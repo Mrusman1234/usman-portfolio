@@ -291,7 +291,7 @@ export default function ContactSection() {
         >
           <div className="flex flex-col md:flex-row justify-between items-center gap-4">
             <p className="text-gray-400 text-sm">
-              © {new Date().getFullYear()} Usman Irfan. All rights reserved.
+              © {new Date().getFullYear()} Muhammad Usman. All rights reserved.
             </p>
             <p className="text-gray-400 text-sm">
               Built with{" "}

@@ -6,7 +6,7 @@ const timeline = [
   {
     year: "2022",
     title: "Started BSCS",
-    description: "Began my Computer Science journey at Bahauddin Zakariya University."
+    description: "Began my Computer Science journey at University of Education Lahore Vehari Campus."
   },
   {
     year: "2023",

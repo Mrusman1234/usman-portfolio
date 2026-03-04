@@ -5,6 +5,7 @@ import AboutSection from "./components/AboutSection"
 import StatsSection from "./components/StatsSection"
 import TimelineSection from "./components/TimelineSection"
 import ContactSection from "./components/ContactSection"
+import ResumeSection from "./components/ResumeSection"
 
 export default function Home() {
   return (
@@ -27,6 +28,9 @@ export default function Home() {
       </div>
       <div id="contact">
         <ContactSection />
+      </div>
+      <div id="resume">
+        <ResumeSection />
       </div>
     </main>
   )

@@ -24,7 +24,7 @@ export default function AboutSection() {
           transition={{ duration: 1, delay: 0.3 }}
           className="text-lg md:text-xl leading-relaxed mb-10"
         >
-          I am Muhammad Usman, a Full Stack Developer and BSCS student at Bahauddin Zakariya University, 
+          I am Muhammad Usman, a Full Stack Developer and BSCS student at University of Education Lahore Vehari Campus, 
           based in Vehari, Punjab, Pakistan. I specialize in building modern web applications using 
           Next.js, React, Node.js, and MongoDB. With expertise in SEO and Digital Marketing, 
           I create responsive, user-friendly websites that drive results.

@@ -29,6 +29,9 @@ export default function Navbar() {
           <a href="#contact" className="hover:text-purple-400 transition">
             Contact
           </a>
+          <a href="#resume" className="hover:text-purple-400 transition">
+            Resume
+          </a>
           <div className="flex gap-3 ml-2">
             <a
               href="https://github.com/Mrusman1234"
