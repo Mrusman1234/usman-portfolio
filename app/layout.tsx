@@ -1,7 +1,13 @@
 import "./globals.css"
 import CustomCursor from "./components/CustomCursor"
 import PageTransition from "./components/PageTransition"
-import type { Metadata } from 'next'
+import type { Metadata, Viewport } from 'next'
+
+export const viewport: Viewport = {
+  width: 'device-width',
+  initialScale: 1,
+  maximumScale: 5,
+}
 
 export const metadata: Metadata = {
   title: 'Muhammad Usman | Full Stack Developer',
@@ -14,6 +20,8 @@ export const metadata: Metadata = {
     type: 'website',
     locale: 'en_US',
     alternateLocale: 'ur_PK',
+    url: 'https://usman-portfolio.vercel.app',
+    siteName: 'Muhammad Usman Portfolio',
   },
   twitter: {
     card: 'summary_large_image',
