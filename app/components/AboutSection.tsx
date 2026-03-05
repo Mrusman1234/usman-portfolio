@@ -6,14 +6,14 @@ export default function AboutSection() {
   return (
     <section
       id="about"
-      className="relative py-20 px-6 md:px-20 bg-gradient-to-b from-gray-900 to-gray-800 text-white"
+      className="relative py-16 md:py-20 px-4 md:px-20 bg-gradient-to-b from-gray-900 to-gray-800 text-white"
     >
       <div className="max-w-5xl mx-auto">
         <motion.h2
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
-          className="text-4xl md:text-5xl font-bold mb-6"
+          className="text-3xl md:text-4xl lg:text-5xl font-bold mb-4 md:mb-6"
         >
           About Me
         </motion.h2>
@@ -22,7 +22,7 @@ export default function AboutSection() {
           initial={{ opacity: 0 }}
           whileInView={{ opacity: 1 }}
           transition={{ duration: 1, delay: 0.3 }}
-          className="text-lg md:text-xl leading-relaxed mb-10"
+          className="text-base md:text-xl leading-relaxed mb-8 md:10"
         >
           I am Muhammad Usman, a Full Stack Developer and BSCS student at University of Education Lahore Vehari Campus, 
           based in Vehari, Punjab, Pakistan. I specialize in building modern web applications using 
@@ -31,7 +31,7 @@ export default function AboutSection() {
         </motion.p>
 
         {/* Skills Section */}
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2 gap-4 md:gap-8">
           <SkillCard skill="React" level={90} />
           <SkillCard skill="Next.js" level={85} />
           <SkillCard skill="Node.js" level={80} />
@@ -51,10 +51,10 @@ function SkillCard({ skill, level }: { skill: string; level: number }) {
       initial={{ opacity: 0, y: 20 }}
       whileInView={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.8 }}
-      className="bg-white/5 backdrop-blur-md rounded-xl p-5 shadow-lg"
+      className="bg-white/5 backdrop-blur-md rounded-xl p-4 md:p-5 shadow-lg"
     >
-      <h3 className="text-xl font-semibold mb-2">{skill}</h3>
-      <div className="w-full h-3 bg-white/20 rounded-full overflow-hidden">
+      <h3 className="text-lg md:text-xl font-semibold mb-2">{skill}</h3>
+      <div className="w-full h-2.5 md:h-3 bg-white/20 rounded-full overflow-hidden">
         <motion.div
           initial={{ width: 0 }}
           whileInView={{ width: `${level}%` }}

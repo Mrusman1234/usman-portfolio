@@ -27,13 +27,13 @@ const timeline = [
 
 export default function TimelineSection() {
   return (
-    <section className="py-20 bg-gray-900 text-white">
-      <div className="max-w-4xl mx-auto">
-        <h2 className="text-4xl font-bold mb-10 text-center">
+    <section className="py-16 md:py-20 bg-gray-900 text-white">
+      <div className="max-w-4xl mx-auto px-4">
+        <h2 className="text-3xl md:text-4xl font-bold mb-8 md:mb-10 text-center">
           My Journey
         </h2>
 
-        <div className="border-l border-purple-600 pl-8 space-y-10">
+        <div className="border-l-2 border-purple-600 pl-6 md:pl-8 space-y-8 md:space-y-10">
           {timeline.map((item, index) => (
             <motion.div
               key={index}
@@ -41,10 +41,10 @@ export default function TimelineSection() {
               whileInView={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.6 }}
             >
-              <h3 className="text-xl font-semibold text-purple-400">
+              <h3 className="text-lg md:text-xl font-semibold text-purple-400">
                 {item.year} — {item.title}
               </h3>
-              <p className="text-gray-400 mt-2">
+              <p className="text-gray-400 mt-1 md:mt-2 text-sm md:text-base">
                 {item.description}
               </p>
             </motion.div>
