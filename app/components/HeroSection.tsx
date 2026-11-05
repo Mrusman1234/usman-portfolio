@@ -1,12 +1,13 @@
 "use client"
 
 import { motion } from "framer-motion"
+import Image from "next/image"
 import { TypeAnimation } from "react-type-animation"
 import { Github, Linkedin, Mail, MapPin } from "lucide-react"
 
 export default function Hero() {
   return (
-    <section className="relative min-h-screen flex items-center justify-center bg-gradient-to-br from-purple-900 via-black to-purple-800 text-white overflow-hidden pt-16 md:pt-20">
+    <section id="home" className="relative min-h-screen flex items-center justify-center bg-gradient-to-br from-purple-900 via-black to-purple-800 text-white overflow-hidden pt-16 md:pt-20">
       {/* Background Glow */}
       <div className="absolute w-[300px] h-[300px] md:w-[500px] md:h-[500px] bg-purple-600 opacity-20 blur-[120px] rounded-full top-10 left-10"></div>
       <div className="absolute w-[250px] h-[250px] md:w-[400px] md:h-[400px] bg-pink-500 opacity-20 blur-[120px] rounded-full bottom-10 right-10"></div>
@@ -30,7 +31,7 @@ export default function Hero() {
           </motion.div>
 
           <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-extrabold mb-2 md:mb-4">
-            Hi, I'm <span className="bg-gradient-to-r from-purple-400 to-pink-500 bg-clip-text text-transparent">Muhammad Usman</span>
+            Hi, I&apos;m <span className="bg-gradient-to-r from-purple-400 to-pink-500 bg-clip-text text-transparent">Muhammad Usman</span>
           </h1>
 
           <div className="text-lg sm:text-xl md:text-2xl text-gray-300 font-medium mb-4 md:mb-6">
@@ -38,11 +39,13 @@ export default function Hero() {
               sequence={[
                 "Full Stack Developer 🚀",
                 1500,
-                "Next.js Specialist ⚡",
+                "AI Agent Integrator 🤖",
                 1500,
-                "React & Node.js Developer 💻",
+                "React & Next.js Specialist ⚡",
                 1500,
-                "SEO & Digital Marketing Expert 📈",
+                "Flutter & Mobile Developer 📱",
+                1500,
+                "Node.js & MongoDB Engineer 💻",
                 1500,
               ]}
               speed={50}
@@ -51,7 +54,7 @@ export default function Hero() {
           </div>
 
           <p className="text-gray-400 mb-6 md:mb-8 text-sm md:text-lg max-w-xl mx-auto md:mx-0">
-            I build modern, responsive, and user-friendly web applications with cutting-edge technologies. Let's turn your ideas into reality!
+            Full Stack Developer and Computer Science graduate (BSCS, 2026) experienced in building production-ready web &amp; mobile applications with React, Next.js, Node.js, Flutter, and AI Agents.
           </p>
 
           <div className="flex flex-wrap justify-center md:justify-start gap-3 md:gap-4 mb-6 md:mb-8">
@@ -76,26 +79,29 @@ export default function Hero() {
               href="https://github.com/Mrusman1234"
               target="_blank"
               rel="noopener noreferrer"
+              aria-label="GitHub Profile"
               whileHover={{ scale: 1.1, y: -5 }}
               className="p-2.5 md:p-3 bg-gray-800/50 rounded-full hover:bg-purple-600 transition-colors"
             >
-              <Github className="w-4 h-5 md:w-5 md:h-5" />
+              <Github className="w-5 h-5" />
             </motion.a>
             <motion.a
-              href="https://www.linkedin.com/in/muhammad-usman-6444523b4/"
+              href="https://www.linkedin.com/in/muhammad-usman-42a363413/"
               target="_blank"
               rel="noopener noreferrer"
+              aria-label="LinkedIn Profile"
               whileHover={{ scale: 1.1, y: -5 }}
               className="p-2.5 md:p-3 bg-gray-800/50 rounded-full hover:bg-purple-600 transition-colors"
             >
-              <Linkedin className="w-4 h-5 md:w-5 md:h-5" />
+              <Linkedin className="w-5 h-5" />
             </motion.a>
             <motion.a
-              href="mailto:usman@example.com"
+              href="mailto:m.usman.dev870@gmail.com"
+              aria-label="Email Muhammad Usman"
               whileHover={{ scale: 1.1, y: -5 }}
               className="p-2.5 md:p-3 bg-gray-800/50 rounded-full hover:bg-purple-600 transition-colors"
             >
-              <Mail className="w-4 h-5 md:w-5 md:h-5" />
+              <Mail className="w-5 h-5" />
             </motion.a>
           </div>
         </motion.div>
@@ -112,14 +118,13 @@ export default function Hero() {
             <div className="relative w-48 h-56 sm:w-56 sm:h-64 md:w-64 md:h-80 lg:w-80 lg:h-96">
               <div className="absolute inset-0 bg-gradient-to-br from-purple-500 to-pink-500 rounded-2xl blur-2xl opacity-50"></div>
               <div className="relative w-full h-full rounded-2xl overflow-hidden border-4 border-purple-500/30">
-                <img
+                <Image
                   src="/project4.png"
                   alt="Muhammad Usman"
-                  className="w-full h-full object-cover object-[center_top]"
-                  onError={(e) => {
-                    // Fallback to placeholder if image doesn't exist
-                    e.currentTarget.src = `https://ui-avatars.com/api/?name=Muhammad+Usman&size=400&background=6b21a8&color=fff&font-size=0.3`
-                  }}
+                  fill
+                  priority
+                  sizes="(max-width: 640px) 192px, (max-width: 768px) 224px, (max-width: 1024px) 256px, 320px"
+                  className="object-cover object-[center_top]"
                 />
               </div>
             </div>
@@ -134,7 +139,7 @@ export default function Hero() {
               <div className="text-lg md:text-2xl">🎯</div>
               <div>
                 <p className="text-xs text-gray-400">Projects</p>
-                <p className="text-sm md:text-lg font-bold text-purple-400">50+</p>
+                <p className="text-sm md:text-lg font-bold text-purple-400">25+</p>
               </div>
             </motion.div>
 

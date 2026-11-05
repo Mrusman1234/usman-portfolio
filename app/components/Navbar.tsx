@@ -10,7 +10,9 @@ export default function Navbar() {
   const navLinks = [
     { href: "#home", label: "Home" },
     { href: "#projects", label: "Projects" },
-    { href: "#skills", label: "Skills" },
+    { href: "#about", label: "About" },
+    { href: "#certifications", label: "Certificates" },
+    { href: "#timeline", label: "Journey" },
     { href: "#contact", label: "Contact" },
     { href: "#resume", label: "Resume" },
   ]
@@ -44,14 +46,16 @@ export default function Navbar() {
               href="https://github.com/Mrusman1234"
               target="_blank"
               rel="noopener noreferrer"
+              aria-label="GitHub Profile"
               className="hover:text-purple-400 transition"
             >
               <Github className="w-5 h-5" />
             </a>
             <a
-              href="https://www.linkedin.com/in/muhammad-usman-6444523b4/"
+              href="https://www.linkedin.com/in/muhammad-usman-42a363413/"
               target="_blank"
               rel="noopener noreferrer"
+              aria-label="LinkedIn Profile"
               className="hover:text-purple-400 transition"
             >
               <Linkedin className="w-5 h-5" />
@@ -101,7 +105,7 @@ export default function Navbar() {
                   <span>GitHub</span>
                 </a>
                 <a
-                  href="https://www.linkedin.com/in/muhammad-usman-6444523b4/"
+                  href="https://www.linkedin.com/in/muhammad-usman-42a363413/"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="flex items-center gap-2 text-gray-300 hover:text-purple-400 transition"

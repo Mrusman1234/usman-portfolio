@@ -10,23 +10,23 @@ export const viewport: Viewport = {
 }
 
 export const metadata: Metadata = {
-  title: 'Muhammad Usman | Full Stack Developer',
-  description: 'BSCS student at University of Education Lahore Vehari Campus, specializing in React, Next.js, Node.js, and MongoDB. Full Stack Developer based in Vehari, Punjab, Pakistan.',
-  keywords: ['Muhammad Usman', 'Full Stack Developer', 'React Developer', 'Next.js', 'MongoDB', 'Node.js', 'BSCS', 'Portfolio', 'Web Developer', 'Vehari', 'Digital Marketing'],
+  title: 'Muhammad Usman | Full Stack Developer & AI Agent Integrator',
+  description: 'Full Stack Developer and Computer Science graduate (BSCS, 2026) building web and mobile applications with React, Next.js, Node.js, Flutter, and AI Agents. Based in Vehari, Punjab, Pakistan.',
+  keywords: ['Muhammad Usman', 'Full Stack Developer', 'AI Agents', 'Next.js', 'React Developer', 'Flutter Developer', 'Node.js', 'MongoDB', 'BSCS', 'Portfolio', 'Android Developer'],
   authors: [{ name: 'Muhammad Usman' }],
   openGraph: {
-    title: 'Muhammad Usman | Full Stack Developer',
-    description: 'BSCS student at University of Education Lahore Vehari Campus, specializing in React, Next.js, Node.js, and MongoDB. Based in Vehari, Punjab, Pakistan.',
+    title: 'Muhammad Usman | Full Stack Developer & AI Agent Integrator',
+    description: 'Full Stack Developer and Computer Science graduate (BSCS, 2026) building web and mobile applications with React, Next.js, Node.js, Flutter, and AI Agents.',
     type: 'website',
     locale: 'en_US',
     alternateLocale: 'ur_PK',
-    url: 'https://usman-portfolio.vercel.app',
+    url: 'https://usman-portfolio-jet.vercel.app',
     siteName: 'Muhammad Usman Portfolio',
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Muhammad Usman | Full Stack Developer',
-    description: 'BSCS student at University of Education Lahore Vehari Campus, specializing in React, Next.js, Node.js, and MongoDB.',
+    title: 'Muhammad Usman | Full Stack Developer & AI Agent Integrator',
+    description: 'Full Stack Developer and Computer Science graduate (BSCS, 2026) building web and mobile applications with Next.js, Flutter, and AI Agents.',
   },
   robots: {
     index: true,

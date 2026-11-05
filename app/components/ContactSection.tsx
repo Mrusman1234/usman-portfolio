@@ -1,29 +1,29 @@
 "use client"
 
 import { motion } from "framer-motion"
-import { Mail, Phone, MapPin, Github, Linkedin, Facebook, Send } from "lucide-react"
+import { Mail, Phone, MapPin, Github, Linkedin, Send } from "lucide-react"
 import { useState } from "react"
 
 const contactInfo = [
   {
     icon: Mail,
     label: "Email",
-    value: "beingwithusman@gmail.com",
-    href: "mailto:beingwithusman@gmail.com",
+    value: "m.usman.dev870@gmail.com",
+    href: "mailto:m.usman.dev870@gmail.com",
     color: "from-blue-500 to-cyan-500",
   },
   {
     icon: Phone,
     label: "Phone",
-    value: "+92 318 1712487",
-    href: "tel:+923181712487",
+    value: "+92-3095039456",
+    href: "tel:+923095039456",
     color: "from-green-500 to-emerald-500",
   },
   {
     icon: MapPin,
     label: "Location",
     value: "Vehari, Punjab, Pakistan",
-    href: "#",
+    href: "https://maps.google.com/?q=Vehari,Punjab,Pakistan",
     color: "from-purple-500 to-pink-500",
   },
 ]
@@ -38,14 +38,8 @@ const socialLinks = [
   {
     icon: Linkedin,
     label: "LinkedIn",
-    href: "https://www.linkedin.com/in/muhammad-usman-6444523b4/",
+    href: "https://www.linkedin.com/in/muhammad-usman-42a363413/",
     color: "hover:bg-blue-600",
-  },
-  {
-    icon: Facebook,
-    label: "Facebook",
-    href: "https://facebook.com",
-    color: "hover:bg-blue-500",
   },
 ]
 
@@ -115,14 +109,14 @@ export default function ContactSection() {
             Get In Touch
           </motion.span>
           <h2 className="text-3xl md:text-5xl lg:text-6xl font-bold text-white mb-3 md:mb-4">
-            Let's{" "}
+            Let&apos;s{" "}
             <span className="bg-gradient-to-r from-cyan-400 to-purple-500 bg-clip-text text-transparent">
               Connect
             </span>
           </h2>
           <p className="text-gray-400 text-sm md:text-lg max-w-2xl mx-auto px-2 md:px-0">
             Have a project in mind or want to collaborate? Feel free to reach out.
-            I'm always open to discussing new opportunities and ideas.
+            I&apos;m always open to discussing new opportunities and ideas.
           </p>
         </motion.div>
 
@@ -179,6 +173,7 @@ export default function ContactSection() {
                     href={social.href}
                     target="_blank"
                     rel="noopener noreferrer"
+                    aria-label={social.label}
                     initial={{ opacity: 0, scale: 0.8 }}
                     whileInView={{ opacity: 1, scale: 1 }}
                     transition={{ duration: 0.4, delay: 0.7 + index * 0.1 }}

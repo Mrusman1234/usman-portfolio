@@ -4,15 +4,6 @@ import { motion } from "framer-motion"
 import { Download } from "lucide-react"
 
 export default function ResumeSection() {
-  const handleDownload = () => {
-    // Replace with actual resume file path
-    // You can add a resume.pdf to the public folder
-    const link = document.createElement("a")
-    link.href = "/resume.pdf"
-    link.download = "Muhammad_Usman_Resume.pdf"
-    link.click()
-  }
-
   return (
     <section id="resume" className="py-16 md:py-20 bg-black">
       <div className="max-w-4xl mx-auto px-4 md:px-6">
@@ -30,15 +21,16 @@ export default function ResumeSection() {
             Download my resume to learn more about my experience, skills, and professional background.
           </p>
           
-          <motion.button
-            onClick={handleDownload}
+          <motion.a
+            href="/resume.pdf"
+            download="Muhammad_Usman_Resume.pdf"
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
             className="inline-flex items-center gap-2 px-6 py-3 md:px-8 md:py-4 bg-purple-600 hover:bg-purple-700 text-white font-semibold rounded-lg transition-colors text-sm md:text-base"
           >
             <Download className="w-4 h-4 md:w-5 md:h-5" />
             Download Resume
-          </motion.button>
+          </motion.a>
         </motion.div>
       </div>
     </section>
