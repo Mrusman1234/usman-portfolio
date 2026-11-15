@@ -1,25 +1,45 @@
-import Hero from "./components/HeroSection"
-import Navbar from "./components/Navbar"
-import ProjectsSection from "./components/ProjectsSection"
-import AboutSection from "./components/AboutSection"
-import CertificationsSection from "./components/CertificationsSection"
-import StatsSection from "./components/StatsSection"
-import TimelineSection from "./components/TimelineSection"
-import ContactSection from "./components/ContactSection"
-import ResumeSection from "./components/ResumeSection"
+import React from "react"
+import Navbar from "@/components/layout/Navbar"
+import Footer from "@/components/layout/Footer"
+import HeroSection from "@/components/sections/HeroSection"
+import AboutSection from "@/components/sections/AboutSection"
+import ProjectsSection from "@/components/sections/ProjectsSection"
+import ServicesSection from "@/components/sections/ServicesSection"
+import SkillsSection from "@/components/sections/SkillsSection"
+import ProcessSection from "@/components/sections/ProcessSection"
+import ContactSection from "@/components/sections/ContactSection"
 
 export default function Home() {
   return (
-    <main>
+    <div className="relative min-h-screen bg-slate-50 text-slate-900 selection:bg-blue-600/10 selection:text-blue-900">
+      {/* Top Floating Navigation */}
       <Navbar />
-      <Hero />
-      <ProjectsSection />
-      <AboutSection />
-      <CertificationsSection />
-      <StatsSection />
-      <TimelineSection />
-      <ContactSection />
-      <ResumeSection />
-    </main>
+
+      <main>
+        {/* Hero Section */}
+        <HeroSection />
+
+        {/* About Section */}
+        <AboutSection />
+
+        {/* Selected Projects Showcase */}
+        <ProjectsSection />
+
+        {/* Professional Services */}
+        <ServicesSection />
+
+        {/* Technical Skills & Systems */}
+        <SkillsSection />
+
+        {/* Development Process (01 - 06) */}
+        <ProcessSection />
+
+        {/* Contact & Inquiries */}
+        <ContactSection />
+      </main>
+
+      {/* Editorial Footer */}
+      <Footer />
+    </div>
   )
 }
