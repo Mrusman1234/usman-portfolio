@@ -37,8 +37,8 @@ export default function SectionHeader({
           isCenter ? "justify-center" : "justify-start"
         }`}
       >
-        <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-blue-50 border border-blue-200/80 text-blue-700 text-xs font-semibold tracking-wide uppercase">
-          {index && <span className="text-blue-600">{index} •</span>}
+        <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-[#8B3DFF]/10 border border-[#8B3DFF]/25 text-[#6425D0] text-xs font-bold tracking-wide uppercase shadow-2xs">
+          {index && <span className="text-[#8B3DFF]">{index} •</span>}
           <span>{kicker}</span>
         </span>
       </div>

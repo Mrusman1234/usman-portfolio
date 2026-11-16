@@ -69,7 +69,7 @@ export default function ContactSection() {
   }
 
   return (
-    <section id="contact" className="py-20 md:py-28 px-4 sm:px-6 lg:px-8 relative overflow-hidden bg-slate-50/70 border-t border-slate-200/60">
+    <section id="contact" className="py-20 md:py-28 px-4 sm:px-6 lg:px-8 relative overflow-hidden bg-[#F7F7FA] border-t border-[#D9DCE5]">
       {/* Background Architectural Grid */}
       <div className="absolute inset-0 bg-grid-subtle opacity-50 pointer-events-none" />
 
@@ -86,7 +86,7 @@ export default function ContactSection() {
           {/* Left Column: Direct Communication Channels & Status */}
           <div className="lg:col-span-5 space-y-5">
             {/* Availability Pill */}
-            <div className="p-6 rounded-3xl bg-white border border-slate-200/80 shadow-sm relative overflow-hidden">
+            <div className="p-6 rounded-3xl bg-white border border-[#D9DCE5] shadow-xs relative overflow-hidden">
               <div className="flex items-center gap-2 mb-2">
                 <span className="w-2.5 h-2.5 rounded-full bg-emerald-500 animate-pulse" />
                 <span className="text-xs text-emerald-700 font-bold uppercase tracking-wider">
@@ -108,7 +108,7 @@ export default function ContactSection() {
                 href={developerProfile.links.whatsapp}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="group p-4 rounded-2xl bg-white border border-slate-200/80 hover:border-emerald-300 hover:shadow-md flex items-center justify-between transition-all shadow-2xs"
+                className="group p-4 rounded-2xl bg-white border border-[#D9DCE5] hover:border-emerald-300 hover:shadow-md flex items-center justify-between transition-all shadow-2xs"
               >
                 <div className="flex items-center gap-3">
                   <div className="w-10 h-10 rounded-xl bg-emerald-50 border border-emerald-200/60 flex items-center justify-center text-emerald-600">
@@ -134,14 +134,14 @@ export default function ContactSection() {
               {/* Email Card */}
               <a
                 href={`mailto:${developerProfile.email}`}
-                className="group p-4 rounded-2xl bg-white border border-slate-200/80 hover:border-blue-300 hover:shadow-md flex items-center justify-between transition-all shadow-2xs"
+                className="group p-4 rounded-2xl bg-white border border-[#D9DCE5] hover:border-[#8B3DFF]/50 hover:shadow-md flex items-center justify-between transition-all shadow-2xs"
               >
                 <div className="flex items-center gap-3">
-                  <div className="w-10 h-10 rounded-xl bg-blue-50 border border-blue-200/60 flex items-center justify-center text-blue-600">
+                  <div className="w-10 h-10 rounded-xl bg-[#8B3DFF]/10 border border-[#8B3DFF]/20 flex items-center justify-center text-[#8B3DFF]">
                     <Mail className="w-5 h-5" />
                   </div>
                   <div>
-                    <span className="text-sm font-bold text-slate-900 group-hover:text-blue-600 transition-colors">
+                    <span className="text-sm font-bold text-slate-900 group-hover:text-[#6425D0] transition-colors">
                       Direct Email
                     </span>
                     <p className="text-xs text-slate-500 font-medium">
@@ -149,7 +149,7 @@ export default function ContactSection() {
                     </p>
                   </div>
                 </div>
-                <ArrowUpRight className="w-4 h-4 text-slate-400 group-hover:text-blue-600 transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
+                <ArrowUpRight className="w-4 h-4 text-slate-400 group-hover:text-[#8B3DFF] transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
               </a>
 
               {/* LinkedIn & GitHub Two-Column */}
@@ -158,7 +158,7 @@ export default function ContactSection() {
                   href={developerProfile.links.github}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="p-4 rounded-2xl bg-white border border-slate-200/80 hover:border-slate-300 hover:shadow-sm transition-all flex items-center gap-2.5 text-slate-700 hover:text-slate-950 shadow-2xs"
+                  className="p-4 rounded-2xl bg-white border border-[#D9DCE5] hover:border-slate-300 hover:shadow-xs transition-all flex items-center gap-2.5 text-slate-700 hover:text-slate-950 shadow-2xs"
                 >
                   <Github className="w-4 h-4 text-slate-500" />
                   <span className="text-xs font-bold">GitHub</span>
@@ -167,9 +167,9 @@ export default function ContactSection() {
                   href={developerProfile.links.linkedin}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="p-4 rounded-2xl bg-white border border-slate-200/80 hover:border-blue-300 hover:shadow-sm transition-all flex items-center gap-2.5 text-slate-700 hover:text-slate-950 shadow-2xs"
+                  className="p-4 rounded-2xl bg-white border border-[#D9DCE5] hover:border-[#8B3DFF]/50 hover:shadow-xs transition-all flex items-center gap-2.5 text-slate-700 hover:text-[#6425D0] shadow-2xs"
                 >
-                  <Linkedin className="w-4 h-4 text-blue-600" />
+                  <Linkedin className="w-4 h-4 text-[#8B3DFF]" />
                   <span className="text-xs font-bold">LinkedIn</span>
                 </a>
               </div>
@@ -184,7 +184,7 @@ export default function ContactSection() {
 
           {/* Right Column: Server-Validated Contact Form */}
           <div className="lg:col-span-7">
-            <div className="p-6 sm:p-8 rounded-3xl bg-white border border-slate-200/90 shadow-xl shadow-slate-900/5">
+            <div className="p-6 sm:p-8 rounded-3xl bg-white border border-[#D9DCE5] shadow-xl shadow-slate-900/5">
               <div className="flex items-center justify-between pb-4 mb-6 border-b border-slate-100">
                 <h3 className="text-lg font-bold text-slate-900">Send a Direct Message</h3>
                 <span className="text-xs font-semibold text-slate-500">
@@ -220,7 +220,7 @@ export default function ContactSection() {
                       placeholder="e.g. Alex Morgan"
                       value={formData.name}
                       onChange={(e) => setFormData({ ...formData, name: e.target.value })}
-                      className="w-full px-4 py-2.5 rounded-xl bg-slate-50 border border-slate-200 focus:bg-white focus:border-blue-500 focus:ring-2 focus:ring-blue-500/20 focus:outline-none text-sm text-slate-900 placeholder-slate-400 transition-all"
+                      className="w-full px-4 py-2.5 rounded-xl bg-[#F7F7FA] border border-[#D9DCE5] focus:bg-white focus:border-[#8B3DFF] focus:ring-2 focus:ring-[#8B3DFF]/20 focus:outline-none text-sm text-slate-900 placeholder-slate-400 transition-all"
                     />
                   </div>
 
@@ -239,7 +239,7 @@ export default function ContactSection() {
                       placeholder="alex@company.com"
                       value={formData.email}
                       onChange={(e) => setFormData({ ...formData, email: e.target.value })}
-                      className="w-full px-4 py-2.5 rounded-xl bg-slate-50 border border-slate-200 focus:bg-white focus:border-blue-500 focus:ring-2 focus:ring-blue-500/20 focus:outline-none text-sm text-slate-900 placeholder-slate-400 transition-all"
+                      className="w-full px-4 py-2.5 rounded-xl bg-[#F7F7FA] border border-[#D9DCE5] focus:bg-white focus:border-[#8B3DFF] focus:ring-2 focus:ring-[#8B3DFF]/20 focus:outline-none text-sm text-slate-900 placeholder-slate-400 transition-all"
                     />
                   </div>
                 </div>
@@ -256,7 +256,7 @@ export default function ContactSection() {
                     id="contact-service"
                     value={formData.service}
                     onChange={(e) => setFormData({ ...formData, service: e.target.value })}
-                    className="w-full px-4 py-2.5 rounded-xl bg-slate-50 border border-slate-200 focus:bg-white focus:border-blue-500 focus:ring-2 focus:ring-blue-500/20 focus:outline-none text-sm text-slate-900 transition-all"
+                    className="w-full px-4 py-2.5 rounded-xl bg-[#F7F7FA] border border-[#D9DCE5] focus:bg-white focus:border-[#8B3DFF] focus:ring-2 focus:ring-[#8B3DFF]/20 focus:outline-none text-sm text-slate-900 transition-all"
                   >
                     <option value="" className="text-slate-500">
                       Select project scope (Optional)
@@ -287,7 +287,7 @@ export default function ContactSection() {
                     placeholder="Tell me about your application goals, timeline, and architectural requirements..."
                     value={formData.message}
                     onChange={(e) => setFormData({ ...formData, message: e.target.value })}
-                    className="w-full px-4 py-2.5 rounded-xl bg-slate-50 border border-slate-200 focus:bg-white focus:border-blue-500 focus:ring-2 focus:ring-blue-500/20 focus:outline-none text-sm text-slate-900 placeholder-slate-400 transition-all resize-none"
+                    className="w-full px-4 py-2.5 rounded-xl bg-[#F7F7FA] border border-[#D9DCE5] focus:bg-white focus:border-[#8B3DFF] focus:ring-2 focus:ring-[#8B3DFF]/20 focus:outline-none text-sm text-slate-900 placeholder-slate-400 transition-all resize-none"
                   />
                 </div>
 
@@ -309,11 +309,11 @@ export default function ContactSection() {
                   </div>
                 )}
 
-                {/* Submit Button */}
+                {/* Submit Button with Electric Purple and Deep Purple Hover */}
                 <button
                   type="submit"
                   disabled={isSubmitting}
-                  className="w-full py-3.5 px-6 rounded-xl bg-slate-900 text-white font-semibold text-sm hover:bg-slate-800 transition-all flex items-center justify-center gap-2 disabled:opacity-60 cursor-pointer shadow-sm shadow-slate-900/10"
+                  className="w-full py-3.5 px-6 rounded-xl bg-brand-primary text-white font-semibold text-sm hover:bg-brand-secondary transition-all flex items-center justify-center gap-2 disabled:opacity-60 cursor-pointer shadow-sm shadow-[#8B3DFF]/25"
                 >
                   {isSubmitting ? (
                     <>

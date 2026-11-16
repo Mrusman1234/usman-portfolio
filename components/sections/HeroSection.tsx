@@ -2,6 +2,7 @@
 
 import React from "react"
 import Link from "next/link"
+import Image from "next/image"
 import { motion } from "framer-motion"
 import { ArrowDown, ArrowUpRight, Sparkles, Shield, Cpu, Bot, Utensils } from "lucide-react"
 import MagneticButton from "@/components/ui/MagneticButton"
@@ -12,12 +13,12 @@ export default function HeroSection() {
   return (
     <section
       id="home"
-      className="relative min-h-[92vh] flex items-center justify-center pt-28 pb-16 md:pt-36 md:pb-24 px-4 sm:px-6 lg:px-8 overflow-hidden bg-slate-50"
+      className="relative min-h-[92vh] flex items-center justify-center pt-28 pb-16 md:pt-36 md:pb-24 px-4 sm:px-6 lg:px-8 overflow-hidden bg-[#F7F7FA]"
     >
       {/* Background Architectural Grid & Subtle Radial Accents */}
-      <div className="absolute inset-0 bg-grid-subtle opacity-70 pointer-events-none" />
-      <div className="absolute top-1/4 left-1/2 -translate-x-1/2 w-[600px] h-[350px] bg-blue-500/[0.06] rounded-full blur-[140px] pointer-events-none" />
-      <div className="absolute bottom-10 right-10 w-[300px] h-[300px] bg-indigo-500/[0.04] rounded-full blur-[120px] pointer-events-none" />
+      <div className="absolute inset-0 bg-grid-subtle opacity-60 pointer-events-none" />
+      <div className="absolute top-1/4 left-1/2 -translate-x-1/2 w-[600px] h-[350px] bg-[#8B3DFF]/[0.05] rounded-full blur-[140px] pointer-events-none" />
+      <div className="absolute bottom-10 right-10 w-[300px] h-[300px] bg-[#6425D0]/[0.04] rounded-full blur-[120px] pointer-events-none" />
 
       <div className="max-w-6xl mx-auto w-full relative z-10">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-8 items-center">
@@ -28,14 +29,14 @@ export default function HeroSection() {
               initial={{ opacity: 0, y: 16 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5, ease: [0.16, 1, 0.3, 1] }}
-              className="inline-flex items-center gap-2.5 px-3.5 py-1.5 rounded-full bg-white border border-slate-200/90 shadow-sm mb-6"
+              className="inline-flex items-center gap-2.5 px-3.5 py-1.5 rounded-full bg-white border border-[#D9DCE5] shadow-xs mb-6"
             >
               <span className="w-2 h-2 rounded-full bg-emerald-500 animate-pulse" />
               <span className="text-xs font-semibold text-slate-700 tracking-wide">
                 {developerProfile.hero.kicker}
               </span>
               <span className="text-slate-300 text-xs">/</span>
-              <span className="text-xs font-semibold text-blue-600">
+              <span className="text-xs font-bold text-gradient-purple">
                 FULL-STACK DEVELOPER
               </span>
             </motion.div>
@@ -52,7 +53,7 @@ export default function HeroSection() {
                 Experiences
               </span>{" "}
               That Make an{" "}
-              <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-600 via-indigo-600 to-blue-700">
+              <span className="text-gradient-headline">
                 Impact.
               </span>
             </motion.h1>
@@ -77,7 +78,7 @@ export default function HeroSection() {
               <MagneticButton
                 href="#projects"
                 variant="primary"
-                className="px-7 py-3.5 text-sm sm:text-base font-semibold group shadow-md shadow-slate-900/10"
+                className="px-7 py-3.5 text-sm sm:text-base font-semibold group shadow-md shadow-[#8B3DFF]/20"
               >
                 <span>{developerProfile.hero.primaryCta}</span>
                 <ArrowDown className="w-4 h-4 ml-2 group-hover:translate-y-0.5 transition-transform" />
@@ -89,7 +90,7 @@ export default function HeroSection() {
                 className="px-6 py-3.5 text-sm sm:text-base font-medium group"
               >
                 <span>{developerProfile.hero.secondaryCta}</span>
-                <ArrowUpRight className="w-4 h-4 ml-1.5 text-slate-500 group-hover:text-slate-900 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-all" />
+                <ArrowUpRight className="w-4 h-4 ml-1.5 text-slate-500 group-hover:text-[#6425D0] group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-all" />
               </MagneticButton>
             </motion.div>
 
@@ -98,9 +99,9 @@ export default function HeroSection() {
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               transition={{ duration: 0.8, delay: 0.4 }}
-              className="mt-12 pt-6 border-t border-slate-200/80 flex flex-wrap items-center gap-2 sm:gap-2.5"
+              className="mt-12 pt-6 border-t border-[#D9DCE5] flex flex-wrap items-center gap-2 sm:gap-2.5"
             >
-              <span className="text-xs font-semibold text-slate-500 uppercase tracking-wider mr-1">
+              <span className="text-xs font-bold text-slate-500 uppercase tracking-wider mr-1">
                 Core Stack:
               </span>
               {["Next.js", "React", "TypeScript", "Node.js", "Express", "Prisma", "PostgreSQL", "MongoDB", "Tailwind"].map(
@@ -121,15 +122,21 @@ export default function HeroSection() {
             className="lg:col-span-5 relative"
           >
             {/* Elevated Showcase Card */}
-            <div className="relative rounded-3xl bg-white border border-slate-200/90 p-6 sm:p-7 shadow-xl shadow-slate-900/5 overflow-hidden">
-              {/* Subtle gradient wash in corner */}
-              <div className="absolute top-0 right-0 w-48 h-48 bg-gradient-to-bl from-blue-50 via-indigo-50/30 to-transparent pointer-events-none rounded-bl-full" />
+            <div className="relative rounded-3xl bg-white border border-[#D9DCE5] p-6 sm:p-7 shadow-xl shadow-slate-900/5 overflow-hidden">
+              {/* Subtle gradient wash in corner with brand colors */}
+              <div className="absolute top-0 right-0 w-48 h-48 bg-gradient-to-bl from-[#8B3DFF]/10 via-[#6425D0]/5 to-transparent pointer-events-none rounded-bl-full" />
 
-              {/* Card Header */}
+              {/* Card Header with Brand Logo */}
               <div className="flex items-center justify-between pb-5 border-b border-slate-100 mb-5 relative z-10">
                 <div className="flex items-center gap-3">
-                  <div className="w-10 h-10 rounded-2xl bg-blue-600 text-white flex items-center justify-center font-bold text-sm shadow-sm shadow-blue-500/20">
-                    MU
+                  <div className="relative w-10 h-10 rounded-2xl overflow-hidden shadow-xs ring-1 ring-slate-900/10 shrink-0 bg-[#0A0814] flex items-center justify-center">
+                    <Image
+                      src="/brand/mu-icon.png"
+                      alt="Muhammad Usman"
+                      width={40}
+                      height={40}
+                      className="object-contain"
+                    />
                   </div>
                   <div>
                     <h3 className="text-sm font-bold text-slate-900">Muhammad Usman</h3>
@@ -141,32 +148,32 @@ export default function HeroSection() {
                 </Badge>
               </div>
 
-              {/* Flagship Projects Spotlight */}
+              {/* Flagship Projects Spotlight (Strict Preservation) */}
               <div className="space-y-3.5 relative z-10">
-                <p className="text-xs font-semibold text-slate-500 uppercase tracking-wider">
+                <p className="text-xs font-bold text-slate-500 uppercase tracking-wider">
                   Featured Production Systems
                 </p>
 
                 {/* System 1: SmartDesk AI Agent */}
                 <Link
                   href="/projects/smartdesk-ai"
-                  className="group block p-3.5 rounded-2xl bg-slate-50/80 border border-slate-200/70 hover:border-blue-300 hover:bg-blue-50/40 transition-all"
+                  className="group block p-3.5 rounded-2xl bg-[#F7F7FA] border border-[#D9DCE5] hover:border-[#8B3DFF]/50 hover:bg-[#8B3DFF]/5 transition-all"
                 >
                   <div className="flex items-start justify-between mb-1.5">
                     <div className="flex items-center gap-2">
-                      <div className="w-7 h-7 rounded-lg bg-blue-100 text-blue-700 flex items-center justify-center">
+                      <div className="w-7 h-7 rounded-lg bg-[#8B3DFF]/10 text-[#6425D0] flex items-center justify-center">
                         <Bot className="w-4 h-4" />
                       </div>
-                      <span className="text-sm font-bold text-slate-900 group-hover:text-blue-600 transition-colors">
+                      <span className="text-sm font-bold text-slate-900 group-hover:text-[#6425D0] transition-colors">
                         SmartDesk AI Support Agent
                       </span>
                     </div>
-                    <ArrowUpRight className="w-4 h-4 text-slate-400 group-hover:text-blue-600 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform" />
+                    <ArrowUpRight className="w-4 h-4 text-slate-400 group-hover:text-[#8B3DFF] group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform" />
                   </div>
-                  <p className="text-xs text-slate-600 leading-relaxed pl-9">
+                  <p className="text-xs text-slate-600 leading-relaxed pl-9 font-normal">
                     Autonomous LLM customer support agent with deterministic tool-calling, 75%+ autonomous resolution, and real-time database queries.
                   </p>
-                  <div className="flex items-center gap-2 pl-9 mt-2 text-[11px] font-semibold text-blue-700">
+                  <div className="flex items-center gap-2 pl-9 mt-2 text-[11px] font-semibold text-[#6425D0]">
                     <span>Next.js</span>
                     <span>•</span>
                     <span>LLM Tool Calling</span>
@@ -178,7 +185,7 @@ export default function HeroSection() {
                 {/* System 2: Online Pizza Hub Vehari */}
                 <Link
                   href="/projects/online-pizza-hub"
-                  className="group block p-3.5 rounded-2xl bg-slate-50/80 border border-slate-200/70 hover:border-emerald-300 hover:bg-emerald-50/40 transition-all"
+                  className="group block p-3.5 rounded-2xl bg-[#F7F7FA] border border-[#D9DCE5] hover:border-emerald-300 hover:bg-emerald-50/40 transition-all"
                 >
                   <div className="flex items-start justify-between mb-1.5">
                     <div className="flex items-center gap-2">
@@ -191,7 +198,7 @@ export default function HeroSection() {
                     </div>
                     <ArrowUpRight className="w-4 h-4 text-slate-400 group-hover:text-emerald-600 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform" />
                   </div>
-                  <p className="text-xs text-slate-600 leading-relaxed pl-9">
+                  <p className="text-xs text-slate-600 leading-relaxed pl-9 font-normal">
                     Multi-restaurant food ordering platform with live kitchen tracking, automated driver dispatching, and comprehensive merchant admin portals.
                   </p>
                   <div className="flex items-center gap-2 pl-9 mt-2 text-[11px] font-semibold text-emerald-700">
@@ -206,7 +213,7 @@ export default function HeroSection() {
 
               {/* Architectural Strengths Micro-Grid */}
               <div className="mt-4 pt-4 border-t border-slate-100 grid grid-cols-2 gap-3 relative z-10">
-                <div className="p-3 rounded-xl bg-slate-50 border border-slate-200/60">
+                <div className="p-3 rounded-xl bg-[#F7F7FA] border border-[#D9DCE5]">
                   <div className="flex items-center gap-1.5 text-slate-600 text-[11px] font-semibold mb-1">
                     <Shield className="w-3.5 h-3.5 text-emerald-600" />
                     <span>Security</span>
@@ -214,9 +221,9 @@ export default function HeroSection() {
                   <div className="text-xs font-bold text-slate-900">Zero-Trust &amp; HMAC</div>
                 </div>
 
-                <div className="p-3 rounded-xl bg-slate-50 border border-slate-200/60">
+                <div className="p-3 rounded-xl bg-[#F7F7FA] border border-[#D9DCE5]">
                   <div className="flex items-center gap-1.5 text-slate-600 text-[11px] font-semibold mb-1">
-                    <Cpu className="w-3.5 h-3.5 text-blue-600" />
+                    <Cpu className="w-3.5 h-3.5 text-[#8B3DFF]" />
                     <span>Architecture</span>
                   </div>
                   <div className="text-xs font-bold text-slate-900">App Router &amp; RSC</div>
@@ -228,9 +235,9 @@ export default function HeroSection() {
             <motion.div
               animate={{ y: [0, -6, 0] }}
               transition={{ duration: 4, repeat: Infinity, ease: "easeInOut" }}
-              className="absolute -bottom-4 -left-4 sm:-bottom-5 sm:-left-5 bg-white border border-slate-200/90 rounded-2xl p-3 shadow-lg shadow-slate-900/10 hidden sm:flex items-center gap-2.5 z-20"
+              className="absolute -bottom-4 -left-4 sm:-bottom-5 sm:-left-5 bg-white border border-[#D9DCE5] rounded-2xl p-3 shadow-lg shadow-slate-900/10 hidden sm:flex items-center gap-2.5 z-20"
             >
-              <div className="w-8 h-8 rounded-xl bg-emerald-50 border border-emerald-200 flex items-center justify-center text-emerald-600">
+              <div className="w-8 h-8 rounded-xl bg-[#8B3DFF]/10 border border-[#8B3DFF]/20 flex items-center justify-center text-[#8B3DFF]">
                 <Sparkles className="w-4 h-4" />
               </div>
               <div>

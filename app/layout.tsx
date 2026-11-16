@@ -8,7 +8,7 @@ export const viewport: Viewport = {
   width: "device-width",
   initialScale: 1,
   maximumScale: 5,
-  themeColor: "#ffffff",
+  themeColor: "#8B3DFF",
 }
 
 export const metadata: Metadata = {
@@ -35,6 +35,16 @@ export const metadata: Metadata = {
   creator: "Muhammad Usman",
   alternates: {
     canonical: "/",
+  },
+  icons: {
+    icon: [
+      { url: "/favicon.ico", sizes: "any" },
+      { url: "/brand/favicon-32.png", sizes: "32x32", type: "image/png" },
+      { url: "/brand/mu-icon.png", sizes: "512x512", type: "image/png" },
+    ],
+    apple: [
+      { url: "/brand/mu-icon.png", sizes: "180x180", type: "image/png" },
+    ],
   },
   openGraph: {
     title: "Muhammad Usman — Full-Stack Web Developer",
@@ -123,7 +133,7 @@ export default function RootLayout({
           dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
         />
       </head>
-      <body className="bg-slate-50 text-slate-900 antialiased selection:bg-blue-600/10 selection:text-blue-900 min-h-screen">
+      <body className="bg-[#F7F7FA] text-slate-900 antialiased selection:bg-[#8B3DFF]/15 selection:text-[#6425D0] min-h-screen">
         <CustomCursor />
         {children}
         <WhatsAppFloatingButton />

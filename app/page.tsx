@@ -11,7 +11,7 @@ import ContactSection from "@/components/sections/ContactSection"
 
 export default function Home() {
   return (
-    <div className="relative min-h-screen bg-slate-50 text-slate-900 selection:bg-blue-600/10 selection:text-blue-900">
+    <div className="relative min-h-screen bg-[#F7F7FA] text-slate-900 selection:bg-[#8B3DFF]/15 selection:text-[#6425D0]">
       {/* Top Floating Navigation */}
       <Navbar />
 

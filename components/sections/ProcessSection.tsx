@@ -37,15 +37,15 @@ export default function ProcessSection() {
                   onClick={() => setActiveStepIndex(idx)}
                   className={`w-full text-left p-4 rounded-2xl border transition-all duration-200 cursor-pointer flex items-center justify-between ${
                     isSelected
-                      ? "bg-white border-blue-400 shadow-md shadow-blue-500/5 text-slate-900 ring-1 ring-blue-500/20"
-                      : "bg-slate-50 border-slate-200/80 hover:border-slate-300 text-slate-600 hover:text-slate-900 hover:bg-slate-100/70"
+                      ? "bg-white border-[#8B3DFF]/40 shadow-md shadow-[#8B3DFF]/5 text-slate-900 ring-1 ring-[#8B3DFF]/20"
+                      : "bg-[#F7F7FA] border-[#D9DCE5] hover:border-slate-300 text-slate-600 hover:text-slate-900 hover:bg-white"
                   }`}
                 >
                   <div className="flex items-center gap-3">
                     <span
                       className={`text-xs font-bold px-2.5 py-1 rounded-lg ${
                         isSelected
-                          ? "bg-blue-600 text-white"
+                          ? "bg-[#8B3DFF] text-white"
                           : "bg-slate-200/70 text-slate-600"
                       }`}
                     >
@@ -67,7 +67,7 @@ export default function ProcessSection() {
 
                   <ArrowRight
                     className={`w-4 h-4 transition-transform ${
-                      isSelected ? "text-blue-600 translate-x-1" : "text-slate-400"
+                      isSelected ? "text-[#8B3DFF] translate-x-1" : "text-slate-400"
                     }`}
                   />
                 </button>
@@ -84,7 +84,7 @@ export default function ProcessSection() {
                 animate={{ opacity: 1, y: 0 }}
                 exit={{ opacity: 0, y: -16 }}
                 transition={{ duration: 0.35, ease: [0.16, 1, 0.3, 1] }}
-                className="p-6 sm:p-8 rounded-3xl bg-white border border-slate-200/90 shadow-xl shadow-slate-900/5"
+                className="p-6 sm:p-8 rounded-3xl bg-white border border-[#D9DCE5] shadow-xl shadow-slate-900/5"
               >
                 {/* Step Header */}
                 <div className="flex items-center justify-between mb-5 pb-4 border-b border-slate-100">
@@ -97,7 +97,7 @@ export default function ProcessSection() {
                       DEVELOPMENT WORKFLOW
                     </span>
                   </div>
-                  <span className="text-xs text-blue-600 font-bold">
+                  <span className="text-xs text-[#8B3DFF] font-bold">
                     STEP {activeStepIndex + 1} OF 6
                   </span>
                 </div>
@@ -106,7 +106,7 @@ export default function ProcessSection() {
                 <h3 className="text-2xl sm:text-3xl font-bold text-slate-900 mb-2">
                   {currentStep.step} — {currentStep.title}
                 </h3>
-                <p className="text-sm font-semibold text-blue-600 mb-4">
+                <p className="text-sm font-semibold text-[#8B3DFF] mb-4">
                   {currentStep.tagline}
                 </p>
 
@@ -124,7 +124,7 @@ export default function ProcessSection() {
                     {currentStep.activities.map((act, aIdx) => (
                       <div
                         key={aIdx}
-                        className="p-3.5 rounded-2xl bg-slate-50 border border-slate-200/80 flex items-start gap-2.5"
+                        className="p-3.5 rounded-2xl bg-[#F7F7FA] border border-[#D9DCE5] flex items-start gap-2.5"
                       >
                         <CheckCircle2 className="w-4 h-4 text-emerald-600 shrink-0 mt-0.5" />
                         <span className="text-xs text-slate-700 font-medium leading-snug">{act}</span>
@@ -134,8 +134,8 @@ export default function ProcessSection() {
                 </div>
 
                 {/* Deliverable Box */}
-                <div className="p-4 rounded-2xl bg-gradient-to-br from-blue-50 to-indigo-50/50 border border-blue-200/80 flex items-center gap-3">
-                  <div className="w-9 h-9 rounded-xl bg-blue-100 text-blue-700 flex items-center justify-center shrink-0">
+                <div className="p-4 rounded-2xl bg-gradient-to-br from-[#8B3DFF]/10 to-[#6425D0]/5 border border-[#8B3DFF]/25 flex items-center gap-3">
+                  <div className="w-9 h-9 rounded-xl bg-[#8B3DFF]/10 text-[#8B3DFF] flex items-center justify-center shrink-0">
                     <FileCheck className="w-5 h-5" />
                   </div>
                   <div>

@@ -63,17 +63,17 @@ export default function ServicesSection() {
                 transition={{ duration: 0.5, delay: idx * 0.05 }}
                 className={`rounded-3xl border transition-all duration-300 p-6 sm:p-7 flex flex-col justify-between ${
                   isExpanded
-                    ? "bg-white border-blue-300 shadow-lg shadow-blue-500/5 ring-1 ring-blue-500/10"
-                    : "bg-slate-50 border-slate-200/80 hover:border-slate-300 hover:bg-slate-50/90 shadow-2xs"
+                    ? "bg-white border-[#8B3DFF]/40 shadow-lg shadow-[#8B3DFF]/5 ring-1 ring-[#8B3DFF]/20"
+                    : "bg-[#F7F7FA] border-[#D9DCE5] hover:border-slate-300 hover:bg-white shadow-2xs"
                 }`}
               >
                 <div>
                   {/* Top Bar: Number & Icon */}
                   <div className="flex items-center justify-between mb-4">
-                    <span className="w-7 h-7 rounded-lg bg-blue-50 text-blue-700 text-xs font-bold flex items-center justify-center border border-blue-200/60">
+                    <span className="w-7 h-7 rounded-lg bg-[#8B3DFF]/10 text-[#6425D0] text-xs font-bold flex items-center justify-center border border-[#8B3DFF]/20">
                       {service.number}
                     </span>
-                    <div className="w-9 h-9 rounded-xl bg-blue-50/70 border border-blue-200/50 flex items-center justify-center text-blue-600">
+                    <div className="w-9 h-9 rounded-xl bg-[#8B3DFF]/10 border border-[#8B3DFF]/20 flex items-center justify-center text-[#8B3DFF]">
                       <Icon className="w-4 h-4" />
                     </div>
                   </div>
@@ -105,7 +105,7 @@ export default function ServicesSection() {
                         transition={{ duration: 0.3 }}
                         className="overflow-hidden pt-4 border-t border-slate-200/80"
                       >
-                        <p className="text-xs text-slate-600 leading-relaxed mb-4">
+                        <p className="text-xs text-slate-600 leading-relaxed mb-4 font-normal">
                           {service.fullDescription}
                         </p>
                         <h4 className="text-[11px] uppercase tracking-wider text-slate-500 font-bold mb-2">
@@ -137,14 +137,14 @@ export default function ServicesSection() {
                     <span>{isExpanded ? "Show Less" : "View Scope & Deliverables"}</span>
                     <ChevronDown
                       className={`w-3.5 h-3.5 transition-transform duration-300 ${
-                        isExpanded ? "rotate-180 text-blue-600" : ""
+                        isExpanded ? "rotate-180 text-[#8B3DFF]" : ""
                       }`}
                     />
                   </button>
 
                   <a
                     href="#contact"
-                    className="text-xs font-semibold text-blue-600 hover:text-blue-700 transition-colors"
+                    className="text-xs font-semibold text-[#8B3DFF] hover:text-[#6425D0] transition-colors"
                   >
                     Inquire →
                   </a>

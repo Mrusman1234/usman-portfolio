@@ -1,19 +1,29 @@
 @import "tailwindcss";
 
+@theme {
+  --color-brand-primary: #8B3DFF;
+  --color-brand-secondary: #6425D0;
+  --color-brand-silver: #D9DCE5;
+  --color-brand-bg: #F7F7FA;
+}
+
 @layer base {
   :root {
-    --bg-base: #f8fafc;
+    --bg-base: #F7F7FA;
     --bg-surface: #ffffff;
     --bg-card: #ffffff;
-    --bg-elevated: #f1f5f9;
-    --border-subtle: rgba(15, 23, 42, 0.08);
-    --border-medium: rgba(15, 23, 42, 0.16);
-    --border-focus: rgba(37, 99, 235, 0.5);
+    --bg-elevated: #F7F7FA;
+    --border-subtle: #D9DCE5;
+    --border-medium: rgba(100, 37, 208, 0.2);
+    --border-focus: rgba(139, 61, 255, 0.5);
     --text-primary: #0f172a;
     --text-muted: #64748b;
     --text-dim: #94a3b8;
-    --accent-blue: #2563eb;
-    --accent-cyan: #0284c7;
+    --brand-primary: #8B3DFF;
+    --brand-secondary: #6425D0;
+    --brand-silver: #D9DCE5;
+    --accent-blue: #8B3DFF;
+    --accent-cyan: #6425D0;
     --accent-amber: #d97706;
     --accent-emerald: #059669;
   }
@@ -34,25 +44,69 @@
   }
 
   ::selection {
-    background-color: rgba(37, 99, 235, 0.15);
-    color: #1e3a8a;
+    background-color: rgba(139, 61, 255, 0.18);
+    color: #6425D0;
   }
 
-  /* Refined, clean scrollbar */
+  /* Refined, clean scrollbar with metallic silver and brand accent */
   ::-webkit-scrollbar {
     width: 8px;
   }
   ::-webkit-scrollbar-track {
-    background: #f1f5f9;
+    background: #F7F7FA;
   }
   ::-webkit-scrollbar-thumb {
-    background: #cbd5e1;
+    background: #D9DCE5;
     border-radius: 4px;
-    border: 2px solid #f1f5f9;
+    border: 2px solid #F7F7FA;
   }
   ::-webkit-scrollbar-thumb:hover {
-    background: #94a3b8;
+    background: #8B3DFF;
   }
+}
+
+/* Bulletproof Brand Utility Classes */
+.bg-brand-primary {
+  background-color: #8B3DFF !important;
+}
+
+.hover\:bg-brand-secondary:hover {
+  background-color: #6425D0 !important;
+}
+
+.text-brand-primary {
+  color: #8B3DFF !important;
+}
+
+.text-brand-secondary {
+  color: #6425D0 !important;
+}
+
+.border-brand-silver {
+  border-color: #D9DCE5 !important;
+}
+
+.border-brand-primary {
+  border-color: #8B3DFF !important;
+}
+
+/* Gradient typography cross-browser clip */
+.text-gradient-purple {
+  background: linear-gradient(135deg, #8B3DFF 0%, #6425D0 100%);
+  -webkit-background-clip: text !important;
+  -webkit-text-fill-color: transparent !important;
+  background-clip: text !important;
+  color: transparent !important;
+  display: inline-block;
+}
+
+.text-gradient-headline {
+  background: linear-gradient(135deg, #8B3DFF 0%, #7B2BF5 50%, #6425D0 100%);
+  -webkit-background-clip: text !important;
+  -webkit-text-fill-color: transparent !important;
+  background-clip: text !important;
+  color: transparent !important;
+  display: inline-block;
 }
 
 /* Subtle architectural patterns for light theme */
@@ -70,15 +124,15 @@
 
 /* Premium frosted glass surface */
 .glass-panel {
-  background: rgba(255, 255, 255, 0.85);
+  background: rgba(255, 255, 255, 0.88);
   backdrop-filter: blur(12px);
   -webkit-backdrop-filter: blur(12px);
-  border: 1px solid rgba(226, 232, 240, 0.9);
+  border: 1px solid #D9DCE5;
 }
 
 .glass-panel-hover:hover {
   background: rgba(255, 255, 255, 0.98);
-  border-color: rgba(203, 213, 225, 1);
+  border-color: #8B3DFF;
 }
 
 /* Clean sans-serif mono accent strictly for code snippets when needed */

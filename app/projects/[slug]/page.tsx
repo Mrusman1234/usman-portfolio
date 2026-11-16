@@ -54,7 +54,7 @@ export default async function ProjectDetailPage({ params }: PageProps) {
   }
 
   return (
-    <main className="min-h-screen bg-slate-50 text-slate-900 pt-24 pb-20 px-4 sm:px-6 lg:px-8 relative overflow-hidden">
+    <main className="min-h-screen bg-[#F7F7FA] text-slate-900 pt-24 pb-20 px-4 sm:px-6 lg:px-8 relative overflow-hidden">
       {/* Background Architectural Grid */}
       <div className="absolute inset-0 bg-grid-subtle opacity-50 pointer-events-none" />
 
@@ -63,7 +63,7 @@ export default async function ProjectDetailPage({ params }: PageProps) {
         <div className="mb-8">
           <Link
             href="/#projects"
-            className="inline-flex items-center gap-2 text-xs font-semibold text-slate-600 hover:text-slate-950 transition-colors px-3.5 py-1.5 rounded-full bg-white border border-slate-200/90 shadow-2xs hover:bg-slate-50"
+            className="inline-flex items-center gap-2 text-xs font-semibold text-slate-600 hover:text-[#6425D0] transition-colors px-3.5 py-1.5 rounded-full bg-white border border-[#D9DCE5] shadow-2xs hover:bg-slate-50"
           >
             <ArrowLeft className="w-3.5 h-3.5" />
             <span>Back to Selected Work</span>
@@ -90,13 +90,13 @@ export default async function ProjectDetailPage({ params }: PageProps) {
           </p>
 
           {/* Action links */}
-          <div className="flex flex-wrap items-center gap-3 mt-6 pt-6 border-t border-slate-200">
+          <div className="flex flex-wrap items-center gap-3 mt-6 pt-6 border-t border-[#D9DCE5]">
             {project.live && project.live !== "#" && (
               <a
                 href={project.live}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center gap-2 px-5 py-2.5 rounded-full text-xs sm:text-sm font-semibold text-white bg-slate-900 hover:bg-slate-800 transition-all shadow-sm"
+                className="inline-flex items-center gap-2 px-5 py-2.5 rounded-full text-xs sm:text-sm font-semibold text-white bg-brand-primary hover:bg-brand-secondary shadow-sm hover:shadow-md transition-all active:scale-[0.98]"
               >
                 <span>Visit Live Application</span>
                 <ExternalLink className="w-3.5 h-3.5" />
@@ -108,7 +108,7 @@ export default async function ProjectDetailPage({ params }: PageProps) {
                 href={project.github}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center gap-2 px-5 py-2.5 rounded-full text-xs sm:text-sm font-semibold text-slate-700 bg-white border border-slate-200/90 hover:bg-slate-50 transition-all shadow-2xs"
+                className="inline-flex items-center gap-2 px-5 py-2.5 rounded-full text-xs sm:text-sm font-semibold text-slate-700 bg-white border border-[#D9DCE5] hover:bg-slate-50 transition-all shadow-2xs"
               >
                 <Github className="w-4 h-4 text-slate-500" />
                 <span>Inspect Source Code</span>
@@ -129,7 +129,7 @@ export default async function ProjectDetailPage({ params }: PageProps) {
         {/* Executive Summary & Metrics Grid */}
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 mb-16 items-start">
           <div className="lg:col-span-7 space-y-4">
-            <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-blue-50 text-blue-700 text-xs font-semibold uppercase tracking-wider border border-blue-200/70">
+            <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-[#8B3DFF]/10 text-[#6425D0] text-xs font-semibold uppercase tracking-wider border border-[#8B3DFF]/20">
               01 • EXECUTIVE SUMMARY
             </span>
             <h2 className="text-xl sm:text-2xl font-bold text-slate-900">
@@ -141,13 +141,13 @@ export default async function ProjectDetailPage({ params }: PageProps) {
           </div>
 
           <div className="lg:col-span-5 space-y-3">
-            <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-slate-100 text-slate-700 text-xs font-semibold uppercase tracking-wider border border-slate-200 mb-2">
+            <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-slate-100 text-slate-700 text-xs font-semibold uppercase tracking-wider border border-[#D9DCE5] mb-2">
               VERIFIED METRICS
             </span>
             {project.metrics?.map((m, idx) => (
               <div
                 key={idx}
-                className="p-4 rounded-2xl bg-white border border-slate-200/80 shadow-sm"
+                className="p-4 rounded-2xl bg-white border border-[#D9DCE5] shadow-sm"
               >
                 <div className="text-xl font-bold text-slate-900 mb-0.5">
                   {m.value}
@@ -160,8 +160,8 @@ export default async function ProjectDetailPage({ params }: PageProps) {
         </div>
 
         {/* Technical Architecture */}
-        <div className="mb-16 p-6 sm:p-8 rounded-3xl bg-white border border-slate-200/90 shadow-sm">
-          <div className="flex items-center gap-2 mb-4 text-blue-600">
+        <div className="mb-16 p-6 sm:p-8 rounded-3xl bg-white border border-[#D9DCE5] shadow-sm">
+          <div className="flex items-center gap-2 mb-4 text-[#8B3DFF]">
             <Cpu className="w-5 h-5" />
             <h2 className="text-xs uppercase tracking-wider font-bold">
               02 • TECHNICAL ARCHITECTURE &amp; DATA FLOW
@@ -173,7 +173,7 @@ export default async function ProjectDetailPage({ params }: PageProps) {
           <ul className="space-y-3 text-sm text-slate-600">
             {project.architecture.map((item, idx) => (
               <li key={idx} className="flex items-start gap-3">
-                <span className="w-6 h-6 rounded-full bg-blue-50 text-blue-700 font-bold text-xs flex items-center justify-center shrink-0 mt-0.5">
+                <span className="w-6 h-6 rounded-full bg-[#8B3DFF]/10 text-[#6425D0] font-bold text-xs flex items-center justify-center shrink-0 mt-0.5">
                   {idx + 1}
                 </span>
                 <span className="leading-relaxed">{item}</span>
@@ -185,7 +185,7 @@ export default async function ProjectDetailPage({ params }: PageProps) {
         {/* Engineering Challenges & Solutions */}
         {project.challenges && project.challenges.length > 0 && (
           <div className="mb-16">
-            <div className="flex items-center gap-2 mb-2 text-blue-600">
+            <div className="flex items-center gap-2 mb-2 text-[#8B3DFF]">
               <Sparkles className="w-4 h-4" />
               <h2 className="text-xs uppercase tracking-wider font-bold">
                 03 • ENGINEERING CHALLENGES
@@ -198,7 +198,7 @@ export default async function ProjectDetailPage({ params }: PageProps) {
               {project.challenges.map((c, idx) => (
                 <div
                   key={idx}
-                  className="p-6 rounded-3xl bg-white border border-slate-200/90 shadow-sm"
+                  className="p-6 rounded-3xl bg-white border border-[#D9DCE5] shadow-sm"
                 >
                   <h4 className="text-base sm:text-lg font-bold text-slate-900 mb-4">
                     {c.title}
@@ -228,21 +228,21 @@ export default async function ProjectDetailPage({ params }: PageProps) {
 
         {/* Key Decisions & Lessons Learned */}
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-16">
-          <div className="p-6 rounded-3xl bg-white border border-slate-200/90 shadow-sm">
+          <div className="p-6 rounded-3xl bg-white border border-[#D9DCE5] shadow-sm">
             <h4 className="text-xs uppercase tracking-wider text-slate-500 font-bold mb-4">
               Key Engineering Decisions
             </h4>
             <ul className="space-y-3 text-xs sm:text-sm text-slate-600">
               {project.keyDecisions.map((decision, dIdx) => (
                 <li key={dIdx} className="flex items-start gap-2.5">
-                  <span className="w-1.5 h-1.5 rounded-full bg-blue-600 mt-2 shrink-0" />
+                  <span className="w-1.5 h-1.5 rounded-full bg-[#8B3DFF] mt-2 shrink-0" />
                   <span>{decision}</span>
                 </li>
               ))}
             </ul>
           </div>
 
-          <div className="p-6 rounded-3xl bg-white border border-slate-200/90 shadow-sm">
+          <div className="p-6 rounded-3xl bg-white border border-[#D9DCE5] shadow-sm">
             <h4 className="text-xs uppercase tracking-wider text-slate-500 font-bold mb-4">
               Lessons Learned
             </h4>
@@ -272,17 +272,17 @@ export default async function ProjectDetailPage({ params }: PageProps) {
         </div>
 
         {/* Footer Navigation CTA */}
-        <div className="pt-8 border-t border-slate-200 flex flex-col sm:flex-row items-center justify-between gap-4">
+        <div className="pt-8 border-t border-[#D9DCE5] flex flex-col sm:flex-row items-center justify-between gap-4">
           <Link
             href="/#projects"
-            className="text-xs font-semibold text-blue-600 hover:text-blue-700 transition-colors inline-flex items-center gap-1"
+            className="text-xs font-semibold text-[#8B3DFF] hover:text-[#6425D0] transition-colors inline-flex items-center gap-1"
           >
             <ArrowLeft className="w-3.5 h-3.5" />
             <span>Back to All Projects</span>
           </Link>
           <Link
             href="/#contact"
-            className="inline-flex items-center gap-2 px-5 py-2.5 rounded-full text-xs font-semibold text-white bg-slate-900 hover:bg-slate-800 transition-all shadow-sm"
+            className="inline-flex items-center gap-2 px-5 py-2.5 rounded-full text-xs font-semibold text-white bg-brand-primary hover:bg-brand-secondary shadow-sm hover:shadow-md transition-all active:scale-[0.98]"
           >
             <span>Discuss a Similar System</span>
             <ArrowRight className="w-3.5 h-3.5" />

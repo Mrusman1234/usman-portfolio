@@ -2,6 +2,7 @@
 
 import React, { useState, useEffect } from "react"
 import Link from "next/link"
+import Image from "next/image"
 import { motion, AnimatePresence } from "framer-motion"
 import { Menu, X, ArrowUpRight, FileText } from "lucide-react"
 import WhatsAppIcon from "@/components/ui/WhatsAppIcon"
@@ -22,7 +23,7 @@ export default function Navbar() {
   const [scrolled, setScrolled] = useState(false)
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
 
-  // Track scroll position for navbar background elevation and active section
+  // Track scroll position for navbar elevation and active section
   useEffect(() => {
     const handleScroll = () => {
       setScrolled(window.scrollY > 30)
@@ -60,29 +61,40 @@ export default function Navbar() {
     <>
       <header
         className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 px-4 sm:px-6 lg:px-8 flex justify-center pointer-events-none ${
-          scrolled ? "py-3" : "py-4 sm:py-5"
+          scrolled ? "py-2.5" : "py-3.5 sm:py-4"
         }`}
       >
-        <div className="w-full max-w-6xl mx-auto flex items-center justify-between pointer-events-auto">
-          {/* Brand Monogram */}
+        <div className="w-full max-w-6xl mx-auto flex items-center justify-between pointer-events-auto gap-2">
+          {/* Brand Logo Lockup on far left */}
           <Link
-            href="#home"
-            className="group flex items-center gap-2.5 px-3.5 py-1.5 rounded-full bg-white/80 border border-slate-200/80 backdrop-blur-md hover:border-slate-300 hover:bg-white shadow-sm shadow-slate-900/5 transition-all"
+            href="/"
+            className="group flex items-center gap-2.5 px-2.5 py-1.5 rounded-full bg-white/90 border border-[#D9DCE5] backdrop-blur-md hover:border-[#8B3DFF]/50 hover:bg-white shadow-sm shadow-slate-900/5 transition-all shrink-0"
             aria-label="Muhammad Usman - Home"
           >
-            <div className="w-6 h-6 rounded-full bg-blue-600 text-white flex items-center justify-center text-[10px] font-bold tracking-tight group-hover:scale-105 transition-transform">
-              MU
+            {/* Logo Monogram */}
+            <div className="relative h-8 w-8 sm:h-9 sm:w-9 rounded-lg overflow-hidden shrink-0 shadow-2xs bg-[#0A0814] flex items-center justify-center">
+              <Image
+                src="/brand/mu-icon.png"
+                alt="Muhammad Usman Logo"
+                width={36}
+                height={36}
+                className="object-contain w-full h-full group-hover:scale-105 transition-transform"
+                priority
+              />
             </div>
-            <span className="text-xs font-bold tracking-tight text-slate-800 group-hover:text-slate-950 transition-colors">
-              USMAN<span className="text-blue-600">.DEV</span>
-            </span>
-            <span className="w-1.5 h-1.5 rounded-full bg-emerald-500 animate-pulse ml-0.5" />
+            {/* Logo Typography */}
+            <div className="flex items-center gap-1.5 pr-1">
+              <span className="text-xs sm:text-sm font-bold tracking-tight text-slate-900">
+                Muhammad <span className="text-gradient-purple">Usman</span>
+              </span>
+              <span className="w-1.5 h-1.5 rounded-full bg-emerald-500 animate-pulse hidden sm:inline-block" />
+            </div>
           </Link>
 
           {/* Desktop Navigation Floating Pill */}
           <nav
             aria-label="Main Navigation"
-            className="hidden md:flex items-center gap-1 px-3 py-1.5 rounded-full bg-white/80 border border-slate-200/80 backdrop-blur-md shadow-sm shadow-slate-900/5"
+            className="hidden lg:flex items-center gap-0.5 px-3 py-1.5 rounded-full bg-white/90 border border-[#D9DCE5] backdrop-blur-md shadow-sm shadow-slate-900/5"
           >
             {NAV_ITEMS.map((item) => {
               const isActive = activeSection === item.href.substring(1)
@@ -90,16 +102,16 @@ export default function Navbar() {
                 <a
                   key={item.href}
                   href={item.href}
-                  className={`relative px-3.5 py-1.5 text-xs font-medium tracking-normal transition-colors rounded-full ${
+                  className={`relative px-3 py-1.5 text-xs font-semibold tracking-normal transition-colors rounded-full ${
                     isActive
-                      ? "text-slate-950 font-semibold"
+                      ? "text-[#6425D0]"
                       : "text-slate-600 hover:text-slate-900 hover:bg-slate-100/70"
                   }`}
                 >
                   {isActive && (
                     <motion.div
                       layoutId="activeNavIndicator"
-                      className="absolute inset-0 bg-slate-100 rounded-full border border-slate-200/80"
+                      className="absolute inset-0 bg-[#8B3DFF]/10 rounded-full border border-[#8B3DFF]/25"
                       transition={{ type: "spring", stiffness: 400, damping: 32 }}
                     />
                   )}
@@ -110,20 +122,20 @@ export default function Navbar() {
           </nav>
 
           {/* Action CTAs */}
-          <div className="hidden md:flex items-center gap-2">
+          <div className="hidden sm:flex items-center gap-2 shrink-0">
             <a
               href="/resume.pdf"
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center gap-1.5 px-3.5 py-1.5 text-xs font-medium text-slate-700 bg-white/80 border border-slate-200/80 rounded-full backdrop-blur-md hover:border-slate-300 hover:text-slate-950 hover:bg-white shadow-sm shadow-slate-900/5 transition-all"
+              className="inline-flex items-center gap-1.5 px-3 py-1.5 text-xs font-semibold text-slate-700 bg-white/90 border border-[#D9DCE5] rounded-full backdrop-blur-md hover:border-[#8B3DFF]/40 hover:text-[#6425D0] hover:bg-white shadow-sm shadow-slate-900/5 transition-all"
             >
-              <FileText className="w-3.5 h-3.5 text-blue-600" />
+              <FileText className="w-3.5 h-3.5 text-[#8B3DFF]" />
               <span>Resume</span>
             </a>
 
             <a
               href="#contact"
-              className="inline-flex items-center gap-1 px-4 py-1.5 text-xs font-semibold text-white bg-slate-900 rounded-full hover:bg-slate-800 transition-all shadow-sm shadow-slate-900/10 active:scale-95"
+              className="inline-flex items-center gap-1 px-4 py-1.5 text-xs font-semibold text-white bg-brand-primary hover:bg-brand-secondary rounded-full transition-all shadow-sm shadow-[#8B3DFF]/25 active:scale-95"
             >
               <span>Let&apos;s Talk</span>
               <ArrowUpRight className="w-3.5 h-3.5" />
@@ -134,7 +146,7 @@ export default function Navbar() {
           <button
             type="button"
             onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-            className="md:hidden p-2 rounded-full bg-white/80 border border-slate-200 text-slate-700 hover:text-slate-950 focus:outline-none backdrop-blur-md shadow-sm"
+            className="lg:hidden p-2 rounded-full bg-white/90 border border-[#D9DCE5] text-slate-700 hover:text-slate-950 focus:outline-none backdrop-blur-md shadow-sm shrink-0"
             aria-label={mobileMenuOpen ? "Close menu" : "Open menu"}
           >
             {mobileMenuOpen ? <X className="w-5 h-5" /> : <Menu className="w-5 h-5" />}
@@ -150,10 +162,10 @@ export default function Navbar() {
             animate={{ opacity: 1, backdropFilter: "blur(16px)" }}
             exit={{ opacity: 0, backdropFilter: "blur(0px)" }}
             transition={{ duration: 0.25 }}
-            className="fixed inset-0 z-40 bg-white/95 md:hidden flex flex-col justify-between p-6 pt-24 border-b border-slate-200"
+            className="fixed inset-0 z-40 bg-white/95 lg:hidden flex flex-col justify-between p-6 pt-24 border-b border-[#D9DCE5]"
           >
             <div className="flex flex-col gap-1.5">
-              <span className="text-[11px] font-semibold text-slate-400 uppercase tracking-wider px-3 mb-2">
+              <span className="text-[11px] font-bold text-slate-400 uppercase tracking-wider px-3 mb-2">
                 Navigation
               </span>
               {NAV_ITEMS.map((item, idx) => (
@@ -166,7 +178,7 @@ export default function Navbar() {
                   transition={{ delay: idx * 0.04 + 0.08 }}
                   className={`px-4 py-3 text-base font-semibold rounded-xl transition-all ${
                     activeSection === item.href.substring(1)
-                      ? "bg-slate-100 text-slate-950 border border-slate-200/80"
+                      ? "bg-[#8B3DFF]/10 text-[#6425D0] border border-[#8B3DFF]/25"
                       : "text-slate-600 hover:text-slate-950 hover:bg-slate-50"
                   }`}
                 >
@@ -175,7 +187,7 @@ export default function Navbar() {
               ))}
             </div>
 
-            <div className="pt-6 border-t border-slate-200 flex flex-col gap-3">
+            <div className="pt-6 border-t border-[#D9DCE5] flex flex-col gap-3">
               <div className="flex items-center justify-between text-xs font-medium text-slate-500">
                 <span className="flex items-center gap-1.5">
                   <span className="w-2 h-2 rounded-full bg-emerald-500 animate-pulse" />
@@ -189,9 +201,9 @@ export default function Navbar() {
                   href="/resume.pdf"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="flex items-center justify-center gap-2 py-2.5 px-4 rounded-xl text-xs font-semibold text-slate-700 bg-slate-100 border border-slate-200 hover:bg-slate-200 transition-colors"
+                  className="flex items-center justify-center gap-2 py-2.5 px-4 rounded-xl text-xs font-semibold text-slate-700 bg-white border border-[#D9DCE5] hover:bg-slate-50 transition-colors"
                 >
-                  <FileText className="w-4 h-4 text-blue-600" />
+                  <FileText className="w-4 h-4 text-[#8B3DFF]" />
                   Resume PDF
                 </a>
                 <a
