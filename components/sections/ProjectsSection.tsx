@@ -153,10 +153,11 @@ export default function ProjectsSection() {
                         <Link
                           href={`/projects/${project.slug}`}
                           onClick={(e) => e.stopPropagation()}
-                          className="inline-flex items-center gap-1.5 px-4 py-2 rounded-full text-xs sm:text-sm font-semibold text-white bg-brand-primary hover:bg-brand-secondary transition-all shadow-sm shadow-[#8B3DFF]/25 cursor-pointer"
+                          aria-label={`Read technical case study for ${project.title}`}
+                          className="inline-flex items-center gap-1.5 px-4 py-2 rounded-full text-xs sm:text-sm font-semibold text-white bg-brand-primary hover:bg-brand-secondary transition-all shadow-sm shadow-[#8B3DFF]/25 cursor-pointer shrink-0"
                         >
                           <span>Case Study &amp; Architecture</span>
-                          <ArrowRight className="w-3.5 h-3.5 stroke-[1.5]" />
+                          <ArrowRight className="w-3.5 h-3.5 stroke-[1.5]" aria-hidden="true" />
                         </Link>
 
                         {(project.liveUrl || project.live) && (
@@ -165,9 +166,10 @@ export default function ProjectsSection() {
                             target="_blank"
                             rel="noopener noreferrer"
                             onClick={(e) => e.stopPropagation()}
-                            className="inline-flex items-center gap-1.5 text-xs sm:text-sm font-semibold text-slate-700 hover:text-[#6425D0] transition-colors py-2 px-3 rounded-full hover:bg-[#8B3DFF]/10 cursor-pointer"
+                            aria-label={`Open live deployment preview for ${project.title}`}
+                            className="inline-flex items-center gap-1.5 text-xs sm:text-sm font-semibold text-slate-700 hover:text-[#6425D0] transition-colors py-2 px-3.5 rounded-full canvas-pill canvas-pill-hover hover:border-[#8B3DFF]/40 cursor-pointer shrink-0"
                           >
-                            <ExternalLink className="w-4 h-4 text-slate-400 group-hover:text-[#6425D0] stroke-[1.5]" />
+                            <ExternalLink className="w-4 h-4 text-slate-400 group-hover:text-[#6425D0] stroke-[1.5]" aria-hidden="true" />
                             <span>Live Preview</span>
                           </a>
                         )}
@@ -178,9 +180,10 @@ export default function ProjectsSection() {
                             target="_blank"
                             rel="noopener noreferrer"
                             onClick={(e) => e.stopPropagation()}
-                            className="inline-flex items-center gap-1.5 text-xs sm:text-sm font-semibold text-slate-700 hover:text-slate-950 transition-colors py-2 px-3 rounded-full hover:bg-slate-100 cursor-pointer"
+                            aria-label={`Open GitHub source repository for ${project.title}`}
+                            className="inline-flex items-center gap-1.5 text-xs sm:text-sm font-semibold text-slate-700 hover:text-slate-950 transition-colors py-2 px-3.5 rounded-full canvas-pill canvas-pill-hover hover:border-slate-400 cursor-pointer shrink-0"
                           >
-                            <Github className="w-4 h-4 text-slate-500 stroke-[1.5]" />
+                            <Github className="w-4 h-4 text-slate-500 stroke-[1.5]" aria-hidden="true" />
                             <span>GitHub Repository</span>
                           </a>
                         )}
@@ -195,8 +198,8 @@ export default function ProjectsSection() {
                           target="_blank"
                           rel="noopener noreferrer"
                           onClick={(e) => e.stopPropagation()}
-                          className="block cursor-pointer"
-                          title={`Visit ${project.title} Live Preview`}
+                          className="block cursor-pointer focus:outline-none focus:ring-2 focus:ring-[#8B3DFF]/30 rounded-2xl"
+                          aria-label={`Visit live preview for ${project.title}`}
                         >
                           <BrowserMockup
                             src={project.previewImage || "/project1.png"}
@@ -209,8 +212,8 @@ export default function ProjectsSection() {
                         <Link
                           href={`/projects/${project.slug}`}
                           onClick={(e) => e.stopPropagation()}
-                          className="block cursor-pointer"
-                          title={`View ${project.title} Case Study`}
+                          className="block cursor-pointer focus:outline-none focus:ring-2 focus:ring-[#8B3DFF]/30 rounded-2xl"
+                          aria-label={`View technical case study for ${project.title}`}
                         >
                           <BrowserMockup
                             src={project.previewImage || "/project1.png"}

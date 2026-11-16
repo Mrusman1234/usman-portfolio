@@ -96,10 +96,11 @@ export default async function ProjectDetailPage({ params }: PageProps) {
                 href={project.liveUrl || project.live}
                 target="_blank"
                 rel="noopener noreferrer"
+                aria-label={`Open live deployment for ${project.title}`}
                 className="inline-flex items-center gap-2 px-5 py-2.5 rounded-full text-xs sm:text-sm font-semibold text-white bg-brand-primary hover:bg-brand-secondary shadow-sm hover:shadow-md transition-all active:scale-[0.98]"
               >
                 <span>Live Preview</span>
-                <ExternalLink className="w-3.5 h-3.5 stroke-[1.5]" />
+                <ExternalLink className="w-3.5 h-3.5 stroke-[1.5]" aria-hidden="true" />
               </a>
             )}
 
@@ -108,9 +109,10 @@ export default async function ProjectDetailPage({ params }: PageProps) {
                 href={project.githubUrl || project.github}
                 target="_blank"
                 rel="noopener noreferrer"
+                aria-label={`Open GitHub repository for ${project.title}`}
                 className="inline-flex items-center gap-2 px-5 py-2.5 rounded-full text-xs sm:text-sm font-semibold text-slate-700 bg-white border border-[#D9DCE5] hover:bg-slate-50 transition-all shadow-2xs"
               >
-                <Github className="w-4 h-4 text-slate-500 stroke-[1.5]" />
+                <Github className="w-4 h-4 text-slate-500 stroke-[1.5]" aria-hidden="true" />
                 <span>GitHub Repository</span>
               </a>
             )}
