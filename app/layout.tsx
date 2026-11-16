@@ -126,14 +126,17 @@ export default function RootLayout({
   }
 
   return (
-    <html lang="en" className="scroll-smooth">
+    <html lang="en" className="scroll-smooth" suppressHydrationWarning>
       <head>
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
         />
       </head>
-      <body className="bg-[#F7F7FA] text-slate-900 antialiased selection:bg-[#8B3DFF]/15 selection:text-[#6425D0] min-h-screen">
+      <body
+        className="bg-[#F7F7FA] text-slate-900 antialiased selection:bg-[#8B3DFF]/15 selection:text-[#6425D0] min-h-screen"
+        suppressHydrationWarning
+      >
         <CustomCursor />
         {children}
         <WhatsAppFloatingButton />
