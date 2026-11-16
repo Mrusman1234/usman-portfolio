@@ -14,6 +14,8 @@ export const projectsData: Project[] = [
     executiveSummary:
       "Engineered an autonomous support agent that bridges generative language models with backend transactional APIs. SmartDesk AI uses structured function calling to query real databases, verify order statuses, handle return requests, and escalate complex tickets to human staff.",
     tech: ["Next.js", "TypeScript", "Node.js", "Express.js", "MongoDB", "Tailwind CSS"],
+    liveUrl: "https://usman-portfolio-jet.vercel.app",
+    githubUrl: "https://github.com/Mrusman1234",
     github: "https://github.com/Mrusman1234",
     live: "https://usman-portfolio-jet.vercel.app",
     previewImage: "/project3.png",
@@ -91,6 +93,8 @@ export const projectsData: Project[] = [
     executiveSummary:
       "Designed and developed a comprehensive digital ordering platform bridging local pizzerias with hungry customers. The system provides a real-time kitchen display, automated delivery driver assignments, and a streamlined mobile-first customer checkout experience.",
     tech: ["Next.js", "React.js", "Node.js", "Express.js", "MongoDB", "JavaScript", "Tailwind CSS"],
+    liveUrl: "https://online-pizza-hub.vercel.app",
+    githubUrl: "https://github.com/Mrusman1234/online-pizza-hub",
     github: "https://github.com/Mrusman1234/online-pizza-hub",
     live: "https://online-pizza-hub.vercel.app",
     previewImage: "/project2.png",
@@ -169,6 +173,8 @@ export const projectsData: Project[] = [
     executiveSummary:
       "NOIR & GOLD Atelier pairs an editorial haute couture storefront with an enterprise operations suite (Atelier Ops). Built to solve real domestic payment challenges: hybrid multi-channel payment reconciliation, transactional stock reservation during flash drops, zero-trust cryptographic order verification, and automated audit logging.",
     tech: ["Next.js", "React.js", "TypeScript", "Node.js", "Express.js", "Prisma ORM", "SQL", "Tailwind CSS"],
+    liveUrl: "https://noir-gold-atelier.vercel.app",
+    githubUrl: "https://github.com/Mrusman1234/noir-gold-atelier",
     github: "https://github.com/Mrusman1234/noir-gold-atelier",
     live: "https://noir-gold-atelier.vercel.app",
     previewImage: "/project1.png",
@@ -253,6 +259,8 @@ export const projectsData: Project[] = [
     executiveSummary:
       "Built to demonstrate the synergy of modern frontend architecture, accessibility (WCAG 2.2 AA), technical SEO, and fluid motion design. The website serves as both an interactive resume and an architectural showcase.",
     tech: ["Next.js", "React.js", "TypeScript", "Tailwind CSS", "Framer Motion"],
+    liveUrl: "https://usman-portfolio-jet.vercel.app",
+    githubUrl: "https://github.com/Mrusman1234/usman-portfolio",
     github: "https://github.com/Mrusman1234/usman-portfolio",
     live: "https://usman-portfolio-jet.vercel.app",
     previewImage: "/project4.png",

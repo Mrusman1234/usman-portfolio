@@ -26,6 +26,8 @@ export interface Project {
   description: string
   executiveSummary: string
   tech: string[]
+  liveUrl?: string
+  githubUrl?: string
   github?: string
   live?: string
   previewImage?: string
