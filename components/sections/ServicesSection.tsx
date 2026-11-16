@@ -38,7 +38,7 @@ export default function ServicesSection() {
   }
 
   return (
-    <section id="services" className="py-20 md:py-28 px-4 sm:px-6 lg:px-8 relative overflow-hidden bg-white">
+    <section id="services" className="py-20 md:py-28 px-4 sm:px-6 lg:px-8 relative overflow-hidden bg-transparent">
       <div className="max-w-6xl mx-auto relative z-10">
         <SectionHeader
           index="03"
@@ -63,8 +63,8 @@ export default function ServicesSection() {
                 transition={{ duration: 0.5, delay: idx * 0.05 }}
                 className={`rounded-3xl border transition-all duration-300 p-6 sm:p-7 flex flex-col justify-between ${
                   isExpanded
-                    ? "bg-white border-[#8B3DFF]/40 shadow-lg shadow-[#8B3DFF]/5 ring-1 ring-[#8B3DFF]/20"
-                    : "bg-[#F7F7FA] border-[#D9DCE5] hover:border-slate-300 hover:bg-white shadow-2xs"
+                    ? "canvas-card-elevated border-[#8B3DFF]/50 shadow-xl shadow-[#8B3DFF]/10 ring-1 ring-[#8B3DFF]/25"
+                    : "canvas-card border-[#D9DCE5]/80 hover:border-slate-300 hover:shadow-md"
                 }`}
               >
                 <div>
@@ -74,7 +74,7 @@ export default function ServicesSection() {
                       {service.number}
                     </span>
                     <div className="w-9 h-9 rounded-xl bg-[#8B3DFF]/10 border border-[#8B3DFF]/20 flex items-center justify-center text-[#8B3DFF]">
-                      <Icon className="w-4 h-4" />
+                      <Icon className="w-4 h-4 stroke-[1.5]" />
                     </div>
                   </div>
 
@@ -117,7 +117,7 @@ export default function ServicesSection() {
                               key={dIdx}
                               className="flex items-center gap-2 text-xs text-slate-700 font-medium"
                             >
-                              <Check className="w-3.5 h-3.5 text-emerald-600 shrink-0" />
+                              <Check className="w-3.5 h-3.5 text-emerald-600 stroke-[1.5] shrink-0" />
                               <span>{del}</span>
                             </li>
                           ))}
@@ -136,7 +136,7 @@ export default function ServicesSection() {
                   >
                     <span>{isExpanded ? "Show Less" : "View Scope & Deliverables"}</span>
                     <ChevronDown
-                      className={`w-3.5 h-3.5 transition-transform duration-300 ${
+                      className={`w-3.5 h-3.5 stroke-[1.5] transition-transform duration-300 ${
                         isExpanded ? "rotate-180 text-[#8B3DFF]" : ""
                       }`}
                     />

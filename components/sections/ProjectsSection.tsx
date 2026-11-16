@@ -41,8 +41,8 @@ export default function ProjectsSection() {
               onClick={() => setActiveCategory(cat)}
               className={`px-4 py-1.5 text-xs font-semibold rounded-full transition-all cursor-pointer ${
                 activeCategory === cat
-                  ? "bg-[#8B3DFF] text-white shadow-sm shadow-[#8B3DFF]/25"
-                  : "bg-white text-slate-600 hover:text-slate-900 hover:bg-[#F7F7FA] border border-[#D9DCE5]"
+                  ? "bg-brand-primary text-white shadow-sm shadow-[#8B3DFF]/25"
+                  : "canvas-pill canvas-pill-hover text-slate-600 hover:text-slate-900"
               }`}
             >
               {cat}
@@ -64,10 +64,10 @@ export default function ProjectsSection() {
                   viewport={{ once: true, margin: "-60px" }}
                   exit={{ opacity: 0, scale: 0.98 }}
                   transition={{ duration: 0.5, ease: [0.16, 1, 0.3, 1] }}
-                  className={`group rounded-3xl bg-white border transition-all duration-300 p-6 sm:p-8 lg:p-10 ${
+                  className={`group rounded-3xl transition-all duration-300 p-6 sm:p-8 lg:p-10 ${
                     isKeyFlagship
-                      ? "border-[#8B3DFF]/40 shadow-lg shadow-[#8B3DFF]/5 hover:border-[#8B3DFF] hover:shadow-xl"
-                      : "border-[#D9DCE5] shadow-xs hover:border-slate-300 hover:shadow-md"
+                      ? "canvas-card-elevated border-[#8B3DFF]/50 shadow-xl shadow-[#8B3DFF]/10 hover:border-[#8B3DFF] hover:shadow-2xl hover:shadow-[#8B3DFF]/15 ring-1 ring-[#8B3DFF]/20"
+                      : "canvas-card border-[#D9DCE5]/80 shadow-md hover:border-slate-300 hover:shadow-lg"
                   }`}
                 >
                   <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center">
@@ -116,7 +116,7 @@ export default function ProjectsSection() {
                             {project.metrics.map((metric, mIdx) => (
                               <div
                                 key={mIdx}
-                                className="p-3 rounded-xl bg-[#F7F7FA] border border-[#D9DCE5]"
+                                className="p-3 rounded-xl bg-white/70 border border-white/60 shadow-2xs backdrop-blur-xs"
                               >
                                 <div className="text-base font-bold text-slate-900">
                                   {metric.value}
@@ -146,7 +146,7 @@ export default function ProjectsSection() {
                           className="inline-flex items-center gap-1.5 px-4 py-2 rounded-full text-xs sm:text-sm font-semibold text-white bg-brand-primary hover:bg-brand-secondary transition-all shadow-sm shadow-[#8B3DFF]/25"
                         >
                           <span>Case Study &amp; Architecture</span>
-                          <ArrowRight className="w-3.5 h-3.5" />
+                          <ArrowRight className="w-3.5 h-3.5 stroke-[1.5]" />
                         </Link>
 
                         {project.live && project.live !== "#" && (
@@ -156,7 +156,7 @@ export default function ProjectsSection() {
                             rel="noopener noreferrer"
                             className="inline-flex items-center gap-1.5 text-xs sm:text-sm font-semibold text-slate-600 hover:text-[#6425D0] transition-colors py-2 px-3 rounded-full hover:bg-[#8B3DFF]/10"
                           >
-                            <ExternalLink className="w-4 h-4 text-slate-400 group-hover:text-[#6425D0]" />
+                            <ExternalLink className="w-4 h-4 text-slate-400 group-hover:text-[#6425D0] stroke-[1.5]" />
                             <span>Live Site</span>
                           </a>
                         )}
@@ -168,7 +168,7 @@ export default function ProjectsSection() {
                             rel="noopener noreferrer"
                             className="inline-flex items-center gap-1.5 text-xs sm:text-sm font-semibold text-slate-600 hover:text-slate-900 transition-colors py-2 px-3 rounded-full hover:bg-slate-100"
                           >
-                            <Github className="w-4 h-4 text-slate-400" />
+                            <Github className="w-4 h-4 text-slate-500 stroke-[1.5]" />
                             <span>Source Code</span>
                           </a>
                         )}

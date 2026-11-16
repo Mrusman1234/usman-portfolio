@@ -85,7 +85,7 @@ export default function AboutSection() {
                 {principles.map((p, idx) => (
                   <div
                     key={idx}
-                    className="p-5 rounded-2xl bg-[#F7F7FA] border border-[#D9DCE5] hover:border-[#8B3DFF]/40 hover:bg-white transition-all shadow-2xs"
+                    className="p-5 rounded-2xl canvas-card border-[#D9DCE5]/70 hover:border-[#8B3DFF]/50 transition-all shadow-xs"
                   >
                     <div className="flex items-center gap-2 mb-2">
                       <span className="w-6 h-6 rounded-full bg-[#8B3DFF]/10 text-[#6425D0] text-xs font-bold flex items-center justify-center">
@@ -109,9 +109,9 @@ export default function AboutSection() {
             className="lg:col-span-5 space-y-6"
           >
             {/* Education Card */}
-            <div className="p-6 rounded-3xl bg-[#F7F7FA] border border-[#D9DCE5] shadow-xs relative overflow-hidden">
+            <div className="p-6 rounded-3xl canvas-card-elevated border-[#D9DCE5]/80 shadow-md relative overflow-hidden">
               <div className="flex items-center gap-2.5 mb-3 text-[#8B3DFF]">
-                <GraduationCap className="w-5 h-5" />
+                <GraduationCap className="w-5 h-5 stroke-[1.5]" />
                 <span className="text-xs uppercase tracking-wider font-bold">
                   Education &amp; Foundations
                 </span>
@@ -128,9 +128,9 @@ export default function AboutSection() {
             </div>
 
             {/* Verified Certifications Card */}
-            <div className="p-6 rounded-3xl bg-[#F7F7FA] border border-[#D9DCE5] shadow-xs space-y-4">
+            <div className="p-6 rounded-3xl canvas-card-elevated border-[#D9DCE5]/80 shadow-md space-y-4">
               <div className="flex items-center gap-2.5 text-emerald-600">
-                <Award className="w-5 h-5" />
+                <Award className="w-5 h-5 stroke-[1.5]" />
                 <span className="text-xs uppercase tracking-wider font-bold">
                   Verified Certifications
                 </span>
@@ -140,7 +140,7 @@ export default function AboutSection() {
                 {certifications.map((cert) => (
                   <div
                     key={cert.id}
-                    className="p-3.5 rounded-xl bg-white border border-[#D9DCE5] flex items-center justify-between shadow-2xs hover:border-[#8B3DFF]/40 transition-colors"
+                    className="p-3.5 rounded-xl bg-white/70 border border-white/60 flex items-center justify-between shadow-2xs hover:border-[#8B3DFF]/40 transition-colors"
                   >
                     <div>
                       <h5 className="text-xs sm:text-sm font-bold text-slate-900">
@@ -157,7 +157,7 @@ export default function AboutSection() {
                       className="p-1.5 rounded-lg text-slate-400 hover:text-[#8B3DFF] hover:bg-[#8B3DFF]/10 transition-colors"
                       aria-label={`Verify ${cert.title}`}
                     >
-                      <ArrowUpRight className="w-4 h-4" />
+                      <ArrowUpRight className="w-4 h-4 stroke-[1.5]" />
                     </a>
                   </div>
                 ))}
@@ -167,7 +167,7 @@ export default function AboutSection() {
             {/* Availability Box */}
             <div className="p-6 rounded-3xl bg-gradient-to-br from-[#8B3DFF]/10 via-[#6425D0]/5 to-transparent border border-[#8B3DFF]/25 flex items-center gap-4 shadow-xs">
               <div className="w-10 h-10 rounded-2xl bg-[#8B3DFF] text-white flex items-center justify-center shrink-0 shadow-sm shadow-[#8B3DFF]/25">
-                <Compass className="w-5 h-5" />
+                <Compass className="w-5 h-5 stroke-[1.5]" />
               </div>
               <div>
                 <h5 className="text-xs font-bold text-slate-900 uppercase tracking-wider">

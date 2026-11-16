@@ -46,8 +46,8 @@ export default function SkillsSection() {
               onClick={() => setSelectedCategory(cat)}
               className={`px-4 py-1.5 text-xs font-semibold rounded-full transition-all cursor-pointer ${
                 selectedCategory === cat
-                  ? "bg-[#8B3DFF] text-white shadow-sm shadow-[#8B3DFF]/25"
-                  : "bg-white text-slate-600 hover:text-slate-900 hover:bg-[#F7F7FA] border border-[#D9DCE5]"
+                  ? "bg-brand-primary text-white shadow-sm shadow-[#8B3DFF]/25"
+                  : "canvas-pill canvas-pill-hover text-slate-600 hover:text-slate-900"
               }`}
             >
               {cat}
@@ -80,7 +80,7 @@ export default function SkillsSection() {
                 {group.skills.map((skill) => (
                   <div
                     key={skill.name}
-                    className="p-5 rounded-2xl bg-white border border-[#D9DCE5] hover:border-[#8B3DFF]/50 hover:shadow-md transition-all group flex flex-col justify-between shadow-2xs"
+                    className="p-5 rounded-2xl canvas-card border-[#D9DCE5]/70 hover:border-[#8B3DFF]/50 hover:shadow-md transition-all group flex flex-col justify-between shadow-2xs"
                   >
                     <div>
                       <div className="flex items-center justify-between mb-2">

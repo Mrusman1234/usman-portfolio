@@ -122,12 +122,12 @@ export default function HeroSection() {
             className="lg:col-span-5 relative"
           >
             {/* Elevated Showcase Card */}
-            <div className="relative rounded-3xl bg-white border border-[#D9DCE5] p-6 sm:p-7 shadow-xl shadow-slate-900/5 overflow-hidden">
+            <div className="relative rounded-3xl canvas-card-elevated border-[#D9DCE5]/80 p-6 sm:p-7 shadow-xl overflow-hidden">
               {/* Subtle gradient wash in corner with brand colors */}
               <div className="absolute top-0 right-0 w-48 h-48 bg-gradient-to-bl from-[#8B3DFF]/10 via-[#6425D0]/5 to-transparent pointer-events-none rounded-bl-full" />
 
               {/* Card Header with Brand Logo */}
-              <div className="flex items-center justify-between pb-5 border-b border-slate-100 mb-5 relative z-10">
+              <div className="flex items-center justify-between pb-5 border-b border-slate-100/80 mb-5 relative z-10">
                 <div className="flex items-center gap-3">
                   <div className="relative w-10 h-10 rounded-2xl overflow-hidden shadow-xs ring-1 ring-slate-900/10 shrink-0 bg-[#0A0814] flex items-center justify-center">
                     <Image
@@ -140,7 +140,7 @@ export default function HeroSection() {
                   </div>
                   <div>
                     <h3 className="text-sm font-bold text-slate-900">Muhammad Usman</h3>
-                    <p className="text-xs text-slate-500">BSCS (2022 – 2026) • Vehari, PK</p>
+                    <p className="text-xs text-slate-500 font-medium">BSCS (2022 – 2026) • Vehari, PK</p>
                   </div>
                 </div>
                 <Badge variant="success" size="sm">
@@ -157,18 +157,18 @@ export default function HeroSection() {
                 {/* System 1: SmartDesk AI Agent */}
                 <Link
                   href="/projects/smartdesk-ai"
-                  className="group block p-3.5 rounded-2xl bg-[#F7F7FA] border border-[#D9DCE5] hover:border-[#8B3DFF]/50 hover:bg-[#8B3DFF]/5 transition-all"
+                  className="group block p-3.5 rounded-2xl bg-white/75 border border-[#8B3DFF]/30 hover:border-[#8B3DFF] hover:bg-white transition-all shadow-xs"
                 >
                   <div className="flex items-start justify-between mb-1.5">
                     <div className="flex items-center gap-2">
                       <div className="w-7 h-7 rounded-lg bg-[#8B3DFF]/10 text-[#6425D0] flex items-center justify-center">
-                        <Bot className="w-4 h-4" />
+                        <Bot className="w-4 h-4 stroke-[1.5]" />
                       </div>
                       <span className="text-sm font-bold text-slate-900 group-hover:text-[#6425D0] transition-colors">
                         SmartDesk AI Support Agent
                       </span>
                     </div>
-                    <ArrowUpRight className="w-4 h-4 text-slate-400 group-hover:text-[#8B3DFF] group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform" />
+                    <ArrowUpRight className="w-4 h-4 text-slate-400 group-hover:text-[#8B3DFF] stroke-[1.5] group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform" />
                   </div>
                   <p className="text-xs text-slate-600 leading-relaxed pl-9 font-normal">
                     Autonomous LLM customer support agent with deterministic tool-calling, 75%+ autonomous resolution, and real-time database queries.
@@ -185,18 +185,18 @@ export default function HeroSection() {
                 {/* System 2: Online Pizza Hub Vehari */}
                 <Link
                   href="/projects/online-pizza-hub"
-                  className="group block p-3.5 rounded-2xl bg-[#F7F7FA] border border-[#D9DCE5] hover:border-emerald-300 hover:bg-emerald-50/40 transition-all"
+                  className="group block p-3.5 rounded-2xl bg-white/75 border border-emerald-200/80 hover:border-emerald-400 hover:bg-white transition-all shadow-xs"
                 >
                   <div className="flex items-start justify-between mb-1.5">
                     <div className="flex items-center gap-2">
                       <div className="w-7 h-7 rounded-lg bg-emerald-100 text-emerald-700 flex items-center justify-center">
-                        <Utensils className="w-4 h-4" />
+                        <Utensils className="w-4 h-4 stroke-[1.5]" />
                       </div>
                       <span className="text-sm font-bold text-slate-900 group-hover:text-emerald-700 transition-colors">
                         Online Pizza Hub Vehari
                       </span>
                     </div>
-                    <ArrowUpRight className="w-4 h-4 text-slate-400 group-hover:text-emerald-600 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform" />
+                    <ArrowUpRight className="w-4 h-4 text-slate-400 group-hover:text-emerald-600 stroke-[1.5] group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform" />
                   </div>
                   <p className="text-xs text-slate-600 leading-relaxed pl-9 font-normal">
                     Multi-restaurant food ordering platform with live kitchen tracking, automated driver dispatching, and comprehensive merchant admin portals.
@@ -212,18 +212,18 @@ export default function HeroSection() {
               </div>
 
               {/* Architectural Strengths Micro-Grid */}
-              <div className="mt-4 pt-4 border-t border-slate-100 grid grid-cols-2 gap-3 relative z-10">
-                <div className="p-3 rounded-xl bg-[#F7F7FA] border border-[#D9DCE5]">
+              <div className="mt-4 pt-4 border-t border-slate-100/80 grid grid-cols-2 gap-3 relative z-10">
+                <div className="p-3 rounded-xl bg-white/70 border border-white/60 shadow-2xs">
                   <div className="flex items-center gap-1.5 text-slate-600 text-[11px] font-semibold mb-1">
-                    <Shield className="w-3.5 h-3.5 text-emerald-600" />
+                    <Shield className="w-3.5 h-3.5 text-emerald-600 stroke-[1.5]" />
                     <span>Security</span>
                   </div>
                   <div className="text-xs font-bold text-slate-900">Zero-Trust &amp; HMAC</div>
                 </div>
 
-                <div className="p-3 rounded-xl bg-[#F7F7FA] border border-[#D9DCE5]">
+                <div className="p-3 rounded-xl bg-white/70 border border-white/60 shadow-2xs">
                   <div className="flex items-center gap-1.5 text-slate-600 text-[11px] font-semibold mb-1">
-                    <Cpu className="w-3.5 h-3.5 text-[#8B3DFF]" />
+                    <Cpu className="w-3.5 h-3.5 text-[#8B3DFF] stroke-[1.5]" />
                     <span>Architecture</span>
                   </div>
                   <div className="text-xs font-bold text-slate-900">App Router &amp; RSC</div>

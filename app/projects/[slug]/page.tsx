@@ -147,7 +147,7 @@ export default async function ProjectDetailPage({ params }: PageProps) {
             {project.metrics?.map((m, idx) => (
               <div
                 key={idx}
-                className="p-4 rounded-2xl bg-white border border-[#D9DCE5] shadow-sm"
+                className="p-4 rounded-2xl canvas-card border-[#D9DCE5]/70 shadow-sm"
               >
                 <div className="text-xl font-bold text-slate-900 mb-0.5">
                   {m.value}
@@ -160,9 +160,9 @@ export default async function ProjectDetailPage({ params }: PageProps) {
         </div>
 
         {/* Technical Architecture */}
-        <div className="mb-16 p-6 sm:p-8 rounded-3xl bg-white border border-[#D9DCE5] shadow-sm">
+        <div className="mb-16 p-6 sm:p-8 rounded-3xl canvas-card-elevated border-[#D9DCE5]/80 shadow-md">
           <div className="flex items-center gap-2 mb-4 text-[#8B3DFF]">
-            <Cpu className="w-5 h-5" />
+            <Cpu className="w-5 h-5 stroke-[1.5]" />
             <h2 className="text-xs uppercase tracking-wider font-bold">
               02 • TECHNICAL ARCHITECTURE &amp; DATA FLOW
             </h2>
@@ -186,7 +186,7 @@ export default async function ProjectDetailPage({ params }: PageProps) {
         {project.challenges && project.challenges.length > 0 && (
           <div className="mb-16">
             <div className="flex items-center gap-2 mb-2 text-[#8B3DFF]">
-              <Sparkles className="w-4 h-4" />
+              <Sparkles className="w-4 h-4 stroke-[1.5]" />
               <h2 className="text-xs uppercase tracking-wider font-bold">
                 03 • ENGINEERING CHALLENGES
               </h2>
@@ -198,7 +198,7 @@ export default async function ProjectDetailPage({ params }: PageProps) {
               {project.challenges.map((c, idx) => (
                 <div
                   key={idx}
-                  className="p-6 rounded-3xl bg-white border border-[#D9DCE5] shadow-sm"
+                  className="p-6 rounded-3xl canvas-card-elevated border-[#D9DCE5]/80 shadow-md"
                 >
                   <h4 className="text-base sm:text-lg font-bold text-slate-900 mb-4">
                     {c.title}
@@ -206,7 +206,7 @@ export default async function ProjectDetailPage({ params }: PageProps) {
                   <div className="grid grid-cols-1 md:grid-cols-2 gap-4 text-xs sm:text-sm">
                     <div className="p-4 rounded-2xl bg-amber-50/70 border border-amber-200/80">
                       <div className="flex items-center gap-1.5 text-amber-800 font-bold mb-1.5">
-                        <AlertCircle className="w-4 h-4 text-amber-600" />
+                        <AlertCircle className="w-4 h-4 text-amber-600 stroke-[1.5]" />
                         <span>The Problem / Vulnerability</span>
                       </div>
                       <p className="text-amber-900/80 leading-relaxed">{c.problem}</p>
@@ -214,7 +214,7 @@ export default async function ProjectDetailPage({ params }: PageProps) {
 
                     <div className="p-4 rounded-2xl bg-emerald-50/70 border border-emerald-200/80">
                       <div className="flex items-center gap-1.5 text-emerald-800 font-bold mb-1.5">
-                        <CheckCircle2 className="w-4 h-4 text-emerald-600" />
+                        <CheckCircle2 className="w-4 h-4 text-emerald-600 stroke-[1.5]" />
                         <span>Engineered Solution</span>
                       </div>
                       <p className="text-emerald-900/80 leading-relaxed">{c.solution}</p>
@@ -228,7 +228,7 @@ export default async function ProjectDetailPage({ params }: PageProps) {
 
         {/* Key Decisions & Lessons Learned */}
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-16">
-          <div className="p-6 rounded-3xl bg-white border border-[#D9DCE5] shadow-sm">
+          <div className="p-6 rounded-3xl canvas-card border-[#D9DCE5]/70 shadow-sm">
             <h4 className="text-xs uppercase tracking-wider text-slate-500 font-bold mb-4">
               Key Engineering Decisions
             </h4>
@@ -242,7 +242,7 @@ export default async function ProjectDetailPage({ params }: PageProps) {
             </ul>
           </div>
 
-          <div className="p-6 rounded-3xl bg-white border border-[#D9DCE5] shadow-sm">
+          <div className="p-6 rounded-3xl canvas-card border-[#D9DCE5]/70 shadow-sm">
             <h4 className="text-xs uppercase tracking-wider text-slate-500 font-bold mb-4">
               Lessons Learned
             </h4>
