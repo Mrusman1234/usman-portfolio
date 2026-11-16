@@ -64,7 +64,13 @@ export default function ProjectsSection() {
                   viewport={{ once: true, margin: "-60px" }}
                   exit={{ opacity: 0, scale: 0.98 }}
                   transition={{ duration: 0.5, ease: [0.16, 1, 0.3, 1] }}
-                  className={`group rounded-3xl transition-all duration-300 p-6 sm:p-8 lg:p-10 ${
+                  onClick={() => {
+                    const targetUrl = project.liveUrl || project.live
+                    if (targetUrl) {
+                      window.open(targetUrl, "_blank", "noopener,noreferrer")
+                    }
+                  }}
+                  className={`group rounded-3xl transition-all duration-300 p-6 sm:p-8 lg:p-10 cursor-pointer ${
                     isKeyFlagship
                       ? "canvas-card-elevated border-[#8B3DFF]/50 shadow-xl shadow-[#8B3DFF]/10 hover:border-[#8B3DFF] hover:shadow-2xl hover:shadow-[#8B3DFF]/15 ring-1 ring-[#8B3DFF]/20"
                       : "canvas-card border-[#D9DCE5]/80 shadow-md hover:border-slate-300 hover:shadow-lg"
@@ -97,7 +103,10 @@ export default function ProjectsSection() {
 
                         {/* Title & Subtitle */}
                         <h3 className="text-2xl sm:text-3xl font-bold text-slate-900 mb-2 group-hover:text-[#6425D0] transition-colors">
-                          <Link href={`/projects/${project.slug}`}>
+                          <Link
+                            href={`/projects/${project.slug}`}
+                            onClick={(e) => e.stopPropagation()}
+                          >
                             {project.title}
                           </Link>
                         </h3>
@@ -143,33 +152,36 @@ export default function ProjectsSection() {
                       <div className="pt-5 border-t border-slate-100 flex flex-wrap items-center gap-3 sm:gap-4">
                         <Link
                           href={`/projects/${project.slug}`}
-                          className="inline-flex items-center gap-1.5 px-4 py-2 rounded-full text-xs sm:text-sm font-semibold text-white bg-brand-primary hover:bg-brand-secondary transition-all shadow-sm shadow-[#8B3DFF]/25"
+                          onClick={(e) => e.stopPropagation()}
+                          className="inline-flex items-center gap-1.5 px-4 py-2 rounded-full text-xs sm:text-sm font-semibold text-white bg-brand-primary hover:bg-brand-secondary transition-all shadow-sm shadow-[#8B3DFF]/25 cursor-pointer"
                         >
                           <span>Case Study &amp; Architecture</span>
                           <ArrowRight className="w-3.5 h-3.5 stroke-[1.5]" />
                         </Link>
 
-                        {project.live && project.live !== "#" && (
+                        {(project.liveUrl || project.live) && (
                           <a
-                            href={project.live}
+                            href={project.liveUrl || project.live}
                             target="_blank"
                             rel="noopener noreferrer"
-                            className="inline-flex items-center gap-1.5 text-xs sm:text-sm font-semibold text-slate-600 hover:text-[#6425D0] transition-colors py-2 px-3 rounded-full hover:bg-[#8B3DFF]/10"
+                            onClick={(e) => e.stopPropagation()}
+                            className="inline-flex items-center gap-1.5 text-xs sm:text-sm font-semibold text-slate-700 hover:text-[#6425D0] transition-colors py-2 px-3 rounded-full hover:bg-[#8B3DFF]/10 cursor-pointer"
                           >
                             <ExternalLink className="w-4 h-4 text-slate-400 group-hover:text-[#6425D0] stroke-[1.5]" />
-                            <span>Live Site</span>
+                            <span>Live Preview</span>
                           </a>
                         )}
 
-                        {project.github && (
+                        {(project.githubUrl || project.github) && (
                           <a
-                            href={project.github}
+                            href={project.githubUrl || project.github}
                             target="_blank"
                             rel="noopener noreferrer"
-                            className="inline-flex items-center gap-1.5 text-xs sm:text-sm font-semibold text-slate-600 hover:text-slate-900 transition-colors py-2 px-3 rounded-full hover:bg-slate-100"
+                            onClick={(e) => e.stopPropagation()}
+                            className="inline-flex items-center gap-1.5 text-xs sm:text-sm font-semibold text-slate-700 hover:text-slate-950 transition-colors py-2 px-3 rounded-full hover:bg-slate-100 cursor-pointer"
                           >
                             <Github className="w-4 h-4 text-slate-500 stroke-[1.5]" />
-                            <span>Source Code</span>
+                            <span>GitHub Repository</span>
                           </a>
                         )}
                       </div>
@@ -177,14 +189,37 @@ export default function ProjectsSection() {
 
                     {/* Right Column: Browser Mockup Preview */}
                     <div className="lg:col-span-6 order-1 lg:order-2">
-                      <Link href={`/projects/${project.slug}`} className="block">
-                        <BrowserMockup
-                          src={project.previewImage || "/project1.png"}
-                          alt={project.title}
-                          url={project.live || `https://${project.slug}.dev`}
-                          className="transition-transform duration-300 group-hover:scale-[1.01]"
-                        />
-                      </Link>
+                      {project.liveUrl || project.live ? (
+                        <a
+                          href={project.liveUrl || project.live}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          onClick={(e) => e.stopPropagation()}
+                          className="block cursor-pointer"
+                          title={`Visit ${project.title} Live Preview`}
+                        >
+                          <BrowserMockup
+                            src={project.previewImage || "/project1.png"}
+                            alt={project.title}
+                            url={project.liveUrl || project.live || `https://${project.slug}.dev`}
+                            className="transition-transform duration-300 group-hover:scale-[1.01]"
+                          />
+                        </a>
+                      ) : (
+                        <Link
+                          href={`/projects/${project.slug}`}
+                          onClick={(e) => e.stopPropagation()}
+                          className="block cursor-pointer"
+                          title={`View ${project.title} Case Study`}
+                        >
+                          <BrowserMockup
+                            src={project.previewImage || "/project1.png"}
+                            alt={project.title}
+                            url={`https://${project.slug}.dev`}
+                            className="transition-transform duration-300 group-hover:scale-[1.01]"
+                          />
+                        </Link>
+                      )}
                     </div>
                   </div>
                 </motion.article>

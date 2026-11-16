@@ -91,27 +91,27 @@ export default async function ProjectDetailPage({ params }: PageProps) {
 
           {/* Action links */}
           <div className="flex flex-wrap items-center gap-3 mt-6 pt-6 border-t border-[#D9DCE5]">
-            {project.live && project.live !== "#" && (
+            {(project.liveUrl || project.live) && (
               <a
-                href={project.live}
+                href={project.liveUrl || project.live}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="inline-flex items-center gap-2 px-5 py-2.5 rounded-full text-xs sm:text-sm font-semibold text-white bg-brand-primary hover:bg-brand-secondary shadow-sm hover:shadow-md transition-all active:scale-[0.98]"
               >
-                <span>Visit Live Application</span>
-                <ExternalLink className="w-3.5 h-3.5" />
+                <span>Live Preview</span>
+                <ExternalLink className="w-3.5 h-3.5 stroke-[1.5]" />
               </a>
             )}
 
-            {project.github && (
+            {(project.githubUrl || project.github) && (
               <a
-                href={project.github}
+                href={project.githubUrl || project.github}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="inline-flex items-center gap-2 px-5 py-2.5 rounded-full text-xs sm:text-sm font-semibold text-slate-700 bg-white border border-[#D9DCE5] hover:bg-slate-50 transition-all shadow-2xs"
               >
-                <Github className="w-4 h-4 text-slate-500" />
-                <span>Inspect Source Code</span>
+                <Github className="w-4 h-4 text-slate-500 stroke-[1.5]" />
+                <span>GitHub Repository</span>
               </a>
             )}
           </div>
