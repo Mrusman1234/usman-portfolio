@@ -2,6 +2,7 @@ import "./globals.css"
 import type { Metadata, Viewport } from "next"
 import CustomCursor from "@/components/layout/CustomCursor"
 import WhatsAppFloatingButton from "@/components/layout/WhatsAppFloatingButton"
+import AmbientBackground from "@/components/ui/AmbientBackground"
 import { developerProfile } from "@/data/profile"
 
 export const viewport: Viewport = {
@@ -134,9 +135,10 @@ export default function RootLayout({
         />
       </head>
       <body
-        className="bg-[#F7F7FA] text-slate-900 antialiased selection:bg-[#8B3DFF]/15 selection:text-[#6425D0] min-h-screen"
+        className="bg-[#F7F7FA] text-slate-900 antialiased selection:bg-[#8B3DFF]/15 selection:text-[#6425D0] min-h-screen relative"
         suppressHydrationWarning
       >
+        <AmbientBackground />
         <CustomCursor />
         {children}
         <WhatsAppFloatingButton />

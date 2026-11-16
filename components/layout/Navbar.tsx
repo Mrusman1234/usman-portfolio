@@ -68,7 +68,7 @@ export default function Navbar() {
           {/* Brand Logo Lockup on far left */}
           <Link
             href="/"
-            className="group flex items-center gap-2.5 px-2.5 py-1.5 rounded-full bg-white/90 border border-[#D9DCE5] backdrop-blur-md hover:border-[#8B3DFF]/50 hover:bg-white shadow-sm shadow-slate-900/5 transition-all shrink-0"
+            className="group flex items-center gap-2.5 px-2.5 py-1.5 rounded-full canvas-pill canvas-pill-hover shadow-sm transition-all shrink-0"
             aria-label="Muhammad Usman - Home"
           >
             {/* Logo Monogram */}
@@ -94,7 +94,7 @@ export default function Navbar() {
           {/* Desktop Navigation Floating Pill */}
           <nav
             aria-label="Main Navigation"
-            className="hidden lg:flex items-center gap-0.5 px-3 py-1.5 rounded-full bg-white/90 border border-[#D9DCE5] backdrop-blur-md shadow-sm shadow-slate-900/5"
+            className="hidden lg:flex items-center gap-0.5 px-3 py-1.5 rounded-full canvas-pill shadow-sm"
           >
             {NAV_ITEMS.map((item) => {
               const isActive = activeSection === item.href.substring(1)
@@ -127,7 +127,7 @@ export default function Navbar() {
               href="/resume.pdf"
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center gap-1.5 px-3 py-1.5 text-xs font-semibold text-slate-700 bg-white/90 border border-[#D9DCE5] rounded-full backdrop-blur-md hover:border-[#8B3DFF]/40 hover:text-[#6425D0] hover:bg-white shadow-sm shadow-slate-900/5 transition-all"
+              className="inline-flex items-center gap-1.5 px-3 py-1.5 text-xs font-semibold text-slate-700 canvas-pill canvas-pill-hover rounded-full transition-all"
             >
               <FileText className="w-3.5 h-3.5 text-[#8B3DFF]" />
               <span>Resume</span>
@@ -146,7 +146,7 @@ export default function Navbar() {
           <button
             type="button"
             onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-            className="lg:hidden p-2 rounded-full bg-white/90 border border-[#D9DCE5] text-slate-700 hover:text-slate-950 focus:outline-none backdrop-blur-md shadow-sm shrink-0"
+            className="lg:hidden p-2 rounded-full canvas-pill canvas-pill-hover text-slate-700 hover:text-slate-950 focus:outline-none shadow-sm shrink-0"
             aria-label={mobileMenuOpen ? "Close menu" : "Open menu"}
           >
             {mobileMenuOpen ? <X className="w-5 h-5" /> : <Menu className="w-5 h-5" />}
@@ -162,7 +162,7 @@ export default function Navbar() {
             animate={{ opacity: 1, backdropFilter: "blur(16px)" }}
             exit={{ opacity: 0, backdropFilter: "blur(0px)" }}
             transition={{ duration: 0.25 }}
-            className="fixed inset-0 z-40 bg-white/95 lg:hidden flex flex-col justify-between p-6 pt-24 border-b border-[#D9DCE5]"
+            className="fixed inset-0 z-40 bg-white/85 backdrop-blur-xl lg:hidden flex flex-col justify-between p-6 pt-24 border-b border-[#D9DCE5]/80"
           >
             <div className="flex flex-col gap-1.5">
               <span className="text-[11px] font-bold text-slate-400 uppercase tracking-wider px-3 mb-2">
