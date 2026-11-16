@@ -11,6 +11,7 @@ import {
   AlertCircle,
   Loader2,
   ArrowUpRight,
+  Clock,
 } from "lucide-react"
 import WhatsAppIcon from "@/components/ui/WhatsAppIcon"
 import SectionHeader from "@/components/ui/SectionHeader"
@@ -138,7 +139,7 @@ export default function ContactSection() {
               >
                 <div className="flex items-center gap-3">
                   <div className="w-10 h-10 rounded-xl bg-[#8B3DFF]/10 border border-[#8B3DFF]/20 flex items-center justify-center text-[#8B3DFF]">
-                    <Mail className="w-5 h-5" />
+                    <Mail className="w-5 h-5 stroke-[1.5]" />
                   </div>
                   <div>
                     <span className="text-sm font-bold text-slate-900 group-hover:text-[#6425D0] transition-colors">
@@ -149,7 +150,7 @@ export default function ContactSection() {
                     </p>
                   </div>
                 </div>
-                <ArrowUpRight className="w-4 h-4 text-slate-400 group-hover:text-[#8B3DFF] transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
+                <ArrowUpRight className="w-4 h-4 text-slate-400 group-hover:text-[#8B3DFF] stroke-[1.5] transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
               </a>
 
               {/* LinkedIn & GitHub Two-Column */}
@@ -160,7 +161,7 @@ export default function ContactSection() {
                   rel="noopener noreferrer"
                   className="p-4 rounded-2xl bg-white border border-[#D9DCE5] hover:border-slate-300 hover:shadow-xs transition-all flex items-center gap-2.5 text-slate-700 hover:text-slate-950 shadow-2xs"
                 >
-                  <Github className="w-4 h-4 text-slate-500" />
+                  <Github className="w-4 h-4 text-slate-600 stroke-[1.5]" />
                   <span className="text-xs font-bold">GitHub</span>
                 </a>
                 <a
@@ -169,7 +170,7 @@ export default function ContactSection() {
                   rel="noopener noreferrer"
                   className="p-4 rounded-2xl bg-white border border-[#D9DCE5] hover:border-[#8B3DFF]/50 hover:shadow-xs transition-all flex items-center gap-2.5 text-slate-700 hover:text-[#6425D0] shadow-2xs"
                 >
-                  <Linkedin className="w-4 h-4 text-[#8B3DFF]" />
+                  <Linkedin className="w-4 h-4 text-[#8B3DFF] stroke-[1.5]" />
                   <span className="text-xs font-bold">LinkedIn</span>
                 </a>
               </div>
@@ -177,7 +178,7 @@ export default function ContactSection() {
 
             {/* Location Tag */}
             <div className="flex items-center gap-2 text-xs text-slate-500 px-1 font-medium">
-              <MapPin className="w-3.5 h-3.5 text-slate-400 shrink-0" />
+              <MapPin className="w-4 h-4 text-slate-400 stroke-[1.5] shrink-0" />
               <span>Based in Vehari, Punjab, Pakistan (Working globally via Remote)</span>
             </div>
           </div>
@@ -187,9 +188,10 @@ export default function ContactSection() {
             <div className="p-6 sm:p-8 rounded-3xl bg-white border border-[#D9DCE5] shadow-xl shadow-slate-900/5">
               <div className="flex items-center justify-between pb-4 mb-6 border-b border-slate-100">
                 <h3 className="text-lg font-bold text-slate-900">Send a Direct Message</h3>
-                <span className="text-xs font-semibold text-slate-500">
-                  Response within 24h
-                </span>
+                <div className="flex items-center gap-1.5 text-xs font-semibold text-slate-500">
+                  <Clock className="w-3.5 h-3.5 text-emerald-600 stroke-[1.5]" />
+                  <span>Response within 24h</span>
+                </div>
               </div>
 
               <form onSubmit={handleSubmit} className="space-y-4">
@@ -323,7 +325,7 @@ export default function ContactSection() {
                   ) : (
                     <>
                       <span>Transmit Inquiry</span>
-                      <Send className="w-4 h-4" />
+                      <Send className="w-4 h-4 stroke-[1.5]" />
                     </>
                   )}
                 </button>

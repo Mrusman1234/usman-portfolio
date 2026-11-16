@@ -4,18 +4,30 @@ import React, { useState, useEffect } from "react"
 import Link from "next/link"
 import Image from "next/image"
 import { motion, AnimatePresence } from "framer-motion"
-import { Menu, X, ArrowUpRight, FileText } from "lucide-react"
+import {
+  Menu,
+  X,
+  ArrowUpRight,
+  FileText,
+  Home,
+  User,
+  Briefcase,
+  Sparkles,
+  Cpu,
+  GitBranch,
+  Mail,
+} from "lucide-react"
 import WhatsAppIcon from "@/components/ui/WhatsAppIcon"
 import { developerProfile } from "@/data/profile"
 
 const NAV_ITEMS = [
-  { href: "#home", label: "Home" },
-  { href: "#about", label: "About" },
-  { href: "#projects", label: "Projects" },
-  { href: "#services", label: "Services" },
-  { href: "#skills", label: "Skills" },
-  { href: "#process", label: "Process" },
-  { href: "#contact", label: "Contact" },
+  { href: "#home", label: "Home", icon: Home },
+  { href: "#about", label: "About", icon: User },
+  { href: "#projects", label: "Projects", icon: Briefcase },
+  { href: "#services", label: "Services", icon: Sparkles },
+  { href: "#skills", label: "Skills", icon: Cpu },
+  { href: "#process", label: "Process", icon: GitBranch },
+  { href: "#contact", label: "Contact", icon: Mail },
 ]
 
 export default function Navbar() {
@@ -98,11 +110,12 @@ export default function Navbar() {
           >
             {NAV_ITEMS.map((item) => {
               const isActive = activeSection === item.href.substring(1)
+              const Icon = item.icon
               return (
                 <a
                   key={item.href}
                   href={item.href}
-                  className={`relative px-3 py-1.5 text-xs font-semibold tracking-normal transition-colors rounded-full ${
+                  className={`relative px-3 py-1.5 text-xs font-semibold tracking-normal transition-colors rounded-full flex items-center gap-1.5 ${
                     isActive
                       ? "text-[#6425D0]"
                       : "text-slate-600 hover:text-slate-900 hover:bg-slate-100/70"
@@ -115,6 +128,7 @@ export default function Navbar() {
                       transition={{ type: "spring", stiffness: 400, damping: 32 }}
                     />
                   )}
+                  <Icon className="w-3.5 h-3.5 stroke-[1.5] relative z-10 shrink-0" />
                   <span className="relative z-10">{item.label}</span>
                 </a>
               )
@@ -129,7 +143,7 @@ export default function Navbar() {
               rel="noopener noreferrer"
               className="inline-flex items-center gap-1.5 px-3 py-1.5 text-xs font-semibold text-slate-700 canvas-pill canvas-pill-hover rounded-full transition-all"
             >
-              <FileText className="w-3.5 h-3.5 text-[#8B3DFF]" />
+              <FileText className="w-3.5 h-3.5 text-[#8B3DFF] stroke-[1.5]" />
               <span>Resume</span>
             </a>
 
@@ -138,7 +152,7 @@ export default function Navbar() {
               className="inline-flex items-center gap-1 px-4 py-1.5 text-xs font-semibold text-white bg-brand-primary hover:bg-brand-secondary rounded-full transition-all shadow-sm shadow-[#8B3DFF]/25 active:scale-95"
             >
               <span>Let&apos;s Talk</span>
-              <ArrowUpRight className="w-3.5 h-3.5" />
+              <ArrowUpRight className="w-3.5 h-3.5 stroke-[1.5]" />
             </a>
           </div>
 
@@ -149,7 +163,7 @@ export default function Navbar() {
             className="lg:hidden p-2 rounded-full canvas-pill canvas-pill-hover text-slate-700 hover:text-slate-950 focus:outline-none shadow-sm shrink-0"
             aria-label={mobileMenuOpen ? "Close menu" : "Open menu"}
           >
-            {mobileMenuOpen ? <X className="w-5 h-5" /> : <Menu className="w-5 h-5" />}
+            {mobileMenuOpen ? <X className="w-5 h-5 stroke-[1.5]" /> : <Menu className="w-5 h-5 stroke-[1.5]" />}
           </button>
         </div>
       </header>
@@ -168,23 +182,28 @@ export default function Navbar() {
               <span className="text-[11px] font-bold text-slate-400 uppercase tracking-wider px-3 mb-2">
                 Navigation
               </span>
-              {NAV_ITEMS.map((item, idx) => (
-                <motion.a
-                  key={item.href}
-                  href={item.href}
-                  onClick={() => setMobileMenuOpen(false)}
-                  initial={{ opacity: 0, x: -16 }}
-                  animate={{ opacity: 1, x: 0 }}
-                  transition={{ delay: idx * 0.04 + 0.08 }}
-                  className={`px-4 py-3 text-base font-semibold rounded-xl transition-all ${
-                    activeSection === item.href.substring(1)
-                      ? "bg-[#8B3DFF]/10 text-[#6425D0] border border-[#8B3DFF]/25"
-                      : "text-slate-600 hover:text-slate-950 hover:bg-slate-50"
-                  }`}
-                >
-                  {item.label}
-                </motion.a>
-              ))}
+              {NAV_ITEMS.map((item, idx) => {
+                const Icon = item.icon
+                const isActive = activeSection === item.href.substring(1)
+                return (
+                  <motion.a
+                    key={item.href}
+                    href={item.href}
+                    onClick={() => setMobileMenuOpen(false)}
+                    initial={{ opacity: 0, x: -16 }}
+                    animate={{ opacity: 1, x: 0 }}
+                    transition={{ delay: idx * 0.04 + 0.08 }}
+                    className={`px-4 py-3 text-base font-semibold rounded-xl transition-all flex items-center gap-3 ${
+                      isActive
+                        ? "bg-[#8B3DFF]/10 text-[#6425D0] border border-[#8B3DFF]/25"
+                        : "text-slate-600 hover:text-slate-950 hover:bg-slate-50"
+                    }`}
+                  >
+                    <Icon className="w-5 h-5 stroke-[1.5] shrink-0" />
+                    <span>{item.label}</span>
+                  </motion.a>
+                )
+              })}
             </div>
 
             <div className="pt-6 border-t border-[#D9DCE5] flex flex-col gap-3">
