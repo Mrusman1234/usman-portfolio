@@ -247,6 +247,85 @@ export const projectsData: Project[] = [
     ],
   },
   {
+    slug: "acme-store",
+    title: "Acme Store",
+    subtitle: "Modern Headless E-Commerce Storefront for Everyday Creators",
+    category: "E-Commerce",
+    role: "Full-Stack E-Commerce Developer",
+    year: "2026",
+    featured: true,
+    description:
+      "Modern, lightning-fast e-commerce storefront engineered with Next.js App Router and Tailwind CSS. Features dynamic multi-category filtering, real-time live product search, promotional discount calculating, and seamless shopping cart checkout flows.",
+    executiveSummary:
+      "Designed and deployed a responsive, modern digital storefront (Acme Store) tailored for creator essentials, streetwear apparel, and ergonomic workstation gear. Built with Next.js Server Components, edge-optimized routing, and fluid cart animations to deliver sub-100ms transitions and zero layout shift.",
+    tech: ["Next.js", "React.js", "TypeScript", "Tailwind CSS", "Server Components", "Vercel"],
+    liveUrl: "https://acmestore-theta.vercel.app",
+    githubUrl: "https://github.com/Mrusman1234",
+    github: "https://github.com/Mrusman1234",
+    live: "https://acmestore-theta.vercel.app",
+    previewImage: "/acme-store.png",
+    images: ["/acme-store.png"],
+    architecture: [
+      "Frontend: Next.js App Router with Server Components for ultra-fast initial paint",
+      "Catalog Engine: Dynamic category routing (/search/apparel, /search/accessories) with instant search",
+      "Cart & Checkout: Persistent client state synchronization with optimistic drawer mutations",
+      "Performance: Edge-cached assets and automatic responsive image optimization on Vercel",
+    ],
+    challenges: [
+      {
+        title: "Sub-Second Catalog Search & Filter Performance",
+        problem:
+          "Traditional client-side search across dynamic apparel collections causes UI stuttering and unoptimized bundle bloat.",
+        solution:
+          "Implemented debounced URL-synchronized search parameters paired with React Suspense boundaries for instantaneous catalog filtering without full page reloads.",
+      },
+      {
+        title: "Cart Persistence & Mobile Checkout Ergonomics",
+        problem:
+          "Ensuring shopping cart states persist reliably across browser reloads while maintaining 60fps drawer animations on mobile devices.",
+        solution:
+          "Engineered resilient local storage synchronization coupled with GPU-accelerated drawer transitions, preventing layout shifts during cart updates.",
+      },
+    ],
+    metrics: [
+      {
+        label: "Lighthouse Performance",
+        value: "99+",
+        description: "Sub-second initial paint with optimized responsive imagery and zero CLS.",
+      },
+      {
+        label: "Search Response",
+        value: "< 100ms",
+        description: "Instantaneous product search and multi-category filtering latency.",
+      },
+    ],
+    highlights: [
+      {
+        title: "Modern Storefront UX",
+        points: [
+          "Interactive live product search with instant keyword suggestions.",
+          "Dynamic promotional discount engine with coupon codes (SAVE10).",
+          "Comprehensive Help & FAQ along with live order tracking integration.",
+        ],
+      },
+      {
+        title: "Performance & Responsive Engineering",
+        points: [
+          "Mobile-first responsive drawer navigation and touch-optimized gallery.",
+          "Geist typography system paired with clean, minimalist aesthetic tokens.",
+          "Production deployment running on Vercel Edge Network.",
+        ],
+      },
+    ],
+    keyDecisions: [
+      "Utilized Next.js Server Components to minimize client-side JavaScript payloads.",
+      "Used clean URL search parameters to make filtered product views easily shareable and SEO-friendly.",
+    ],
+    lessonsLearned: [
+      "Frictionless cart drawers and immediate visual feedback significantly elevate perceived store performance and user trust.",
+    ],
+  },
+  {
     slug: "portfolio-website",
     title: "Muhammad Usman — Creative Developer Portfolio",
     subtitle: "High-Performance Editorial Portfolio & Personal Digital Identity",
