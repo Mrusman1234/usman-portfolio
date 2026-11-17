@@ -50,7 +50,8 @@ export default function ContactSection() {
       if (res.ok && data.success) {
         setStatus({
           type: "success",
-          message: data.message || "Message sent successfully!",
+          message:
+            data.message || "Thank you! Your message has been sent directly to Muhammad Usman.",
         })
         setFormData({ name: "", email: "", service: "", message: "", honeypot: "" })
       } else {
@@ -320,7 +321,7 @@ export default function ContactSection() {
                   {isSubmitting ? (
                     <>
                       <Loader2 className="w-4 h-4 animate-spin" />
-                      <span>Validating &amp; Sending...</span>
+                      <span>Sending...</span>
                     </>
                   ) : (
                     <>
