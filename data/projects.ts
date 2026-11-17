@@ -161,6 +161,85 @@ export const projectsData: Project[] = [
     ],
   },
   {
+    slug: "nexusflow-ai-crm",
+    title: "NexusFlow AI CRM",
+    subtitle: "Enterprise Revenue Intelligence & B2B SaaS Platform",
+    category: "AI & Web Apps",
+    role: "Full-Stack SaaS & AI Engineer",
+    year: "2026",
+    featured: true,
+    description:
+      "AI-assisted B2B pipeline, accounts, contracts, invoicing, and revenue forecasting workspace featuring 1-Click Demo Admin Login, Gmail SMTP OTP authentication, and an integrated Gemini AI Sales Copilot.",
+    executiveSummary:
+      "Engineered a full-stack enterprise B2B SaaS CRM and revenue intelligence cockpit powered by Next.js, TypeScript, Prisma, and MongoDB. NexusFlow combines real-time pipeline analytics, contract and invoice lifecycle tracking, passwordless Gmail SMTP OTP verification with instant 1-Click Demo Admin access, and an embedded Gemini AI Sales Copilot for deal insights and executive forecasting.",
+    tech: ["Next.js", "TypeScript", "Tailwind CSS", "Prisma", "MongoDB", "Gemini AI", "Nodemailer"],
+    liveUrl: "https://nexusflow-ai-crm.vercel.app",
+    githubUrl: "https://github.com/Mrusman1234/nexusflow-ai-crm",
+    github: "https://github.com/Mrusman1234/nexusflow-ai-crm",
+    live: "https://nexusflow-ai-crm.vercel.app",
+    previewImage: "/nexusflow-crm.png",
+    images: ["/nexusflow-crm.png"],
+    architecture: [
+      "Frontend: Next.js App Router with dark/light executive cockpit, interactive revenue charts, and modular CRM views",
+      "AI Copilot: Embedded Gemini AI Sales Copilot analyzing pipeline velocity, account health, and deal risks",
+      "Authentication: Dual-path auth supporting passwordless Gmail SMTP OTP via Nodemailer and 1-Click Demo Admin Login",
+      "Data Layer: Prisma ORM with MongoDB managing B2B leads, enterprise accounts, deals, contracts, and invoices",
+    ],
+    challenges: [
+      {
+        title: "Frictionless Portfolio Demo Access Without Compromising Auth Security",
+        problem:
+          "Enterprise SaaS applications typically hide their core dashboard behind strict onboarding walls, preventing reviewers from exploring real functionality immediately.",
+        solution:
+          "Built a dual authentication gateway pairing production-grade Gmail SMTP OTP verification (Nodemailer) with a secure 1-Click Demo Admin Login pre-seeded with realistic B2B pipeline, accounts, contracts, and invoice data.",
+      },
+      {
+        title: "Context-Aware Revenue Forecasting with Gemini AI",
+        problem:
+          "Generic AI chat widgets lack visibility into live CRM pipeline stages, weighted deal values, and overdue invoice metrics.",
+        solution:
+          "Engineered a structured context injection layer feeding real-time Prisma/MongoDB revenue snapshots directly into the Gemini AI Sales Copilot for actionable deal recommendations.",
+      },
+    ],
+    metrics: [
+      {
+        label: "Tracked Pipeline",
+        value: "$1.84M+",
+        description: "Pre-loaded B2B enterprise deals, revenue trajectory forecasting, and MoM KPI analytics.",
+      },
+      {
+        label: "Auth & Access",
+        value: "1-Click + OTP",
+        description: "Instant Demo Admin workspace access alongside verified Gmail SMTP OTP authentication.",
+      },
+    ],
+    highlights: [
+      {
+        title: "Executive Revenue Cockpit",
+        points: [
+          "Real-time KPI cards tracking total revenue, expected pipeline value, leads, and enterprise accounts.",
+          "6-month closed-won bookings vs. active enterprise pipeline trajectory visualizations.",
+          "Unified modules for Sales, Campaigns, Projects, E-mails, Reports, Documents, and Invoices.",
+        ],
+      },
+      {
+        title: "Integrated Gemini AI Sales Copilot",
+        points: [
+          "Always-accessible floating AI Sales Copilot inside the CRM workspace.",
+          "Intelligent deal risk scoring, follow-up drafting, and pipeline health summaries.",
+          "Seamless dark and light theme support tailored for executive readability.",
+        ],
+      },
+    ],
+    keyDecisions: [
+      "Paired Prisma ORM with MongoDB to maintain strict TypeScript schema safety while supporting flexible enterprise CRM metadata.",
+      "Implemented Nodemailer Gmail SMTP OTP delivery for reliable passwordless authentication without third-party auth vendor lock-in.",
+    ],
+    lessonsLearned: [
+      "Providing an instant 1-Click Demo Admin experience dramatically increases engagement for complex B2B SaaS showcases.",
+    ],
+  },
+  {
     slug: "noir-gold-atelier",
     title: "NOIR & GOLD Atelier",
     subtitle: "Full-Stack Luxury Couture Commerce Platform & Financial Reconciliation Engine",
