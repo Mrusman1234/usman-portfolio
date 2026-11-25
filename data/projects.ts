@@ -2,162 +2,140 @@ import { Project } from "@/types/project"
 
 export const projectsData: Project[] = [
   {
-    slug: "smartdesk-ai",
-    title: "SmartDesk AI Support Agent",
-    subtitle: "Autonomous E-Commerce Customer Support & Order Intelligence Agent",
-    category: "AI & Web Apps",
-    role: "Full-Stack Engineer & AI Integrator",
+    slug: "noir-gold-atelier",
+    title: "NOIR & GOLD Atelier",
+    subtitle: "Full-Stack Luxury Couture Commerce Platform & Financial Reconciliation Engine",
+    category: "E-Commerce",
+    role: "Lead Full-Stack Engineer & UI/UX Architect",
     year: "2026",
     featured: true,
     description:
-      "Full-stack web application featuring an embeddable conversational AI agent that resolves customer inquiries, queries orders, and checks product availability using LLM tool calling against a Node.js/MongoDB backend.",
+      "Full-stack fashion e-commerce platform and administrative operations suite built with Next.js App Router, Express, Prisma ORM, and SQLite/PostgreSQL, featuring domestic payment rails (JazzCash, EasyPaisa, IBFT, COD), double-entry audit ledgers, and HMAC security.",
     executiveSummary:
-      "Engineered an autonomous support agent that bridges generative language models with backend transactional APIs. SmartDesk AI uses structured function calling to query real databases, verify order statuses, handle return requests, and escalate complex tickets to human staff.",
-    tech: ["Next.js", "TypeScript", "Node.js", "Express.js", "MongoDB", "Tailwind CSS"],
-    liveUrl: "https://usman-portfolio-jet.vercel.app",
-    githubUrl: "https://github.com/Mrusman1234",
-    github: "https://github.com/Mrusman1234",
-    live: "https://usman-portfolio-jet.vercel.app",
-    previewImage: "/project3.png",
-    images: ["/project3.png"],
+      "NOIR & GOLD Atelier pairs an editorial haute couture storefront with an enterprise administrative suite. Engineered to handle domestic South Asian payment workflows including JazzCash, EasyPaisa, direct bank transfer (IBFT), and Cash on Delivery alongside atomic inventory reservations, HMAC webhook verification, and audit logging.",
+    tech: ["Next.js", "React.js", "TypeScript", "Node.js", "Express.js", "Prisma ORM", "PostgreSQL", "Tailwind CSS"],
+    githubUrl: "https://github.com/Mrusman1234/noir-and-gold",
+    github: "https://github.com/Mrusman1234/noir-and-gold",
+    previewImage: "/noir-gold-preview.png",
+    images: ["/noir-gold-preview.png"],
     architecture: [
-      "Client: Embeddable React widget with markdown streaming and quick actions",
-      "Agent Orchestration: LLM tool-calling layer parsing natural language intent into typed API requests",
-      "API & Tool Execution: Secure Node.js backend executing parameterized read/write database queries",
-      "Storage: MongoDB tracking conversation histories, session contexts, and ticket states",
+      "Client Layer: Next.js App Router storefront with Server Components and responsive garment catalog",
+      "Dedicated Backend: Express REST API service managing categories, products, orders, and authentication",
+      "Data Layer: Prisma ORM with 14 synchronized relational models, transactional inventory locks, and audit logs",
+      "Payment & Financial Engine: Support for COD, JazzCash, EasyPaisa, Direct Bank Transfer, HMAC webhooks, and CSV ledger exports",
     ],
     challenges: [
       {
-        title: "Preventing Hallucinations on Customer Data",
+        title: "Stock Concurrency During High-Demand Orders",
         problem:
-          "Language models can generate plausible-sounding but incorrect order numbers and status information.",
+          "Simultaneous checkout attempts for limited garment variants can cause race conditions and inventory overselling.",
         solution:
-          "Enforced strict deterministic tool calling where the LLM is only permitted to communicate verified JSON payloads returned directly from backend database queries.",
+          "Implemented atomic database transactions with optimistic locking and inventory reservations inside Prisma order workflows.",
       },
       {
-        title: "Secure Session & PII Verification",
+        title: "Multi-Rail Payment Reconciliation & Refund Safety",
         problem:
-          "Protecting customer order details while maintaining a natural conversational flow.",
+          "Combining Cash on Delivery with mobile wallets (JazzCash, EasyPaisa) and direct bank transfers creates audit and refund integrity risks.",
         solution:
-          "Implemented signed temporary session tokens requiring email or phone verification before the agent accesses sensitive customer records.",
-      },
-    ],
-    metrics: [
-      {
-        label: "Autonomous Resolution",
-        value: "75%+",
-        description: "Routine shipping, inventory, and policy queries answered without human intervention.",
-      },
-      {
-        label: "Streaming Latency",
-        value: "< 400ms",
-        description: "Time to first token using server-sent event streaming.",
+          "Engineered replay-protected HMAC-SHA256 webhook verification, idempotent payment tracking, and cumulative capacity checks on refunds.",
       },
     ],
     highlights: [
       {
-        title: "Intelligent Tool Calling",
+        title: "Admin Command Center",
         points: [
-          "Live stock and pricing lookups directly from MongoDB.",
-          "Real-time courier tracking number verification.",
-          "Automated draft generation for customer return requests.",
+          "Role-based access control separating ADMIN and STAFF permissions with rate-limited authentication.",
+          "Garment & variant CRUD with dynamic SKU generation and asset pipeline support.",
+          "Real-time revenue tracking, order state transitions, and streaming RFC-4180 financial CSV exports.",
         ],
       },
       {
-        title: "Developer Integration",
+        title: "Editorial Haute Couture Storefront",
         points: [
-          "One-line script tag embed for external websites.",
-          "Customizable branding, color schemes, and system instructions.",
-          "Live analytics dashboard showing query topics and escalation rates.",
+          "Filterable Pakistani luxury garment collections with color/size variant selection.",
+          "Multi-zone regional shipping calculations and persistent cart state.",
+          "Guest order tracking secured with cryptographic HMAC verification tokens.",
         ],
       },
     ],
     keyDecisions: [
-      "Used Server-Sent Events (SSE) for streaming text responses to create an immediate, human-like typing feel.",
-      "Separated tool definitions into strongly typed Zod schemas to guarantee parameter safety.",
+      "Selected Prisma ORM with transactional isolation to guarantee type safety and stock consistency across checkout mutations.",
+      "Separated storefront Next.js App Router services from the dedicated Express backend API for modular scaling.",
+      "Verified all order totals and refund bounds strictly on the server to prevent client-side price tampering.",
     ],
     lessonsLearned: [
-      "Prompt engineering is most effective when paired with tight system guardrails and deterministic API validators.",
+      "Integrating local payment rails requires idempotent retry handling and explicit audit logs from day one.",
+      "Financial ledger schemas and capacity constraints should be enforced cleanly at the service and database transaction level.",
     ],
   },
   {
     slug: "online-pizza-hub",
     title: "Online Pizza Hub Vehari",
-    subtitle: "Multi-Restaurant Food Ordering, Live Dispatch & Management Platform",
+    subtitle: "Multi-Restaurant Food Ordering, Rider Dispatch & Management Platform",
     category: "Full-Stack",
-    role: "Full-Stack Web & Mobile Engineer",
+    role: "Full-Stack Mobile & Backend Developer",
     year: "2024",
     featured: true,
     description:
-      "Multi-restaurant food ordering and management platform featuring real-time order tracking, merchant administrative dashboards, automated dispatching, and commission analytics.",
+      "Multi-restaurant food ordering and management platform built with Flutter, Dart, and Firebase, featuring real-time Firestore order tracking, dedicated customer/restaurant/rider workflows, commission analytics, and Firebase Cloud Functions.",
     executiveSummary:
-      "Designed and developed a comprehensive digital ordering platform bridging local pizzerias with hungry customers. The system provides a real-time kitchen display, automated delivery driver assignments, and a streamlined mobile-first customer checkout experience.",
-    tech: ["Next.js", "React.js", "Node.js", "Express.js", "MongoDB", "JavaScript", "Tailwind CSS"],
-    liveUrl: "https://online-pizza-hub.vercel.app",
-    githubUrl: "https://github.com/Mrusman1234/online-pizza-hub",
-    github: "https://github.com/Mrusman1234/online-pizza-hub",
-    live: "https://online-pizza-hub.vercel.app",
-    previewImage: "/project2.png",
-    images: ["/project2.png"],
+      "Designed and built a multi-restaurant food ordering and delivery ecosystem using Flutter and Firebase. The platform connects customers, restaurant administrators, and delivery riders with live Cloud Firestore status synchronization, bilingual English/Urdu localization, role-based dashboards, and automated backend Cloud Functions.",
+    tech: ["Flutter", "Dart", "Firebase", "Cloud Firestore", "Firebase Auth", "Cloud Functions", "Provider", "Google Maps"],
+    liveUrl: "/demo/online-pizza-hub",
+    live: "/demo/online-pizza-hub",
+    githubUrl: "https://github.com/Mrusman1234/pizza-app-flutter",
+    github: "https://github.com/Mrusman1234/pizza-app-flutter",
+    previewImage: "/online-pizza-hub-preview.jpg",
+    previewAspectRatio: "video",
+    previewObjectPosition: "center",
+    images: ["/online-pizza-hub-preview.jpg"],
     architecture: [
-      "Frontend: Next.js with responsive Tailwind CSS mobile ordering interface",
-      "Backend API: Node.js and Express.js REST API handling orders, menus, and auth",
-      "Real-Time Engine: WebSockets for live status updates from oven to doorstep",
-      "Database: MongoDB with optimized geospatial and order status indexes",
+      "Mobile Client: Cross-platform Flutter application with Provider state management and English/Urdu (EN/UR) localization",
+      "Real-Time Data: Cloud Firestore streams synchronizing menus, live order stages, notifications, and wallet balances",
+      "Authentication & Security: Firebase Auth, Google Sign-In, OTP verification, App Check, and Firestore security rules",
+      "Serverless Backend: Firebase Cloud Functions handling JazzCash/Stripe payment callbacks and scheduled stale-order cleanup",
     ],
     challenges: [
       {
-        title: "Real-Time Multi-Party Synchronization",
+        title: "Multi-Role Synchronization Across Customers, Restaurants & Riders",
         problem:
-          "Keeping customer tracking screens, kitchen displays, and driver phones synchronized in real time without high server overhead.",
+          "Keeping customer order tracking, restaurant kitchen queues, and rider dispatch views synchronized in real time across mobile connections.",
         solution:
-          "Implemented lightweight socket channels and optimistic local UI updates, reducing server roundtrips and ensuring instant feedback.",
+          "Built reactive Cloud Firestore listeners paired with Firebase Cloud Messaging (FCM) push notifications and local notifications.",
       },
       {
-        title: "Complex Custom Pizza Customization",
+        title: "Commission Tracking & Payment Callback Security",
         problem:
-          "Managing dynamic toppings, sizes, crusts, and price calculations created UI clutter and state management friction.",
+          "Calculating platform commissions and validating mobile payment redirects safely without trusting client-side logic.",
         solution:
-          "Built a modular configuration engine with pure reducer state, validating price constraints both on the client and strictly in the backend API.",
-      },
-    ],
-    metrics: [
-      {
-        label: "Order Flow Speed",
-        value: "Under 45s",
-        description: "Average customer journey from menu browse to order submission.",
-      },
-      {
-        label: "Live Tracking Latency",
-        value: "< 250ms",
-        description: "Status propagation delay between restaurant kitchen and customer app.",
+          "Offloaded payment verification webhooks, order confirmation state transitions, and commission calculations to Firebase Cloud Functions.",
       },
     ],
     highlights: [
       {
-        title: "Interactive Ordering Interface",
+        title: "Customer Ordering Experience",
         points: [
-          "Instant menu filtering by category, dietary preference, and price.",
-          "Visual pizza builder with dynamic pricing update.",
-          "One-click reordering from customer history.",
+          "Live restaurant browsing, hot deals, vouchers, custom pizza options, and debounced search.",
+          "Real-time delivery tracking with Google Maps and Geolocator location helpers.",
+          "Multi-language support with English and Urdu translations.",
         ],
       },
       {
-        title: "Restaurant Admin Portal",
+        title: "Restaurant, Rider & Admin Portals",
         points: [
-          "Live order queue with audio alerts for incoming orders.",
-          "Sales analytics, peak hour heatmaps, and menu item performance.",
-          "Driver dispatch management with status tracking.",
+          "Dedicated restaurant admin dashboards for menus, orders, audit logs, and sales reports.",
+          "Rider dispatch portal for active deliveries and order status updates.",
+          "Super-admin commission management, wallet tracking, and performance analytics charts.",
         ],
       },
     ],
     keyDecisions: [
-      "Selected MongoDB for its document-oriented structure, allowing flexible menu item schemas with varying topping arrays.",
-      "Structured REST API with clean controller-service-repository pattern to allow straightforward client scaling.",
+      "Used Firebase Cloud Firestore and Cloud Functions to synchronize mobile clients in real time without managing separate socket servers.",
+      "Organized business state cleanly with modular Provider stores across orders, restaurants, riders, wallets, and commissions.",
     ],
     lessonsLearned: [
-      "Mobile network variability requires robust offline retry mechanisms for customer order submissions.",
-      "Clear visual indicators for order status significantly reduce customer support inquiries.",
+      "Separating sensitive payment callbacks into serverless Cloud Functions prevents client-side tampering on mobile platforms.",
+      "Designing connectivity-aware UI wrappers improves reliability on variable mobile data networks.",
     ],
   },
   {
@@ -171,7 +149,7 @@ export const projectsData: Project[] = [
     description:
       "AI-assisted B2B pipeline, accounts, contracts, invoicing, and revenue forecasting workspace featuring 1-Click Demo Admin Login, Gmail SMTP OTP authentication, and an integrated Gemini AI Sales Copilot.",
     executiveSummary:
-      "Engineered a full-stack enterprise B2B SaaS CRM and revenue intelligence cockpit powered by Next.js, TypeScript, Prisma, and MongoDB. NexusFlow combines real-time pipeline analytics, contract and invoice lifecycle tracking, passwordless Gmail SMTP OTP verification with instant 1-Click Demo Admin access, and an embedded Gemini AI Sales Copilot for deal insights and executive forecasting.",
+      "Engineered a full-stack enterprise B2B SaaS CRM and revenue intelligence cockpit powered by Next.js, TypeScript, Prisma, and MongoDB. NexusFlow combines pipeline analytics, contract and invoice lifecycle tracking, passwordless Gmail SMTP OTP verification with instant 1-Click Demo Admin access, and an embedded Gemini AI Sales Copilot for deal insights and forecasting.",
     tech: ["Next.js", "TypeScript", "Tailwind CSS", "Prisma", "MongoDB", "Gemini AI", "Nodemailer"],
     liveUrl: "https://nexusflow-ai-crm.vercel.app",
     githubUrl: "https://github.com/Mrusman1234/nexusflow-ai-crm",
@@ -201,24 +179,12 @@ export const projectsData: Project[] = [
           "Engineered a structured context injection layer feeding real-time Prisma/MongoDB revenue snapshots directly into the Gemini AI Sales Copilot for actionable deal recommendations.",
       },
     ],
-    metrics: [
-      {
-        label: "Tracked Pipeline",
-        value: "$1.84M+",
-        description: "Pre-loaded B2B enterprise deals, revenue trajectory forecasting, and MoM KPI analytics.",
-      },
-      {
-        label: "Auth & Access",
-        value: "1-Click + OTP",
-        description: "Instant Demo Admin workspace access alongside verified Gmail SMTP OTP authentication.",
-      },
-    ],
     highlights: [
       {
         title: "Executive Revenue Cockpit",
         points: [
           "Real-time KPI cards tracking total revenue, expected pipeline value, leads, and enterprise accounts.",
-          "6-month closed-won bookings vs. active enterprise pipeline trajectory visualizations.",
+          "Closed-won bookings vs. active enterprise pipeline trajectory visualizations.",
           "Unified modules for Sales, Campaigns, Projects, E-mails, Reports, Documents, and Invoices.",
         ],
       },
@@ -240,92 +206,6 @@ export const projectsData: Project[] = [
     ],
   },
   {
-    slug: "noir-gold-atelier",
-    title: "NOIR & GOLD Atelier",
-    subtitle: "Full-Stack Luxury Couture Commerce Platform & Financial Reconciliation Engine",
-    category: "E-Commerce",
-    role: "Lead Full-Stack Engineer & UI/UX Architect",
-    year: "2026",
-    featured: true,
-    description:
-      "Enterprise luxury couture e-commerce engine and administrative operations suite engineered for domestic South Asian payment rails (JazzCash, EasyPaisa, direct IBFT, COD), double-entry ledger, and zero-trust cryptographic security.",
-    executiveSummary:
-      "NOIR & GOLD Atelier pairs an editorial haute couture storefront with an enterprise operations suite (Atelier Ops). Built to solve real domestic payment challenges: hybrid multi-channel payment reconciliation, transactional stock reservation during flash drops, zero-trust cryptographic order verification, and automated audit logging.",
-    tech: ["Next.js", "React.js", "TypeScript", "Node.js", "Express.js", "Prisma ORM", "SQL", "Tailwind CSS"],
-    liveUrl: "https://noir-gold-atelier.vercel.app",
-    githubUrl: "https://github.com/Mrusman1234/noir-gold-atelier",
-    github: "https://github.com/Mrusman1234/noir-gold-atelier",
-    live: "https://noir-gold-atelier.vercel.app",
-    previewImage: "/project1.png",
-    images: ["/project1.png", "/project4.png"],
-    architecture: [
-      "Client Layer: Next.js App Router with Server Components and optimistic UI mutations",
-      "API Layer: Type-safe REST endpoints with HMAC webhook verification",
-      "Data Layer: Prisma ORM with relational SQL schema and transactional isolation",
-      "Financial Engine: Double-entry audit ledger for payment reconciliations",
-    ],
-    challenges: [
-      {
-        title: "Flash Drop Stock Concurrency",
-        problem:
-          "During high-volume couture product releases, simultaneous checkouts caused race conditions and inventory overselling.",
-        solution:
-          "Architected atomic database transactions using Prisma with row-level locks and time-to-live (TTL) inventory reservations that auto-release on payment timeout.",
-      },
-      {
-        title: "Multi-Rail Payment Reconciliation",
-        problem:
-          "Disparate payment flows across mobile wallets (JazzCash, EasyPaisa), manual IBFT slip uploads, and COD created financial audit discrepancies.",
-        solution:
-          "Engineered a unified double-entry ledger system where every financial state change is cryptographically tracked with immutable audit trails.",
-      },
-    ],
-    metrics: [
-      {
-        label: "Automated Test Suite",
-        value: "149 Tests",
-        description: "Comprehensive end-to-end and unit coverage across critical payment pipelines.",
-      },
-      {
-        label: "Inventory Accuracy",
-        value: "100%",
-        description: "Zero overselling during simulated high-concurrency peak drop traffic.",
-      },
-      {
-        label: "Reconciliation Time",
-        value: "< 3 Sec",
-        description: "Near-instantaneous receipt parsing and transaction matching.",
-      },
-    ],
-    highlights: [
-      {
-        title: "Enterprise Back-Office (Atelier Ops)",
-        points: [
-          "Role-based access control with granular administrative permissions.",
-          "Real-time order triage, packing slip generation, and courier integration.",
-          "Visual telemetry dashboard showing live transaction health and reconciliation queue.",
-        ],
-      },
-      {
-        title: "Editorial Haute Couture UI",
-        points: [
-          "Minimalist luxury aesthetic designed with strict typographic hierarchy.",
-          "Micro-interactions with zero layout shift (CLS 0.00).",
-          "Seamless checkout flow with smart address autocomplete.",
-        ],
-      },
-    ],
-    keyDecisions: [
-      "Chose Prisma ORM over raw queries to guarantee compile-time type safety across database mutations.",
-      "Implemented server-side order calculations to eliminate any client-side price tampering vulnerabilities.",
-      "Used Next.js Server Components for lightning-fast initial page loads while isolating dynamic checkout logic in targeted client boundaries.",
-    ],
-    lessonsLearned: [
-      "Handling real-world local payment integrations requires resilient fallback mechanisms for network drops and webhook retries.",
-      "Financial ledger schemas must be immutable from day one rather than retrofitted later.",
-    ],
-  },
-  {
     slug: "acme-store",
     title: "Acme Store",
     subtitle: "Modern Headless E-Commerce Storefront for Everyday Creators",
@@ -334,57 +214,45 @@ export const projectsData: Project[] = [
     year: "2026",
     featured: true,
     description:
-      "Modern, lightning-fast e-commerce storefront engineered with Next.js App Router and Tailwind CSS. Features dynamic multi-category filtering, real-time live product search, promotional discount calculating, and seamless shopping cart checkout flows.",
+      "Modern, responsive e-commerce storefront engineered with Next.js App Router and Tailwind CSS. Features dynamic multi-category filtering, live product search, promotional discount calculation, and seamless shopping cart checkout flows.",
     executiveSummary:
-      "Designed and deployed a responsive, modern digital storefront (Acme Store) tailored for creator essentials, streetwear apparel, and ergonomic workstation gear. Built with Next.js Server Components, edge-optimized routing, and fluid cart animations to deliver sub-100ms transitions and zero layout shift.",
+      "Designed and deployed a responsive digital storefront (Acme Store) tailored for creator essentials, streetwear apparel, and ergonomic workstation gear. Built with Next.js Server Components, clean catalog routing, promotional discounting, and persistent cart interactions.",
     tech: ["Next.js", "React.js", "TypeScript", "Tailwind CSS", "Server Components", "Vercel"],
     liveUrl: "https://acmestore-theta.vercel.app",
-    githubUrl: "https://github.com/Mrusman1234",
-    github: "https://github.com/Mrusman1234",
+    githubUrl: "https://github.com/Mrusman1234/acme_store",
+    github: "https://github.com/Mrusman1234/acme_store",
     live: "https://acmestore-theta.vercel.app",
     previewImage: "/acme-store.png",
     images: ["/acme-store.png"],
     architecture: [
-      "Frontend: Next.js App Router with Server Components for ultra-fast initial paint",
-      "Catalog Engine: Dynamic category routing (/search/apparel, /search/accessories) with instant search",
-      "Cart & Checkout: Persistent client state synchronization with optimistic drawer mutations",
+      "Frontend: Next.js App Router with Server Components for responsive storefront rendering",
+      "Catalog Engine: Dynamic category routing (/search/apparel, /search/accessories) with live product search",
+      "Cart & Checkout: Persistent client state synchronization with smooth cart drawer updates",
       "Performance: Edge-cached assets and automatic responsive image optimization on Vercel",
     ],
     challenges: [
       {
-        title: "Sub-Second Catalog Search & Filter Performance",
+        title: "Responsive Catalog Search & Multi-Category Filtering",
         problem:
-          "Traditional client-side search across dynamic apparel collections causes UI stuttering and unoptimized bundle bloat.",
+          "Keeping product search and category navigation clean, URL-shareable, and smooth on both desktop and mobile viewports.",
         solution:
-          "Implemented debounced URL-synchronized search parameters paired with React Suspense boundaries for instantaneous catalog filtering without full page reloads.",
+          "Implemented URL-synchronized search parameters paired with React Suspense boundaries for clean catalog filtering without jarring page reloads.",
       },
       {
         title: "Cart Persistence & Mobile Checkout Ergonomics",
         problem:
-          "Ensuring shopping cart states persist reliably across browser reloads while maintaining 60fps drawer animations on mobile devices.",
+          "Ensuring shopping cart states persist reliably across browser reloads while keeping drawer animations responsive on mobile devices.",
         solution:
-          "Engineered resilient local storage synchronization coupled with GPU-accelerated drawer transitions, preventing layout shifts during cart updates.",
-      },
-    ],
-    metrics: [
-      {
-        label: "Lighthouse Performance",
-        value: "99+",
-        description: "Sub-second initial paint with optimized responsive imagery and zero CLS.",
-      },
-      {
-        label: "Search Response",
-        value: "< 100ms",
-        description: "Instantaneous product search and multi-category filtering latency.",
+          "Engineered persistent local storage synchronization coupled with smooth slide-over cart drawer transitions.",
       },
     ],
     highlights: [
       {
         title: "Modern Storefront UX",
         points: [
-          "Interactive live product search with instant keyword suggestions.",
-          "Dynamic promotional discount engine with coupon codes (SAVE10).",
-          "Comprehensive Help & FAQ along with live order tracking integration.",
+          "Interactive live product search with keyword suggestions.",
+          "Dynamic promotional discount support with coupon codes (SAVE10).",
+          "Help & FAQ center alongside dedicated order tracking views.",
         ],
       },
       {
@@ -392,80 +260,68 @@ export const projectsData: Project[] = [
         points: [
           "Mobile-first responsive drawer navigation and touch-optimized gallery.",
           "Geist typography system paired with clean, minimalist aesthetic tokens.",
-          "Production deployment running on Vercel Edge Network.",
+          "Live production deployment hosted on Vercel.",
         ],
       },
     ],
     keyDecisions: [
-      "Utilized Next.js Server Components to minimize client-side JavaScript payloads.",
+      "Utilized Next.js Server Components to keep client-side JavaScript bundles lean.",
       "Used clean URL search parameters to make filtered product views easily shareable and SEO-friendly.",
     ],
     lessonsLearned: [
-      "Frictionless cart drawers and immediate visual feedback significantly elevate perceived store performance and user trust.",
+      "Frictionless cart drawers and immediate visual feedback significantly elevate the customer checkout experience.",
     ],
   },
   {
     slug: "portfolio-website",
     title: "Muhammad Usman — Creative Developer Portfolio",
-    subtitle: "High-Performance Editorial Portfolio & Personal Digital Identity",
+    subtitle: "Editorial Developer Portfolio & Personal Digital Identity",
     category: "Creative Engineering",
     role: "Designer & Frontend Architect",
     year: "2026",
     featured: false,
     description:
-      "Editorial developer portfolio engineered with Next.js 16 App Router, TypeScript, and Tailwind CSS v4. Designed with clean SaaS aesthetics, tactile micro-interactions, and zero layout shift.",
+      "Editorial developer portfolio engineered with Next.js 16 App Router, TypeScript, and Tailwind CSS v4. Designed with clean aesthetics, tactile micro-interactions, and semantic technical SEO.",
     executiveSummary:
-      "Built to demonstrate the synergy of modern frontend architecture, accessibility (WCAG 2.2 AA), technical SEO, and fluid motion design. The website serves as both an interactive resume and an architectural showcase.",
+      "Built to showcase full-stack systems cleanly through modern frontend architecture, semantic HTML, technical SEO (JSON-LD, XML sitemap, Open Graph metadata), Gmail SMTP inquiry delivery, and purposeful Framer Motion transitions.",
     tech: ["Next.js", "React.js", "TypeScript", "Tailwind CSS", "Framer Motion"],
-    liveUrl: "https://usman-portfolio-jet.vercel.app",
+    liveUrl: "https://usman-portfolio-jet.vercel.app/",
     githubUrl: "https://github.com/Mrusman1234/usman-portfolio",
     github: "https://github.com/Mrusman1234/usman-portfolio",
-    live: "https://usman-portfolio-jet.vercel.app",
-    previewImage: "/project4.png",
-    images: ["/project4.png"],
+    live: "https://usman-portfolio-jet.vercel.app/",
+    previewImage: "/portfolio-preview.png",
+    images: ["/portfolio-preview.png"],
     architecture: [
-      "Architecture: Next.js App Router with Server Components for static performance",
-      "Motion: Framer Motion spring physics with prefers-reduced-motion fallbacks",
-      "Styling: Tailwind CSS v4 with custom design tokens and fluid typography",
-      "SEO: Automated JSON-LD structured data, Open Graph cards, dynamic sitemap",
+      "Architecture: Next.js App Router with Server Components and statically generated case study pages",
+      "Motion: Framer Motion animations respecting prefers-reduced-motion user preferences",
+      "Styling: Tailwind CSS v4 with custom design tokens and fluid responsive typography",
+      "SEO & Integrations: Automated JSON-LD structured data, Open Graph cards, dynamic sitemap, and Nodemailer contact API",
     ],
     challenges: [
       {
-        title: "High Performance with Rich Motion",
+        title: "Smooth Motion Without Hurting Layout Stability",
         problem:
-          "Combining interactive cursor effects, magnetic buttons, and page transitions without degrading Core Web Vitals.",
+          "Combining interactive pointer effects, magnetic buttons, and scroll transitions without introducing layout jumps or hydration issues.",
         solution:
-          "Isolated animations to GPU-composited properties (transform, opacity) and dynamically mounted desktop-only interactions after hydration.",
-      },
-    ],
-    metrics: [
-      {
-        label: "Lighthouse Performance",
-        value: "98+",
-        description: "Optimized asset delivery, zero cumulative layout shift (CLS 0.00).",
-      },
-      {
-        label: "Accessibility Score",
-        value: "100",
-        description: "Strict semantic hierarchy, keyboard navigability, and high contrast ratio.",
+          "Scoped animations to GPU-composited transform/opacity properties and safely mounted pointer-only effects after hydration.",
       },
     ],
     highlights: [
       {
         title: "Crafted Micro-Interactions",
         points: [
-          "Magnetic CTA buttons responding to cursor proximity.",
-          "Dynamic scroll-aware navigation with active section indicator.",
-          "Smooth interactive 6-stage development process explorer.",
+          "Magnetic CTA buttons responding smoothly to pointer movement.",
+          "Scroll-aware floating navigation with active section indicator.",
+          "Interactive 6-stage development process explorer and filterable project catalog.",
         ],
       },
     ],
     keyDecisions: [
-      "Built with strict TypeScript to eliminate runtime bugs across all data layers.",
-      "Used native Next.js Image optimization for responsive formats (AVIF/WebP).",
+      "Built with strict TypeScript to maintain compile-time safety across all data modules and UI components.",
+      "Used Next.js Image optimization and clean semantic markup across landing and case-study routes.",
     ],
     lessonsLearned: [
-      "Restraint is the hallmark of great motion design — animations should guide user attention, never distract from content.",
+      "Restraint is essential in motion design — subtle animations guide attention without distracting from project substance.",
     ],
   },
 ]

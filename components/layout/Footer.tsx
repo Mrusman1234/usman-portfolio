@@ -63,43 +63,43 @@ export default function Footer() {
             <ul className="space-y-2.5 text-sm font-medium">
               <li>
                 <a href="#home" className="inline-flex items-center gap-2 hover:text-[#8B3DFF] transition-colors">
-                  <Home className="w-3.5 h-3.5 text-slate-400 stroke-[1.5]" />
+                  <Home className="w-3.5 h-3.5 text-slate-400 stroke-[1.5]" aria-hidden="true" />
                   <span>Home</span>
                 </a>
               </li>
               <li>
                 <a href="#about" className="inline-flex items-center gap-2 hover:text-[#8B3DFF] transition-colors">
-                  <User className="w-3.5 h-3.5 text-slate-400 stroke-[1.5]" />
+                  <User className="w-3.5 h-3.5 text-slate-400 stroke-[1.5]" aria-hidden="true" />
                   <span>About</span>
                 </a>
               </li>
               <li>
                 <a href="#projects" className="inline-flex items-center gap-2 hover:text-[#8B3DFF] transition-colors">
-                  <Briefcase className="w-3.5 h-3.5 text-slate-400 stroke-[1.5]" />
+                  <Briefcase className="w-3.5 h-3.5 text-slate-400 stroke-[1.5]" aria-hidden="true" />
                   <span>Selected Work</span>
                 </a>
               </li>
               <li>
                 <a href="#services" className="inline-flex items-center gap-2 hover:text-[#8B3DFF] transition-colors">
-                  <Sparkles className="w-3.5 h-3.5 text-slate-400 stroke-[1.5]" />
+                  <Sparkles className="w-3.5 h-3.5 text-slate-400 stroke-[1.5]" aria-hidden="true" />
                   <span>Services</span>
                 </a>
               </li>
               <li>
                 <a href="#skills" className="inline-flex items-center gap-2 hover:text-[#8B3DFF] transition-colors">
-                  <Cpu className="w-3.5 h-3.5 text-slate-400 stroke-[1.5]" />
+                  <Cpu className="w-3.5 h-3.5 text-slate-400 stroke-[1.5]" aria-hidden="true" />
                   <span>Technical Stack</span>
                 </a>
               </li>
               <li>
                 <a href="#process" className="inline-flex items-center gap-2 hover:text-[#8B3DFF] transition-colors">
-                  <GitBranch className="w-3.5 h-3.5 text-slate-400 stroke-[1.5]" />
+                  <GitBranch className="w-3.5 h-3.5 text-slate-400 stroke-[1.5]" aria-hidden="true" />
                   <span>Development Process</span>
                 </a>
               </li>
               <li>
                 <a href="#contact" className="inline-flex items-center gap-2 hover:text-[#8B3DFF] transition-colors">
-                  <Mail className="w-3.5 h-3.5 text-slate-400 stroke-[1.5]" />
+                  <Mail className="w-3.5 h-3.5 text-slate-400 stroke-[1.5]" aria-hidden="true" />
                   <span>Contact</span>
                 </a>
               </li>
@@ -119,7 +119,7 @@ export default function Footer() {
                   rel="noopener noreferrer"
                   className="inline-flex items-center gap-2 hover:text-[#8B3DFF] transition-colors"
                 >
-                  <Github className="w-4 h-4 text-slate-600 stroke-[1.5]" />
+                  <Github className="w-4 h-4 text-slate-600 stroke-[1.5]" aria-hidden="true" />
                   <span>GitHub Profile</span>
                 </a>
               </li>
@@ -130,7 +130,7 @@ export default function Footer() {
                   rel="noopener noreferrer"
                   className="inline-flex items-center gap-2 hover:text-[#8B3DFF] transition-colors"
                 >
-                  <Linkedin className="w-4 h-4 text-[#8B3DFF] stroke-[1.5]" />
+                  <Linkedin className="w-4 h-4 text-[#8B3DFF] stroke-[1.5]" aria-hidden="true" />
                   <span>LinkedIn Network</span>
                 </a>
               </li>
@@ -150,7 +150,7 @@ export default function Footer() {
                   href={`mailto:${developerProfile.email}`}
                   className="inline-flex items-center gap-2 hover:text-[#8B3DFF] transition-colors"
                 >
-                  <Mail className="w-4 h-4 text-slate-600 stroke-[1.5]" />
+                  <Mail className="w-4 h-4 text-slate-600 stroke-[1.5]" aria-hidden="true" />
                   <span className="truncate max-w-[170px]">{developerProfile.email}</span>
                 </a>
               </li>
@@ -163,7 +163,7 @@ export default function Footer() {
           <p>© {new Date().getFullYear()} Muhammad Usman. All rights reserved.</p>
           <div className="flex items-center gap-4">
             <span className="inline-flex items-center gap-1.5">
-              <MapPin className="w-3.5 h-3.5 text-slate-400 stroke-[1.5]" />
+              <MapPin className="w-3.5 h-3.5 text-slate-400 stroke-[1.5]" aria-hidden="true" />
               <span>Vehari, Punjab, Pakistan</span>
             </span>
             <span>•</span>
@@ -174,7 +174,7 @@ export default function Footer() {
               aria-label="Back to top"
             >
               <span>Back to Top</span>
-              <ArrowUp className="w-3.5 h-3.5 stroke-[1.5] group-hover:-translate-y-0.5 transition-transform" />
+              <ArrowUp className="w-3.5 h-3.5 stroke-[1.5] group-hover:-translate-y-0.5 transition-transform" aria-hidden="true" />
             </button>
           </div>
         </div>

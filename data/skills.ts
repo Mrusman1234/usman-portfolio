@@ -57,8 +57,8 @@ export const skillGroupsData: SkillGroup[] = [
         featured: true,
       },
       {
-        name: "Serverless & Handlers",
-        context: "Edge runtimes, Next.js route handlers, webhooks, asynchronous workers.",
+        name: "Serverless & Deployments",
+        context: "Production cloud deployments on Vercel and Netlify, edge runtimes, Next.js route handlers, webhooks, and AI-assisted development workflows.",
         featured: false,
       },
     ],

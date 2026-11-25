@@ -35,9 +35,12 @@ export default function Navbar() {
   const [scrolled, setScrolled] = useState(false)
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
 
-  // Track scroll position for navbar elevation and active section
+  // Track scroll position with rAF throttling for navbar elevation and active section
   useEffect(() => {
-    const handleScroll = () => {
+    let rafId = 0
+
+    const updateNavState = () => {
+      rafId = 0
       setScrolled(window.scrollY > 30)
 
       const sections = NAV_ITEMS.map((item) => item.href.substring(1))
@@ -52,18 +55,35 @@ export default function Navbar() {
       }
     }
 
+    const handleScroll = () => {
+      if (rafId) return
+      rafId = window.requestAnimationFrame(updateNavState)
+    }
+
     window.addEventListener("scroll", handleScroll, { passive: true })
-    handleScroll()
-    return () => window.removeEventListener("scroll", handleScroll)
+    updateNavState()
+    return () => {
+      window.removeEventListener("scroll", handleScroll)
+      if (rafId) window.cancelAnimationFrame(rafId)
+    }
   }, [])
 
-  // Lock body scroll when mobile menu is open
+  // Lock body scroll and support Escape key when mobile menu is open
   useEffect(() => {
     if (mobileMenuOpen) {
       document.body.style.overflow = "hidden"
-    } else {
-      document.body.style.overflow = ""
+      const handleKeyDown = (e: KeyboardEvent) => {
+        if (e.key === "Escape") {
+          setMobileMenuOpen(false)
+        }
+      }
+      window.addEventListener("keydown", handleKeyDown)
+      return () => {
+        document.body.style.overflow = ""
+        window.removeEventListener("keydown", handleKeyDown)
+      }
     }
+    document.body.style.overflow = ""
     return () => {
       document.body.style.overflow = ""
     }
@@ -128,7 +148,7 @@ export default function Navbar() {
                       transition={{ type: "spring", stiffness: 400, damping: 32 }}
                     />
                   )}
-                  <Icon className="w-3.5 h-3.5 stroke-[1.5] relative z-10 shrink-0" />
+                  <Icon className="w-3.5 h-3.5 stroke-[1.5] relative z-10 shrink-0" aria-hidden="true" />
                   <span className="relative z-10">{item.label}</span>
                 </a>
               )
@@ -143,7 +163,7 @@ export default function Navbar() {
               rel="noopener noreferrer"
               className="inline-flex items-center gap-1.5 px-3 py-1.5 text-xs font-semibold text-slate-700 canvas-pill canvas-pill-hover rounded-full transition-all"
             >
-              <FileText className="w-3.5 h-3.5 text-[#8B3DFF] stroke-[1.5]" />
+              <FileText className="w-3.5 h-3.5 text-[#8B3DFF] stroke-[1.5]" aria-hidden="true" />
               <span>Resume</span>
             </a>
 
@@ -152,7 +172,7 @@ export default function Navbar() {
               className="inline-flex items-center gap-1 px-4 py-1.5 text-xs font-semibold text-white bg-brand-primary hover:bg-brand-secondary rounded-full transition-all shadow-sm shadow-[#8B3DFF]/25 active:scale-95"
             >
               <span>Let&apos;s Talk</span>
-              <ArrowUpRight className="w-3.5 h-3.5 stroke-[1.5]" />
+              <ArrowUpRight className="w-3.5 h-3.5 stroke-[1.5]" aria-hidden="true" />
             </a>
           </div>
 
@@ -162,8 +182,10 @@ export default function Navbar() {
             onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
             className="lg:hidden p-2 rounded-full canvas-pill canvas-pill-hover text-slate-700 hover:text-slate-950 focus:outline-none shadow-sm shrink-0"
             aria-label={mobileMenuOpen ? "Close menu" : "Open menu"}
+            aria-expanded={mobileMenuOpen}
+            aria-controls="mobile-navigation-drawer"
           >
-            {mobileMenuOpen ? <X className="w-5 h-5 stroke-[1.5]" /> : <Menu className="w-5 h-5 stroke-[1.5]" />}
+            {mobileMenuOpen ? <X className="w-5 h-5 stroke-[1.5]" aria-hidden="true" /> : <Menu className="w-5 h-5 stroke-[1.5]" aria-hidden="true" />}
           </button>
         </div>
       </header>
@@ -172,6 +194,10 @@ export default function Navbar() {
       <AnimatePresence>
         {mobileMenuOpen && (
           <motion.div
+            id="mobile-navigation-drawer"
+            role="dialog"
+            aria-modal="true"
+            aria-label="Mobile navigation menu"
             initial={{ opacity: 0, backdropFilter: "blur(0px)" }}
             animate={{ opacity: 1, backdropFilter: "blur(16px)" }}
             exit={{ opacity: 0, backdropFilter: "blur(0px)" }}
@@ -199,7 +225,7 @@ export default function Navbar() {
                         : "text-slate-600 hover:text-slate-950 hover:bg-slate-50"
                     }`}
                   >
-                    <Icon className="w-5 h-5 stroke-[1.5] shrink-0" />
+                    <Icon className="w-5 h-5 stroke-[1.5] shrink-0" aria-hidden="true" />
                     <span>{item.label}</span>
                   </motion.a>
                 )
@@ -209,7 +235,7 @@ export default function Navbar() {
             <div className="pt-6 border-t border-[#D9DCE5] flex flex-col gap-3">
               <div className="flex items-center justify-between text-xs font-medium text-slate-500">
                 <span className="flex items-center gap-1.5">
-                  <span className="w-2 h-2 rounded-full bg-emerald-500 animate-pulse" />
+                  <span className="w-2 h-2 rounded-full bg-emerald-500 animate-pulse" aria-hidden="true" />
                   Available for Work
                 </span>
                 <span>Vehari, Pakistan</span>
@@ -222,7 +248,7 @@ export default function Navbar() {
                   rel="noopener noreferrer"
                   className="flex items-center justify-center gap-2 py-2.5 px-4 rounded-xl text-xs font-semibold text-slate-700 bg-white border border-[#D9DCE5] hover:bg-slate-50 transition-colors"
                 >
-                  <FileText className="w-4 h-4 text-[#8B3DFF]" />
+                  <FileText className="w-4 h-4 text-[#8B3DFF]" aria-hidden="true" />
                   Resume PDF
                 </a>
                 <a

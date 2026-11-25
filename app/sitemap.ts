@@ -20,5 +20,11 @@ export default function sitemap(): MetadataRoute.Sitemap {
       priority: 1.0,
     },
     ...projectUrls,
+    {
+      url: `${baseUrl}/demo/online-pizza-hub`,
+      lastModified: currentDate,
+      changeFrequency: "monthly",
+      priority: 0.7,
+    },
   ]
 }

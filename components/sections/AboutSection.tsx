@@ -67,13 +67,13 @@ export default function AboutSection() {
             className="lg:col-span-7 space-y-6 text-slate-600 text-base md:text-lg leading-relaxed font-normal"
           >
             <p>
-              I am <strong className="text-slate-900 font-semibold">{developerProfile.name}</strong>, a Full-Stack Web Developer and Computer Science graduate ({developerProfile.education.year}) based in {developerProfile.location}.
+              I am <strong className="text-slate-900 font-semibold">{developerProfile.name}</strong>, a Full-Stack Web Developer and Computer Science graduate ({developerProfile.education.year}) from <strong className="text-slate-900 font-semibold">{developerProfile.education.institution}</strong> based in {developerProfile.location}.
             </p>
             <p>
               My work centers on developing scalable, robust, and user-centric web applications. I bridge backend architectural rigor—relational databases, REST APIs, atomic transactions, and zero-trust security perimeters—with refined, high-performance frontend interfaces in Next.js, React, and TypeScript.
             </p>
             <p>
-              Whether engineering an autonomous support agent with deterministic tool-calling guardrails (<strong className="text-slate-900 font-semibold">SmartDesk AI</strong>) or architecting a multi-restaurant live ordering and dispatch platform (<strong className="text-slate-900 font-semibold">Online Pizza Hub Vehari</strong>), I prioritize maintainability, testability, and verifiable performance over temporary shortcuts.
+              Whether engineering a full-stack fashion e-commerce platform and financial ledger (<strong className="text-slate-900 font-semibold">NOIR &amp; GOLD Atelier</strong>), a Flutter and Firebase multi-restaurant delivery ecosystem (<strong className="text-slate-900 font-semibold">Online Pizza Hub Vehari</strong>), or an AI-assisted B2B SaaS workspace (<strong className="text-slate-900 font-semibold">NexusFlow AI CRM</strong>), I prioritize maintainability, data integrity, and clean architecture over temporary shortcuts.
             </p>
 
             {/* Development Philosophy / Principles Grid */}
@@ -111,7 +111,7 @@ export default function AboutSection() {
             {/* Education Card */}
             <div className="p-6 rounded-3xl canvas-card-elevated border-[#D9DCE5]/80 shadow-md relative overflow-hidden">
               <div className="flex items-center gap-2.5 mb-3 text-[#8B3DFF]">
-                <GraduationCap className="w-5 h-5 stroke-[1.5]" />
+                <GraduationCap className="w-5 h-5 stroke-[1.5]" aria-hidden="true" />
                 <span className="text-xs uppercase tracking-wider font-bold">
                   Education &amp; Foundations
                 </span>
@@ -120,7 +120,7 @@ export default function AboutSection() {
                 {developerProfile.education.degree}
               </h4>
               <p className="text-xs font-semibold text-slate-500 mb-3">
-                {developerProfile.education.year} • Vehari, Punjab, Pakistan
+                {developerProfile.education.institution} • {developerProfile.education.year} • CGPA: {developerProfile.education.cgpa}
               </p>
               <p className="text-xs text-slate-600 leading-relaxed font-normal">
                 Core coursework and technical foundation in distributed systems, web architectures, algorithms, data structures, and database management systems.
@@ -130,7 +130,7 @@ export default function AboutSection() {
             {/* Verified Certifications Card */}
             <div className="p-6 rounded-3xl canvas-card-elevated border-[#D9DCE5]/80 shadow-md space-y-4">
               <div className="flex items-center gap-2.5 text-emerald-600">
-                <Award className="w-5 h-5 stroke-[1.5]" />
+                <Award className="w-5 h-5 stroke-[1.5]" aria-hidden="true" />
                 <span className="text-xs uppercase tracking-wider font-bold">
                   Verified Certifications
                 </span>
@@ -157,7 +157,7 @@ export default function AboutSection() {
                       className="p-1.5 rounded-lg text-slate-400 hover:text-[#8B3DFF] hover:bg-[#8B3DFF]/10 transition-colors"
                       aria-label={`Verify ${cert.title}`}
                     >
-                      <ArrowUpRight className="w-4 h-4 stroke-[1.5]" />
+                      <ArrowUpRight className="w-4 h-4 stroke-[1.5]" aria-hidden="true" />
                     </a>
                   </div>
                 ))}
@@ -167,7 +167,7 @@ export default function AboutSection() {
             {/* Availability Box */}
             <div className="p-6 rounded-3xl bg-gradient-to-br from-[#8B3DFF]/10 via-[#6425D0]/5 to-transparent border border-[#8B3DFF]/25 flex items-center gap-4 shadow-xs">
               <div className="w-10 h-10 rounded-2xl bg-[#8B3DFF] text-white flex items-center justify-center shrink-0 shadow-sm shadow-[#8B3DFF]/25">
-                <Compass className="w-5 h-5 stroke-[1.5]" />
+                <Compass className="w-5 h-5 stroke-[1.5]" aria-hidden="true" />
               </div>
               <div>
                 <h5 className="text-xs font-bold text-slate-900 uppercase tracking-wider">

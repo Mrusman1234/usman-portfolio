@@ -151,7 +151,7 @@ export default function ContactSection() {
                     </p>
                   </div>
                 </div>
-                <ArrowUpRight className="w-4 h-4 text-slate-400 group-hover:text-[#8B3DFF] stroke-[1.5] transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
+                <ArrowUpRight className="w-4 h-4 text-slate-400 group-hover:text-[#8B3DFF] stroke-[1.5] transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5" aria-hidden="true" />
               </a>
 
               {/* LinkedIn & GitHub Two-Column */}
@@ -162,7 +162,7 @@ export default function ContactSection() {
                   rel="noopener noreferrer"
                   className="p-4 rounded-2xl bg-white border border-[#D9DCE5] hover:border-slate-300 hover:shadow-xs transition-all flex items-center gap-2.5 text-slate-700 hover:text-slate-950 shadow-2xs"
                 >
-                  <Github className="w-4 h-4 text-slate-600 stroke-[1.5]" />
+                  <Github className="w-4 h-4 text-slate-600 stroke-[1.5]" aria-hidden="true" />
                   <span className="text-xs font-bold">GitHub</span>
                 </a>
                 <a
@@ -171,7 +171,7 @@ export default function ContactSection() {
                   rel="noopener noreferrer"
                   className="p-4 rounded-2xl bg-white border border-[#D9DCE5] hover:border-[#8B3DFF]/50 hover:shadow-xs transition-all flex items-center gap-2.5 text-slate-700 hover:text-[#6425D0] shadow-2xs"
                 >
-                  <Linkedin className="w-4 h-4 text-[#8B3DFF] stroke-[1.5]" />
+                  <Linkedin className="w-4 h-4 text-[#8B3DFF] stroke-[1.5]" aria-hidden="true" />
                   <span className="text-xs font-bold">LinkedIn</span>
                 </a>
               </div>
@@ -179,7 +179,7 @@ export default function ContactSection() {
 
             {/* Location Tag */}
             <div className="flex items-center gap-2 text-xs text-slate-500 px-1 font-medium">
-              <MapPin className="w-4 h-4 text-slate-400 stroke-[1.5] shrink-0" />
+              <MapPin className="w-4 h-4 text-slate-400 stroke-[1.5] shrink-0" aria-hidden="true" />
               <span>Based in Vehari, Punjab, Pakistan (Working globally via Remote)</span>
             </div>
           </div>
@@ -190,7 +190,7 @@ export default function ContactSection() {
               <div className="flex items-center justify-between pb-4 mb-6 border-b border-slate-100">
                 <h3 className="text-lg font-bold text-slate-900">Send a Direct Message</h3>
                 <div className="flex items-center gap-1.5 text-xs font-semibold text-slate-500">
-                  <Clock className="w-3.5 h-3.5 text-emerald-600 stroke-[1.5]" />
+                  <Clock className="w-3.5 h-3.5 text-emerald-600 stroke-[1.5]" aria-hidden="true" />
                   <span>Response within 24h</span>
                 </div>
               </div>
@@ -297,6 +297,8 @@ export default function ContactSection() {
                 {/* Status Alert */}
                 {status.type && (
                   <div
+                    role="status"
+                    aria-live="polite"
                     className={`p-4 rounded-xl text-xs font-medium flex items-center gap-2.5 ${
                       status.type === "success"
                         ? "bg-emerald-50 border border-emerald-200 text-emerald-800"
@@ -304,9 +306,9 @@ export default function ContactSection() {
                     }`}
                   >
                     {status.type === "success" ? (
-                      <CheckCircle2 className="w-4 h-4 text-emerald-600 shrink-0" />
+                      <CheckCircle2 className="w-4 h-4 text-emerald-600 shrink-0" aria-hidden="true" />
                     ) : (
-                      <AlertCircle className="w-4 h-4 text-red-600 shrink-0" />
+                      <AlertCircle className="w-4 h-4 text-red-600 shrink-0" aria-hidden="true" />
                     )}
                     <span>{status.message}</span>
                   </div>
@@ -320,13 +322,13 @@ export default function ContactSection() {
                 >
                   {isSubmitting ? (
                     <>
-                      <Loader2 className="w-4 h-4 animate-spin" />
+                      <Loader2 className="w-4 h-4 animate-spin" aria-hidden="true" />
                       <span>Sending...</span>
                     </>
                   ) : (
                     <>
                       <span>Transmit Inquiry</span>
-                      <Send className="w-4 h-4 stroke-[1.5]" />
+                      <Send className="w-4 h-4 stroke-[1.5]" aria-hidden="true" />
                     </>
                   )}
                 </button>

@@ -34,13 +34,33 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
     return { title: "Project Not Found" }
   }
 
+  const previewImg = project.previewImage || "/portfolio-preview.png"
+
   return {
-    title: `${project.title} — Technical Case Study | Muhammad Usman`,
+    title: `${project.title} — Technical Case Study`,
     description: project.description,
+    alternates: {
+      canonical: `/projects/${project.slug}`,
+    },
     openGraph: {
       title: `${project.title} — Architectural Case Study`,
       description: project.description,
+      url: `https://usman-portfolio-jet.vercel.app/projects/${project.slug}`,
       type: "article",
+      images: [
+        {
+          url: previewImg,
+          width: 1280,
+          height: 800,
+          alt: `${project.title} Preview`,
+        },
+      ],
+    },
+    twitter: {
+      card: "summary_large_image",
+      title: `${project.title} — Architectural Case Study`,
+      description: project.description,
+      images: [previewImg],
     },
   }
 }
@@ -52,6 +72,22 @@ export default async function ProjectDetailPage({ params }: PageProps) {
   if (!project) {
     notFound()
   }
+
+  const liveTarget = project.liveUrl || project.live
+  const isInternalDemo = liveTarget?.startsWith("/")
+  const previewBarUrl = liveTarget
+    ? isInternalDemo
+      ? `https://usman-portfolio-jet.vercel.app${liveTarget}`
+      : liveTarget
+    : project.githubUrl
+      ? project.githubUrl.replace("https://", "")
+      : project.slug
+  const mockupAspectClass =
+    project.previewAspectRatio === "video" ? "aspect-video" : "aspect-[16/10]"
+  const mockupObjectClass =
+    project.previewObjectPosition === "center"
+      ? "object-cover object-center"
+      : "object-cover object-top"
 
   return (
     <main className="min-h-screen bg-[#F7F7FA] text-slate-900 pt-24 pb-20 px-4 sm:px-6 lg:px-8 relative overflow-hidden">
@@ -65,7 +101,7 @@ export default async function ProjectDetailPage({ params }: PageProps) {
             href="/#projects"
             className="inline-flex items-center gap-2 text-xs font-semibold text-slate-600 hover:text-[#6425D0] transition-colors px-3.5 py-1.5 rounded-full bg-white border border-[#D9DCE5] shadow-2xs hover:bg-slate-50"
           >
-            <ArrowLeft className="w-3.5 h-3.5" />
+            <ArrowLeft className="w-3.5 h-3.5" aria-hidden="true" />
             <span>Back to Selected Work</span>
           </Link>
         </div>
@@ -91,18 +127,30 @@ export default async function ProjectDetailPage({ params }: PageProps) {
 
           {/* Action links */}
           <div className="flex flex-wrap items-center gap-3 mt-6 pt-6 border-t border-[#D9DCE5]">
-            {(project.liveUrl || project.live) && (
-              <a
-                href={project.liveUrl || project.live}
-                target="_blank"
-                rel="noopener noreferrer"
-                aria-label={`Open live deployment for ${project.title}`}
-                className="inline-flex items-center gap-2 px-5 py-2.5 rounded-full text-xs sm:text-sm font-semibold text-white bg-brand-primary hover:bg-brand-secondary shadow-sm hover:shadow-md transition-all active:scale-[0.98]"
-              >
-                <span>Live Preview</span>
-                <ExternalLink className="w-3.5 h-3.5 stroke-[1.5]" aria-hidden="true" />
-              </a>
-            )}
+            {liveTarget &&
+              (isInternalDemo ? (
+                <Link
+                  href={liveTarget}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label={`Open interactive live demo for ${project.title}`}
+                  className="inline-flex items-center gap-2 px-5 py-2.5 rounded-full text-xs sm:text-sm font-semibold text-white bg-brand-primary hover:bg-brand-secondary shadow-sm hover:shadow-md transition-all active:scale-[0.98]"
+                >
+                  <span>Live Preview</span>
+                  <ExternalLink className="w-3.5 h-3.5 stroke-[1.5]" aria-hidden="true" />
+                </Link>
+              ) : (
+                <a
+                  href={liveTarget}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label={`Open live deployment for ${project.title}`}
+                  className="inline-flex items-center gap-2 px-5 py-2.5 rounded-full text-xs sm:text-sm font-semibold text-white bg-brand-primary hover:bg-brand-secondary shadow-sm hover:shadow-md transition-all active:scale-[0.98]"
+                >
+                  <span>Live Preview</span>
+                  <ExternalLink className="w-3.5 h-3.5 stroke-[1.5]" aria-hidden="true" />
+                </a>
+              ))}
 
             {(project.githubUrl || project.github) && (
               <a
@@ -122,15 +170,19 @@ export default async function ProjectDetailPage({ params }: PageProps) {
         {/* Main Preview Frame */}
         <div className="mb-16">
           <BrowserMockup
-            src={project.previewImage || "/project1.png"}
-            alt={project.title}
-            url={project.live || `https://${project.slug}.dev`}
+            src={project.previewImage || "/portfolio-preview.png"}
+            alt={`${project.title} architecture and UI preview`}
+            url={previewBarUrl}
+            sizes="(max-width: 1024px) 100vw, 1024px"
+            aspectClassName={mockupAspectClass}
+            objectClassName={mockupObjectClass}
+            priority
           />
         </div>
 
         {/* Executive Summary & Metrics Grid */}
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 mb-16 items-start">
-          <div className="lg:col-span-7 space-y-4">
+          <div className={project.metrics && project.metrics.length > 0 ? "lg:col-span-7 space-y-4" : "lg:col-span-12 space-y-4"}>
             <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-[#8B3DFF]/10 text-[#6425D0] text-xs font-semibold uppercase tracking-wider border border-[#8B3DFF]/20">
               01 • EXECUTIVE SUMMARY
             </span>
@@ -142,29 +194,31 @@ export default async function ProjectDetailPage({ params }: PageProps) {
             </p>
           </div>
 
-          <div className="lg:col-span-5 space-y-3">
-            <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-slate-100 text-slate-700 text-xs font-semibold uppercase tracking-wider border border-[#D9DCE5] mb-2">
-              VERIFIED METRICS
-            </span>
-            {project.metrics?.map((m, idx) => (
-              <div
-                key={idx}
-                className="p-4 rounded-2xl canvas-card border-[#D9DCE5]/70 shadow-sm"
-              >
-                <div className="text-xl font-bold text-slate-900 mb-0.5">
-                  {m.value}
+          {project.metrics && project.metrics.length > 0 && (
+            <div className="lg:col-span-5 space-y-3">
+              <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-slate-100 text-slate-700 text-xs font-semibold uppercase tracking-wider border border-[#D9DCE5] mb-2">
+                VERIFIED METRICS
+              </span>
+              {project.metrics.map((m, idx) => (
+                <div
+                  key={idx}
+                  className="p-4 rounded-2xl canvas-card border-[#D9DCE5]/70 shadow-sm"
+                >
+                  <div className="text-xl font-bold text-slate-900 mb-0.5">
+                    {m.value}
+                  </div>
+                  <div className="text-xs font-bold text-slate-800 mb-1">{m.label}</div>
+                  <div className="text-xs text-slate-600 leading-snug">{m.description}</div>
                 </div>
-                <div className="text-xs font-bold text-slate-800 mb-1">{m.label}</div>
-                <div className="text-xs text-slate-600 leading-snug">{m.description}</div>
-              </div>
-            ))}
-          </div>
+              ))}
+            </div>
+          )}
         </div>
 
         {/* Technical Architecture */}
         <div className="mb-16 p-6 sm:p-8 rounded-3xl canvas-card-elevated border-[#D9DCE5]/80 shadow-md">
           <div className="flex items-center gap-2 mb-4 text-[#8B3DFF]">
-            <Cpu className="w-5 h-5 stroke-[1.5]" />
+            <Cpu className="w-5 h-5 stroke-[1.5]" aria-hidden="true" />
             <h2 className="text-xs uppercase tracking-wider font-bold">
               02 • TECHNICAL ARCHITECTURE &amp; DATA FLOW
             </h2>
@@ -188,7 +242,7 @@ export default async function ProjectDetailPage({ params }: PageProps) {
         {project.challenges && project.challenges.length > 0 && (
           <div className="mb-16">
             <div className="flex items-center gap-2 mb-2 text-[#8B3DFF]">
-              <Sparkles className="w-4 h-4 stroke-[1.5]" />
+              <Sparkles className="w-4 h-4 stroke-[1.5]" aria-hidden="true" />
               <h2 className="text-xs uppercase tracking-wider font-bold">
                 03 • ENGINEERING CHALLENGES
               </h2>
@@ -208,7 +262,7 @@ export default async function ProjectDetailPage({ params }: PageProps) {
                   <div className="grid grid-cols-1 md:grid-cols-2 gap-4 text-xs sm:text-sm">
                     <div className="p-4 rounded-2xl bg-amber-50/70 border border-amber-200/80">
                       <div className="flex items-center gap-1.5 text-amber-800 font-bold mb-1.5">
-                        <AlertCircle className="w-4 h-4 text-amber-600 stroke-[1.5]" />
+                        <AlertCircle className="w-4 h-4 text-amber-600 stroke-[1.5]" aria-hidden="true" />
                         <span>The Problem / Vulnerability</span>
                       </div>
                       <p className="text-amber-900/80 leading-relaxed">{c.problem}</p>
@@ -216,7 +270,7 @@ export default async function ProjectDetailPage({ params }: PageProps) {
 
                     <div className="p-4 rounded-2xl bg-emerald-50/70 border border-emerald-200/80">
                       <div className="flex items-center gap-1.5 text-emerald-800 font-bold mb-1.5">
-                        <CheckCircle2 className="w-4 h-4 text-emerald-600 stroke-[1.5]" />
+                        <CheckCircle2 className="w-4 h-4 text-emerald-600 stroke-[1.5]" aria-hidden="true" />
                         <span>Engineered Solution</span>
                       </div>
                       <p className="text-emerald-900/80 leading-relaxed">{c.solution}</p>
@@ -231,9 +285,9 @@ export default async function ProjectDetailPage({ params }: PageProps) {
         {/* Key Decisions & Lessons Learned */}
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-16">
           <div className="p-6 rounded-3xl canvas-card border-[#D9DCE5]/70 shadow-sm">
-            <h4 className="text-xs uppercase tracking-wider text-slate-500 font-bold mb-4">
+            <h2 className="text-xs uppercase tracking-wider text-slate-500 font-bold mb-4">
               Key Engineering Decisions
-            </h4>
+            </h2>
             <ul className="space-y-3 text-xs sm:text-sm text-slate-600">
               {project.keyDecisions.map((decision, dIdx) => (
                 <li key={dIdx} className="flex items-start gap-2.5">
@@ -245,9 +299,9 @@ export default async function ProjectDetailPage({ params }: PageProps) {
           </div>
 
           <div className="p-6 rounded-3xl canvas-card border-[#D9DCE5]/70 shadow-sm">
-            <h4 className="text-xs uppercase tracking-wider text-slate-500 font-bold mb-4">
+            <h2 className="text-xs uppercase tracking-wider text-slate-500 font-bold mb-4">
               Lessons Learned
-            </h4>
+            </h2>
             <ul className="space-y-3 text-xs sm:text-sm text-slate-600">
               {project.lessonsLearned.map((lesson, lIdx) => (
                 <li key={lIdx} className="flex items-start gap-2.5">
@@ -261,9 +315,9 @@ export default async function ProjectDetailPage({ params }: PageProps) {
 
         {/* Technology Stack Grid */}
         <div className="mb-16">
-          <h4 className="text-xs uppercase tracking-wider text-slate-500 font-bold mb-3">
+          <h2 className="text-xs uppercase tracking-wider text-slate-500 font-bold mb-3">
             Technology Stack &amp; Libraries
-          </h4>
+          </h2>
           <div className="flex flex-wrap gap-2">
             {project.tech.map((t) => (
               <Badge key={t} variant="default" size="md">
@@ -279,7 +333,7 @@ export default async function ProjectDetailPage({ params }: PageProps) {
             href="/#projects"
             className="text-xs font-semibold text-[#8B3DFF] hover:text-[#6425D0] transition-colors inline-flex items-center gap-1"
           >
-            <ArrowLeft className="w-3.5 h-3.5" />
+            <ArrowLeft className="w-3.5 h-3.5" aria-hidden="true" />
             <span>Back to All Projects</span>
           </Link>
           <Link
@@ -287,7 +341,7 @@ export default async function ProjectDetailPage({ params }: PageProps) {
             className="inline-flex items-center gap-2 px-5 py-2.5 rounded-full text-xs font-semibold text-white bg-brand-primary hover:bg-brand-secondary shadow-sm hover:shadow-md transition-all active:scale-[0.98]"
           >
             <span>Discuss a Similar System</span>
-            <ArrowRight className="w-3.5 h-3.5" />
+            <ArrowRight className="w-3.5 h-3.5" aria-hidden="true" />
           </Link>
         </div>
       </div>

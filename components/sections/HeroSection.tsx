@@ -81,7 +81,7 @@ export default function HeroSection() {
                 className="px-7 py-3.5 text-sm sm:text-base font-semibold group shadow-md shadow-[#8B3DFF]/20"
               >
                 <span>{developerProfile.hero.primaryCta}</span>
-                <ArrowDown className="w-4 h-4 ml-2 group-hover:translate-y-0.5 transition-transform" />
+                <ArrowDown className="w-4 h-4 ml-2 group-hover:translate-y-0.5 transition-transform" aria-hidden="true" />
               </MagneticButton>
 
               <MagneticButton
@@ -90,7 +90,7 @@ export default function HeroSection() {
                 className="px-6 py-3.5 text-sm sm:text-base font-medium group"
               >
                 <span>{developerProfile.hero.secondaryCta}</span>
-                <ArrowUpRight className="w-4 h-4 ml-1.5 text-slate-500 group-hover:text-[#6425D0] group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-all" />
+                <ArrowUpRight className="w-4 h-4 ml-1.5 text-slate-500 group-hover:text-[#6425D0] group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-all" aria-hidden="true" />
               </MagneticButton>
             </motion.div>
 
@@ -136,11 +136,12 @@ export default function HeroSection() {
                       width={40}
                       height={40}
                       className="object-contain"
+                      priority
                     />
                   </div>
                   <div>
-                    <h3 className="text-sm font-bold text-slate-900">Muhammad Usman</h3>
-                    <p className="text-xs text-slate-500 font-medium">BSCS (2022 – 2026) • Vehari, PK</p>
+                    <h2 className="text-sm font-bold text-slate-900">Muhammad Usman</h2>
+                    <p className="text-xs text-slate-500 font-medium">BSCS ({developerProfile.education.year}) • Vehari, PK</p>
                   </div>
                 </div>
                 <Badge variant="success" size="sm">
@@ -154,31 +155,31 @@ export default function HeroSection() {
                   Featured Production Systems
                 </p>
 
-                {/* System 1: SmartDesk AI Agent */}
+                {/* System 1: NexusFlow AI CRM */}
                 <Link
-                  href="/projects/smartdesk-ai"
+                  href="/projects/nexusflow-ai-crm"
                   className="group block p-3.5 rounded-2xl bg-white/75 border border-[#8B3DFF]/30 hover:border-[#8B3DFF] hover:bg-white transition-all shadow-xs"
                 >
                   <div className="flex items-start justify-between mb-1.5">
                     <div className="flex items-center gap-2">
                       <div className="w-7 h-7 rounded-lg bg-[#8B3DFF]/10 text-[#6425D0] flex items-center justify-center">
-                        <Bot className="w-4 h-4 stroke-[1.5]" />
+                        <Bot className="w-4 h-4 stroke-[1.5]" aria-hidden="true" />
                       </div>
                       <span className="text-sm font-bold text-slate-900 group-hover:text-[#6425D0] transition-colors">
-                        SmartDesk AI Support Agent
+                        NexusFlow AI CRM
                       </span>
                     </div>
-                    <ArrowUpRight className="w-4 h-4 text-slate-400 group-hover:text-[#8B3DFF] stroke-[1.5] group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform" />
+                    <ArrowUpRight className="w-4 h-4 text-slate-400 group-hover:text-[#8B3DFF] stroke-[1.5] group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform" aria-hidden="true" />
                   </div>
                   <p className="text-xs text-slate-600 leading-relaxed pl-9 font-normal">
-                    Autonomous LLM customer support agent with deterministic tool-calling, 75%+ autonomous resolution, and real-time database queries.
+                    AI-assisted B2B pipeline, accounts, contracts, and invoicing workspace featuring 1-Click Demo Admin Login and a Gemini AI Sales Copilot.
                   </p>
                   <div className="flex items-center gap-2 pl-9 mt-2 text-[11px] font-semibold text-[#6425D0]">
                     <span>Next.js</span>
                     <span>•</span>
-                    <span>LLM Tool Calling</span>
+                    <span>Gemini AI</span>
                     <span>•</span>
-                    <span>Node.js / MongoDB</span>
+                    <span>Prisma / MongoDB</span>
                   </div>
                 </Link>
 
@@ -190,23 +191,23 @@ export default function HeroSection() {
                   <div className="flex items-start justify-between mb-1.5">
                     <div className="flex items-center gap-2">
                       <div className="w-7 h-7 rounded-lg bg-emerald-100 text-emerald-700 flex items-center justify-center">
-                        <Utensils className="w-4 h-4 stroke-[1.5]" />
+                        <Utensils className="w-4 h-4 stroke-[1.5]" aria-hidden="true" />
                       </div>
                       <span className="text-sm font-bold text-slate-900 group-hover:text-emerald-700 transition-colors">
                         Online Pizza Hub Vehari
                       </span>
                     </div>
-                    <ArrowUpRight className="w-4 h-4 text-slate-400 group-hover:text-emerald-600 stroke-[1.5] group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform" />
+                    <ArrowUpRight className="w-4 h-4 text-slate-400 group-hover:text-emerald-600 stroke-[1.5] group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform" aria-hidden="true" />
                   </div>
                   <p className="text-xs text-slate-600 leading-relaxed pl-9 font-normal">
-                    Multi-restaurant food ordering platform with live kitchen tracking, automated driver dispatching, and comprehensive merchant admin portals.
+                    Multi-restaurant food ordering mobile platform with real-time Firestore order tracking, rider dispatch, and merchant admin portals.
                   </p>
                   <div className="flex items-center gap-2 pl-9 mt-2 text-[11px] font-semibold text-emerald-700">
-                    <span>Full-Stack</span>
+                    <span>Flutter</span>
                     <span>•</span>
-                    <span>WebSockets</span>
+                    <span>Firebase</span>
                     <span>•</span>
-                    <span>Live Dispatch</span>
+                    <span>Cloud Functions</span>
                   </div>
                 </Link>
               </div>
@@ -215,7 +216,7 @@ export default function HeroSection() {
               <div className="mt-4 pt-4 border-t border-slate-100/80 grid grid-cols-2 gap-3 relative z-10">
                 <div className="p-3 rounded-xl bg-white/70 border border-white/60 shadow-2xs">
                   <div className="flex items-center gap-1.5 text-slate-600 text-[11px] font-semibold mb-1">
-                    <Shield className="w-3.5 h-3.5 text-emerald-600 stroke-[1.5]" />
+                    <Shield className="w-3.5 h-3.5 text-emerald-600 stroke-[1.5]" aria-hidden="true" />
                     <span>Security</span>
                   </div>
                   <div className="text-xs font-bold text-slate-900">Zero-Trust &amp; HMAC</div>
@@ -223,7 +224,7 @@ export default function HeroSection() {
 
                 <div className="p-3 rounded-xl bg-white/70 border border-white/60 shadow-2xs">
                   <div className="flex items-center gap-1.5 text-slate-600 text-[11px] font-semibold mb-1">
-                    <Cpu className="w-3.5 h-3.5 text-[#8B3DFF] stroke-[1.5]" />
+                    <Cpu className="w-3.5 h-3.5 text-[#8B3DFF] stroke-[1.5]" aria-hidden="true" />
                     <span>Architecture</span>
                   </div>
                   <div className="text-xs font-bold text-slate-900">App Router &amp; RSC</div>
@@ -238,7 +239,7 @@ export default function HeroSection() {
               className="absolute -bottom-4 -left-4 sm:-bottom-5 sm:-left-5 bg-white border border-[#D9DCE5] rounded-2xl p-3 shadow-lg shadow-slate-900/10 hidden sm:flex items-center gap-2.5 z-20"
             >
               <div className="w-8 h-8 rounded-xl bg-[#8B3DFF]/10 border border-[#8B3DFF]/20 flex items-center justify-center text-[#8B3DFF]">
-                <Sparkles className="w-4 h-4" />
+                <Sparkles className="w-4 h-4" aria-hidden="true" />
               </div>
               <div>
                 <p className="text-[11px] font-semibold text-slate-500 leading-tight">Key Specialization</p>

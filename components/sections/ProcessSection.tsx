@@ -34,6 +34,7 @@ export default function ProcessSection() {
                 <button
                   key={step.step}
                   type="button"
+                  aria-pressed={isSelected}
                   onClick={() => setActiveStepIndex(idx)}
                   className={`w-full text-left p-4 rounded-2xl border transition-all duration-200 cursor-pointer flex items-center justify-between ${
                     isSelected
@@ -52,13 +53,13 @@ export default function ProcessSection() {
                       {step.step}
                     </span>
                     <div>
-                      <h4
+                      <h3
                         className={`text-sm sm:text-base font-bold ${
                           isSelected ? "text-slate-900" : "text-slate-700"
                         }`}
                       >
                         {step.title}
-                      </h4>
+                      </h3>
                       <p className="text-xs text-slate-500 truncate max-w-[200px] sm:max-w-xs font-medium">
                         {step.tagline}
                       </p>
@@ -66,6 +67,7 @@ export default function ProcessSection() {
                   </div>
 
                   <ArrowRight
+                    aria-hidden="true"
                     className={`w-4 h-4 stroke-[1.5] transition-transform ${
                       isSelected ? "text-[#8B3DFF] translate-x-1" : "text-slate-400"
                     }`}
@@ -126,7 +128,7 @@ export default function ProcessSection() {
                         key={aIdx}
                         className="p-3.5 rounded-2xl bg-white/70 border border-white/60 shadow-2xs flex items-start gap-2.5"
                       >
-                        <CheckCircle2 className="w-4 h-4 text-emerald-600 stroke-[1.5] shrink-0 mt-0.5" />
+                        <CheckCircle2 className="w-4 h-4 text-emerald-600 stroke-[1.5] shrink-0 mt-0.5" aria-hidden="true" />
                         <span className="text-xs text-slate-700 font-medium leading-snug">{act}</span>
                       </div>
                     ))}
@@ -136,7 +138,7 @@ export default function ProcessSection() {
                 {/* Deliverable Box */}
                 <div className="p-4 rounded-2xl bg-gradient-to-br from-[#8B3DFF]/10 to-[#6425D0]/5 border border-[#8B3DFF]/25 flex items-center gap-3">
                   <div className="w-9 h-9 rounded-xl bg-[#8B3DFF]/10 text-[#8B3DFF] flex items-center justify-center shrink-0">
-                    <FileCheck className="w-5 h-5 stroke-[1.5]" />
+                    <FileCheck className="w-5 h-5 stroke-[1.5]" aria-hidden="true" />
                   </div>
                   <div>
                     <span className="text-[11px] text-slate-500 font-bold uppercase tracking-wider">

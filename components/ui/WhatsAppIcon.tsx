@@ -11,6 +11,7 @@ export default function WhatsAppIcon({ className = "w-5 h-5" }: { className?: st
       fill="none"
       strokeLinecap="round"
       strokeLinejoin="round"
+      aria-hidden="true"
       className={className}
     >
       <path d="M3 21l1.65-3.8a9 9 0 1 1 3.4 2.9L3 21" />

@@ -38,6 +38,8 @@ export default function ProjectsSection() {
           {CATEGORIES.map((cat) => (
             <button
               key={cat}
+              type="button"
+              aria-pressed={activeCategory === cat}
               onClick={() => setActiveCategory(cat)}
               className={`px-4 py-1.5 text-xs font-semibold rounded-full transition-all cursor-pointer ${
                 activeCategory === cat
@@ -54,7 +56,23 @@ export default function ProjectsSection() {
         <div className="space-y-14 md:space-y-20">
           <AnimatePresence mode="popLayout">
             {filteredProjects.map((project) => {
-              const isKeyFlagship = project.slug === "smartdesk-ai" || project.slug === "online-pizza-hub"
+              const isKeyFlagship = project.slug === "noir-gold-atelier" || project.slug === "online-pizza-hub"
+              const liveTarget = project.liveUrl || project.live
+              const isInternalDemo = liveTarget?.startsWith("/")
+              const repoDisplayUrl = project.githubUrl || project.github
+              const mockupBarUrl = liveTarget
+                ? isInternalDemo
+                  ? `https://usman-portfolio-jet.vercel.app${liveTarget}`
+                  : liveTarget
+                : repoDisplayUrl
+                  ? repoDisplayUrl.replace("https://", "")
+                  : project.slug
+              const mockupAspectClass =
+                project.previewAspectRatio === "video" ? "aspect-video" : "aspect-[16/10]"
+              const mockupObjectClass =
+                project.previewObjectPosition === "center"
+                  ? "object-cover object-center"
+                  : "object-cover object-top"
 
               return (
                 <motion.article
@@ -65,12 +83,13 @@ export default function ProjectsSection() {
                   exit={{ opacity: 0, scale: 0.98 }}
                   transition={{ duration: 0.5, ease: [0.16, 1, 0.3, 1] }}
                   onClick={() => {
-                    const targetUrl = project.liveUrl || project.live
-                    if (targetUrl) {
-                      window.open(targetUrl, "_blank", "noopener,noreferrer")
+                    if (liveTarget) {
+                      window.open(liveTarget, "_blank", "noopener,noreferrer")
                     }
                   }}
-                  className={`group rounded-3xl transition-all duration-300 p-6 sm:p-8 lg:p-10 cursor-pointer ${
+                  className={`group rounded-3xl transition-all duration-300 p-6 sm:p-8 lg:p-10 ${
+                    liveTarget ? "cursor-pointer " : ""
+                  }${
                     isKeyFlagship
                       ? "canvas-card-elevated border-[#8B3DFF]/50 shadow-xl shadow-[#8B3DFF]/10 hover:border-[#8B3DFF] hover:shadow-2xl hover:shadow-[#8B3DFF]/15 ring-1 ring-[#8B3DFF]/20"
                       : "canvas-card border-[#D9DCE5]/80 shadow-md hover:border-slate-300 hover:shadow-lg"
@@ -84,7 +103,7 @@ export default function ProjectsSection() {
                         <div className="flex flex-wrap items-center gap-2 mb-3.5">
                           {isKeyFlagship && (
                             <span className="inline-flex items-center gap-1 px-2.5 py-0.5 rounded-md bg-brand-primary text-white text-[11px] font-bold tracking-wide uppercase shadow-xs">
-                              <Star className="w-3 h-3 fill-current" />
+                              <Star className="w-3 h-3 fill-current" aria-hidden="true" />
                               Key Flagship
                             </span>
                           )}
@@ -160,19 +179,32 @@ export default function ProjectsSection() {
                           <ArrowRight className="w-3.5 h-3.5 stroke-[1.5]" aria-hidden="true" />
                         </Link>
 
-                        {(project.liveUrl || project.live) && (
-                          <a
-                            href={project.liveUrl || project.live}
-                            target="_blank"
-                            rel="noopener noreferrer"
-                            onClick={(e) => e.stopPropagation()}
-                            aria-label={`Open live deployment preview for ${project.title}`}
-                            className="inline-flex items-center gap-1.5 text-xs sm:text-sm font-semibold text-slate-700 hover:text-[#6425D0] transition-colors py-2 px-3.5 rounded-full canvas-pill canvas-pill-hover hover:border-[#8B3DFF]/40 cursor-pointer shrink-0"
-                          >
-                            <ExternalLink className="w-4 h-4 text-slate-400 group-hover:text-[#6425D0] stroke-[1.5]" aria-hidden="true" />
-                            <span>Live Preview</span>
-                          </a>
-                        )}
+                        {liveTarget &&
+                          (isInternalDemo ? (
+                            <Link
+                              href={liveTarget}
+                              target="_blank"
+                              rel="noopener noreferrer"
+                              onClick={(e) => e.stopPropagation()}
+                              aria-label={`Open interactive live demo for ${project.title}`}
+                              className="inline-flex items-center gap-1.5 text-xs sm:text-sm font-semibold text-slate-700 hover:text-[#6425D0] transition-colors py-2 px-3.5 rounded-full canvas-pill canvas-pill-hover hover:border-[#8B3DFF]/40 cursor-pointer shrink-0"
+                            >
+                              <ExternalLink className="w-4 h-4 text-slate-400 group-hover:text-[#6425D0] stroke-[1.5]" aria-hidden="true" />
+                              <span>Live Preview</span>
+                            </Link>
+                          ) : (
+                            <a
+                              href={liveTarget}
+                              target="_blank"
+                              rel="noopener noreferrer"
+                              onClick={(e) => e.stopPropagation()}
+                              aria-label={`Open live deployment preview for ${project.title}`}
+                              className="inline-flex items-center gap-1.5 text-xs sm:text-sm font-semibold text-slate-700 hover:text-[#6425D0] transition-colors py-2 px-3.5 rounded-full canvas-pill canvas-pill-hover hover:border-[#8B3DFF]/40 cursor-pointer shrink-0"
+                            >
+                              <ExternalLink className="w-4 h-4 text-slate-400 group-hover:text-[#6425D0] stroke-[1.5]" aria-hidden="true" />
+                              <span>Live Preview</span>
+                            </a>
+                          ))}
 
                         {(project.githubUrl || project.github) && (
                           <a
@@ -192,22 +224,44 @@ export default function ProjectsSection() {
 
                     {/* Right Column: Browser Mockup Preview */}
                     <div className="lg:col-span-6 order-1 lg:order-2">
-                      {project.liveUrl || project.live ? (
-                        <a
-                          href={project.liveUrl || project.live}
-                          target="_blank"
-                          rel="noopener noreferrer"
-                          onClick={(e) => e.stopPropagation()}
-                          className="block cursor-pointer focus:outline-none focus:ring-2 focus:ring-[#8B3DFF]/30 rounded-2xl"
-                          aria-label={`Visit live preview for ${project.title}`}
-                        >
-                          <BrowserMockup
-                            src={project.previewImage || "/project1.png"}
-                            alt={project.title}
-                            url={project.liveUrl || project.live || `https://${project.slug}.dev`}
-                            className="transition-transform duration-300 group-hover:scale-[1.01]"
-                          />
-                        </a>
+                      {liveTarget ? (
+                        isInternalDemo ? (
+                          <Link
+                            href={liveTarget}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            onClick={(e) => e.stopPropagation()}
+                            className="block cursor-pointer focus:outline-none focus:ring-2 focus:ring-[#8B3DFF]/30 rounded-2xl"
+                            aria-label={`Open interactive live demo for ${project.title}`}
+                          >
+                            <BrowserMockup
+                              src={project.previewImage || "/portfolio-preview.png"}
+                              alt={`${project.title} interface preview`}
+                              url={mockupBarUrl}
+                              aspectClassName={mockupAspectClass}
+                              objectClassName={mockupObjectClass}
+                              className="transition-transform duration-300 group-hover:scale-[1.01]"
+                            />
+                          </Link>
+                        ) : (
+                          <a
+                            href={liveTarget}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            onClick={(e) => e.stopPropagation()}
+                            className="block cursor-pointer focus:outline-none focus:ring-2 focus:ring-[#8B3DFF]/30 rounded-2xl"
+                            aria-label={`Visit live preview for ${project.title}`}
+                          >
+                            <BrowserMockup
+                              src={project.previewImage || "/portfolio-preview.png"}
+                              alt={`${project.title} interface preview`}
+                              url={mockupBarUrl}
+                              aspectClassName={mockupAspectClass}
+                              objectClassName={mockupObjectClass}
+                              className="transition-transform duration-300 group-hover:scale-[1.01]"
+                            />
+                          </a>
+                        )
                       ) : (
                         <Link
                           href={`/projects/${project.slug}`}
@@ -216,9 +270,11 @@ export default function ProjectsSection() {
                           aria-label={`View technical case study for ${project.title}`}
                         >
                           <BrowserMockup
-                            src={project.previewImage || "/project1.png"}
-                            alt={project.title}
-                            url={`https://${project.slug}.dev`}
+                            src={project.previewImage || "/portfolio-preview.png"}
+                            alt={`${project.title} interface preview`}
+                            url={mockupBarUrl}
+                            aspectClassName={mockupAspectClass}
+                            objectClassName={mockupObjectClass}
                             className="transition-transform duration-300 group-hover:scale-[1.01]"
                           />
                         </Link>

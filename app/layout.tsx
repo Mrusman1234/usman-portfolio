@@ -57,9 +57,9 @@ export const metadata: Metadata = {
     type: "website",
     images: [
       {
-        url: "/project1.png",
-        width: 1200,
-        height: 630,
+        url: "/portfolio-preview.png",
+        width: 1280,
+        height: 800,
         alt: "Muhammad Usman — Full-Stack Web Developer Portfolio",
       },
     ],
@@ -69,7 +69,7 @@ export const metadata: Metadata = {
     title: "Muhammad Usman — Full-Stack Web Developer",
     description:
       "Full-Stack Web Developer focused on building modern, scalable, and user-centered web applications.",
-    images: ["/project1.png"],
+    images: ["/portfolio-preview.png"],
   },
   robots: {
     index: true,
@@ -95,6 +95,8 @@ export default function RootLayout({
     name: developerProfile.name,
     jobTitle: developerProfile.title,
     url: developerProfile.links.portfolio,
+    email: developerProfile.email,
+    image: "https://usman-portfolio-jet.vercel.app/portfolio-preview.png",
     sameAs: [
       developerProfile.links.github,
       developerProfile.links.linkedin,
@@ -109,9 +111,14 @@ export default function RootLayout({
       "MongoDB",
       "SQL",
       "Prisma ORM",
+      "Flutter",
+      "Firebase",
       "Tailwind CSS",
       "REST API Architecture",
       "Technical SEO",
+      "AI-Assisted Development",
+      "Vercel",
+      "Netlify",
     ],
     alumniOf: {
       "@type": "EducationalOrganization",

@@ -31,6 +31,8 @@ export interface Project {
   github?: string
   live?: string
   previewImage?: string
+  previewAspectRatio?: "16/10" | "video"
+  previewObjectPosition?: "top" | "center"
   images: string[]
   architecture: string[]
   challenges: ProjectChallenge[]

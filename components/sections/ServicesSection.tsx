@@ -74,7 +74,7 @@ export default function ServicesSection() {
                       {service.number}
                     </span>
                     <div className="w-9 h-9 rounded-xl bg-[#8B3DFF]/10 border border-[#8B3DFF]/20 flex items-center justify-center text-[#8B3DFF]">
-                      <Icon className="w-4 h-4 stroke-[1.5]" />
+                      <Icon className="w-4 h-4 stroke-[1.5]" aria-hidden="true" />
                     </div>
                   </div>
 
@@ -117,7 +117,7 @@ export default function ServicesSection() {
                               key={dIdx}
                               className="flex items-center gap-2 text-xs text-slate-700 font-medium"
                             >
-                              <Check className="w-3.5 h-3.5 text-emerald-600 stroke-[1.5] shrink-0" />
+                              <Check className="w-3.5 h-3.5 text-emerald-600 stroke-[1.5] shrink-0" aria-hidden="true" />
                               <span>{del}</span>
                             </li>
                           ))}
@@ -131,11 +131,13 @@ export default function ServicesSection() {
                 <div className="pt-4 mt-2 border-t border-slate-200/70 flex items-center justify-between">
                   <button
                     type="button"
+                    aria-expanded={isExpanded}
                     onClick={() => toggleExpand(service.id)}
                     className="inline-flex items-center gap-1.5 text-xs font-semibold text-slate-600 hover:text-slate-950 transition-colors cursor-pointer"
                   >
                     <span>{isExpanded ? "Show Less" : "View Scope & Deliverables"}</span>
                     <ChevronDown
+                      aria-hidden="true"
                       className={`w-3.5 h-3.5 stroke-[1.5] transition-transform duration-300 ${
                         isExpanded ? "rotate-180 text-[#8B3DFF]" : ""
                       }`}
