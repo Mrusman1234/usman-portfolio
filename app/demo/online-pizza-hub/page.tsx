@@ -13,7 +13,7 @@ export const metadata: Metadata = {
     title: "Online Pizza Hub Vehari — Interactive Storefront Demo",
     description:
       "Explore sample restaurants, customize pizzas with size & add-ons, and test the demo cart & checkout flow.",
-    url: "https://usman-portfolio-jet.vercel.app/demo/online-pizza-hub",
+    url: "https://usman-devs.com/demo/online-pizza-hub",
     type: "website",
     images: [
       {

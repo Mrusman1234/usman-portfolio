@@ -62,7 +62,7 @@ export default function ProjectsSection() {
               const repoDisplayUrl = project.githubUrl || project.github
               const mockupBarUrl = liveTarget
                 ? isInternalDemo
-                  ? `https://usman-portfolio-jet.vercel.app${liveTarget}`
+                  ? `https://usman-devs.com${liveTarget}`
                   : liveTarget
                 : repoDisplayUrl
                   ? repoDisplayUrl.replace("https://", "")

@@ -285,10 +285,10 @@ export const projectsData: Project[] = [
     executiveSummary:
       "Built to showcase full-stack systems cleanly through modern frontend architecture, semantic HTML, technical SEO (JSON-LD, XML sitemap, Open Graph metadata), Gmail SMTP inquiry delivery, and purposeful Framer Motion transitions.",
     tech: ["Next.js", "React.js", "TypeScript", "Tailwind CSS", "Framer Motion"],
-    liveUrl: "https://usman-portfolio-jet.vercel.app/",
+    liveUrl: "https://usman-devs.com",
     githubUrl: "https://github.com/Mrusman1234/usman-portfolio",
     github: "https://github.com/Mrusman1234/usman-portfolio",
-    live: "https://usman-portfolio-jet.vercel.app/",
+    live: "https://usman-devs.com",
     previewImage: "/portfolio-preview.png",
     images: ["/portfolio-preview.png"],
     architecture: [

@@ -13,7 +13,7 @@ export const viewport: Viewport = {
 }
 
 export const metadata: Metadata = {
-  metadataBase: new URL(developerProfile.links.portfolio),
+  metadataBase: new URL("https://usman-devs.com"),
   title: {
     default: "Muhammad Usman — Full-Stack Web Developer",
     template: "%s | Muhammad Usman",
@@ -96,7 +96,7 @@ export default function RootLayout({
     jobTitle: developerProfile.title,
     url: developerProfile.links.portfolio,
     email: developerProfile.email,
-    image: "https://usman-portfolio-jet.vercel.app/portfolio-preview.png",
+    image: "https://usman-devs.com/portfolio-preview.png",
     sameAs: [
       developerProfile.links.github,
       developerProfile.links.linkedin,
@@ -133,12 +133,29 @@ export default function RootLayout({
     description: developerProfile.positioning,
   }
 
+  const websiteJsonLd = {
+    "@context": "https://schema.org",
+    "@type": "WebSite",
+    name: "Muhammad Usman Portfolio",
+    url: "https://usman-devs.com",
+    description: developerProfile.positioning,
+    author: {
+      "@type": "Person",
+      name: developerProfile.name,
+      url: "https://usman-devs.com",
+    },
+  }
+
   return (
     <html lang="en" className="scroll-smooth" suppressHydrationWarning>
       <head>
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+        />
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(websiteJsonLd) }}
         />
       </head>
       <body

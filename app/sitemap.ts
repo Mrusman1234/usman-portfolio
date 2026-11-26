@@ -2,7 +2,7 @@ import { MetadataRoute } from "next"
 import { projectsData } from "@/data/projects"
 
 export default function sitemap(): MetadataRoute.Sitemap {
-  const baseUrl = "https://usman-portfolio-jet.vercel.app"
+  const baseUrl = "https://usman-devs.com"
   const currentDate = new Date().toISOString()
 
   const projectUrls = projectsData.map((project) => ({

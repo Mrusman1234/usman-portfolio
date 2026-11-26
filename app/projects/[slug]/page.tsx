@@ -45,7 +45,7 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
     openGraph: {
       title: `${project.title} — Architectural Case Study`,
       description: project.description,
-      url: `https://usman-portfolio-jet.vercel.app/projects/${project.slug}`,
+      url: `https://usman-devs.com/projects/${project.slug}`,
       type: "article",
       images: [
         {
@@ -77,7 +77,7 @@ export default async function ProjectDetailPage({ params }: PageProps) {
   const isInternalDemo = liveTarget?.startsWith("/")
   const previewBarUrl = liveTarget
     ? isInternalDemo
-      ? `https://usman-portfolio-jet.vercel.app${liveTarget}`
+      ? `https://usman-devs.com${liveTarget}`
       : liveTarget
     : project.githubUrl
       ? project.githubUrl.replace("https://", "")

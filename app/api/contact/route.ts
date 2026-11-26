@@ -99,7 +99,10 @@ export async function POST(req: Request) {
     const smtpPort = Number(process.env.SMTP_PORT || "465")
     const smtpUser = process.env.SMTP_USER
     const smtpPass = process.env.SMTP_PASS
-    const receiverEmail = process.env.CONTACT_RECEIVER_EMAIL || smtpUser || "beingwithusman@gmail.com"
+    const receiverEmail =
+      process.env.CONTACT_RECEIVER_EMAIL ||
+      process.env.CONTACT_EMAIL ||
+      "contact@usman-devs.com"
 
     if (!smtpUser || !smtpPass) {
       console.error("[API_CONTACT_CONFIG_ERROR] Missing SMTP_USER or SMTP_PASS environment variables.")
@@ -208,7 +211,7 @@ export async function POST(req: Request) {
             </div>
 
             <div style="padding:14px 28px;background-color:#F7F7FA;border-top:1px solid #EEF0F5;font-size:11px;color:#64748b;">
-              Sent via Muhammad Usman Portfolio (usman-portfolio-jet.vercel.app) &bull; Hit Reply to respond directly to ${safeEmail}.
+              Sent via Muhammad Usman Portfolio (usman-devs.com) &bull; Hit Reply to respond directly to ${safeEmail}.
             </div>
           </div>
         </body>
