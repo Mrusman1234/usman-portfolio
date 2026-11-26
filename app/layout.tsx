@@ -1,9 +1,16 @@
 import "./globals.css"
 import type { Metadata, Viewport } from "next"
+import { Inter } from "next/font/google"
 import CustomCursor from "@/components/layout/CustomCursor"
 import WhatsAppFloatingButton from "@/components/layout/WhatsAppFloatingButton"
 import AmbientBackground from "@/components/ui/AmbientBackground"
 import { developerProfile } from "@/data/profile"
+
+const inter = Inter({
+  subsets: ["latin"],
+  display: "swap",
+  variable: "--font-sans",
+})
 
 export const viewport: Viewport = {
   width: "device-width",
@@ -15,25 +22,29 @@ export const viewport: Viewport = {
 export const metadata: Metadata = {
   metadataBase: new URL("https://usman-devs.com"),
   title: {
-    default: "Muhammad Usman — Full-Stack Web Developer",
-    template: "%s | Muhammad Usman",
+    default: "Usman Dev | Muhammad Usman — Full Stack Web Developer & Next.js Services",
+    template: "%s | Usman Dev",
   },
   description:
-    "Muhammad Usman is a Full-Stack Web Developer specializing in Next.js, React, Node.js, TypeScript, and modern scalable web applications. Based in Pakistan, working globally.",
+    "Usman Dev (Muhammad Usman) delivers Full Stack Developer Services in React, Next.js, Node.js & TypeScript for scalable SaaS and custom web app solutions.",
   keywords: [
+    "Usman Dev",
+    "Usman Devs",
     "Muhammad Usman",
-    "Full-Stack Web Developer",
-    "Next.js Developer",
-    "React Developer",
+    "Muhammad Usman Full Stack Developer",
+    "Full Stack Developer Services",
+    "Full Stack Web Development Services",
+    "Next.js & React Developer",
+    "Custom Web Application Development",
+    "Custom SaaS & CRM Development",
+    "E-Commerce Web Solutions",
     "Node.js Engineer",
     "TypeScript",
     "Prisma ORM",
-    "Web Application Architecture",
     "Technical SEO Specialist",
-    "Portfolio",
   ],
-  authors: [{ name: "Muhammad Usman", url: developerProfile.links.portfolio }],
-  creator: "Muhammad Usman",
+  authors: [{ name: "Muhammad Usman (Usman Dev)", url: "https://usman-devs.com" }],
+  creator: "Muhammad Usman (Usman Dev)",
   alternates: {
     canonical: "/",
   },
@@ -48,11 +59,11 @@ export const metadata: Metadata = {
     ],
   },
   openGraph: {
-    title: "Muhammad Usman — Full-Stack Web Developer",
+    title: "Usman Dev | Muhammad Usman — Full Stack Web Developer & Next.js Services",
     description:
-      "Building modern, scalable, secure, and user-focused web applications with Next.js, React, TypeScript, and Node.js.",
-    url: developerProfile.links.portfolio,
-    siteName: "Muhammad Usman Portfolio",
+      "Usman Dev (Muhammad Usman) delivers Full Stack Developer Services in React, Next.js, Node.js & TypeScript for scalable SaaS and custom web app solutions.",
+    url: "https://usman-devs.com",
+    siteName: "Usman Dev",
     locale: "en_US",
     type: "website",
     images: [
@@ -60,16 +71,21 @@ export const metadata: Metadata = {
         url: "/portfolio-preview.png",
         width: 1280,
         height: 800,
-        alt: "Muhammad Usman — Full-Stack Web Developer Portfolio",
+        alt: "Usman Dev — Muhammad Usman Full Stack Web Developer & Next.js Services Portfolio",
       },
     ],
   },
   twitter: {
     card: "summary_large_image",
-    title: "Muhammad Usman — Full-Stack Web Developer",
+    title: "Usman Dev | Muhammad Usman — Full Stack Web Developer & Next.js Services",
     description:
-      "Full-Stack Web Developer focused on building modern, scalable, and user-centered web applications.",
-    images: ["/portfolio-preview.png"],
+      "Usman Dev (Muhammad Usman) delivers Full Stack Developer Services in React, Next.js, Node.js & TypeScript for scalable SaaS and custom web app solutions.",
+    images: [
+      {
+        url: "/portfolio-preview.png",
+        alt: "Usman Dev — Muhammad Usman Full Stack Web Developer & Next.js Services Portfolio",
+      },
+    ],
   },
   robots: {
     index: true,
@@ -89,77 +105,109 @@ export default function RootLayout({
 }: {
   children: React.ReactNode
 }) {
-  const jsonLd = {
+  const structuredData = {
     "@context": "https://schema.org",
-    "@type": "Person",
-    name: developerProfile.name,
-    jobTitle: developerProfile.title,
-    url: developerProfile.links.portfolio,
-    email: developerProfile.email,
-    image: "https://usman-devs.com/portfolio-preview.png",
-    sameAs: [
-      developerProfile.links.github,
-      developerProfile.links.linkedin,
+    "@graph": [
+      {
+        "@type": "Person",
+        "@id": "https://usman-devs.com/#person",
+        name: developerProfile.name,
+        alternateName: ["Usman Dev", "Usman Devs"],
+        jobTitle: "Full Stack Web Developer",
+        url: "https://usman-devs.com",
+        email: developerProfile.email,
+        image: "https://usman-devs.com/portfolio-preview.png",
+        affiliation: {
+          "@type": "Organization",
+          name: "Digital Boosters IT Center",
+        },
+        sameAs: [
+          developerProfile.links.github,
+          developerProfile.links.linkedin,
+        ],
+        knowsAbout: [
+          "React.js",
+          "Next.js",
+          "Node.js",
+          "TypeScript",
+          "Full Stack Web Development",
+          "SaaS Development",
+          "Custom Web Application Development",
+          "E-Commerce Web Solutions",
+          "JavaScript",
+          "Express.js",
+          "MongoDB",
+          "PostgreSQL",
+          "Prisma ORM",
+          "Flutter",
+          "Tailwind CSS",
+          "REST API Architecture",
+          "Technical SEO",
+        ],
+        alumniOf: {
+          "@type": "EducationalOrganization",
+          name: developerProfile.education.institution,
+        },
+        address: {
+          "@type": "PostalAddress",
+          addressLocality: "Vehari",
+          addressRegion: "Punjab",
+          addressCountry: "PK",
+        },
+        description: developerProfile.positioning,
+      },
+      {
+        "@type": "WebSite",
+        "@id": "https://usman-devs.com/#website",
+        name: "Usman Dev",
+        alternateName: "Muhammad Usman Portfolio",
+        url: "https://usman-devs.com",
+        description:
+          "Usman Dev (Muhammad Usman) delivers Full Stack Developer Services in React, Next.js, Node.js & TypeScript.",
+        publisher: {
+          "@id": "https://usman-devs.com/#person",
+        },
+      },
+      {
+        "@type": "ProfessionalService",
+        "@id": "https://usman-devs.com/#service",
+        name: "Usman Dev — Full Stack Web Development Services",
+        url: "https://usman-devs.com",
+        email: developerProfile.email,
+        image: "https://usman-devs.com/portfolio-preview.png",
+        description:
+          "Custom SaaS, CRM, e-commerce, and Next.js full-stack web application development services by Usman Dev (Muhammad Usman).",
+        provider: {
+          "@id": "https://usman-devs.com/#person",
+        },
+        serviceType: [
+          "Full Stack Web Development Services",
+          "Next.js & React Frontend Development",
+          "Custom SaaS & CRM Development",
+          "E-Commerce Web Solutions",
+          "Technical SEO & Core Web Vitals Optimization",
+        ],
+        areaServed: "Worldwide",
+        address: {
+          "@type": "PostalAddress",
+          addressLocality: "Vehari",
+          addressRegion: "Punjab",
+          addressCountry: "PK",
+        },
+      },
     ],
-    knowsAbout: [
-      "Next.js",
-      "React.js",
-      "TypeScript",
-      "JavaScript",
-      "Node.js",
-      "Express.js",
-      "MongoDB",
-      "SQL",
-      "Prisma ORM",
-      "Flutter",
-      "Firebase",
-      "Tailwind CSS",
-      "REST API Architecture",
-      "Technical SEO",
-      "AI-Assisted Development",
-      "Vercel",
-      "Netlify",
-    ],
-    alumniOf: {
-      "@type": "EducationalOrganization",
-      name: developerProfile.education.institution,
-    },
-    address: {
-      "@type": "PostalAddress",
-      addressLocality: "Vehari",
-      addressRegion: "Punjab",
-      addressCountry: "PK",
-    },
-    description: developerProfile.positioning,
-  }
-
-  const websiteJsonLd = {
-    "@context": "https://schema.org",
-    "@type": "WebSite",
-    name: "Muhammad Usman Portfolio",
-    url: "https://usman-devs.com",
-    description: developerProfile.positioning,
-    author: {
-      "@type": "Person",
-      name: developerProfile.name,
-      url: "https://usman-devs.com",
-    },
   }
 
   return (
-    <html lang="en" className="scroll-smooth" suppressHydrationWarning>
+    <html lang="en" className={`${inter.variable} scroll-smooth`} suppressHydrationWarning>
       <head>
         <script
           type="application/ld+json"
-          dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
-        />
-        <script
-          type="application/ld+json"
-          dangerouslySetInnerHTML={{ __html: JSON.stringify(websiteJsonLd) }}
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(structuredData) }}
         />
       </head>
       <body
-        className="bg-[#F7F7FA] text-slate-900 antialiased selection:bg-[#8B3DFF]/15 selection:text-[#6425D0] min-h-screen relative"
+        className="bg-[#F7F7FA] text-slate-900 font-sans antialiased selection:bg-[#8B3DFF]/15 selection:text-[#6425D0] min-h-screen relative"
         suppressHydrationWarning
       >
         <AmbientBackground />

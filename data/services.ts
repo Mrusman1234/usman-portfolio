@@ -4,9 +4,9 @@ export const servicesData: Service[] = [
   {
     id: "full-stack",
     number: "01",
-    title: "Full-Stack Web Development",
+    title: "Custom SaaS & CRM Development",
     shortDescription:
-      "End-to-end web applications engineered from database schema design to responsive client interfaces.",
+      "End-to-end custom web applications and SaaS platforms engineered from database schema design to responsive client interfaces.",
     fullDescription:
       "I architect and construct complete, production-ready web applications using modern React, Next.js, and Node.js ecosystems. Every system is built with maintainable architecture, strict type safety, secure API boundaries, and scalable data models.",
     deliverables: [
@@ -21,7 +21,7 @@ export const servicesData: Service[] = [
   {
     id: "frontend",
     number: "02",
-    title: "Frontend Development",
+    title: "Next.js & React Frontend Development",
     shortDescription:
       "High-performance, accessible, and pixel-precise user interfaces built with React, Next.js, and Tailwind CSS.",
     fullDescription:
@@ -38,7 +38,7 @@ export const servicesData: Service[] = [
   {
     id: "backend-api",
     number: "03",
-    title: "Backend & REST API Development",
+    title: "Node.js Backend & REST API Development",
     shortDescription:
       "Secure, resilient, and well-documented server architectures and RESTful endpoints.",
     fullDescription:
@@ -55,7 +55,7 @@ export const servicesData: Service[] = [
   {
     id: "ecommerce",
     number: "04",
-    title: "E-Commerce Development",
+    title: "E-Commerce Web Solutions",
     shortDescription:
       "Conversion-focused online storefronts with reliable checkout funnels and payment reconciliation.",
     fullDescription:

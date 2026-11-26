@@ -112,9 +112,9 @@ export default function AboutSection() {
             <div className="p-6 rounded-3xl canvas-card-elevated border-[#D9DCE5]/80 shadow-md relative overflow-hidden">
               <div className="flex items-center gap-2.5 mb-3 text-[#8B3DFF]">
                 <GraduationCap className="w-5 h-5 stroke-[1.5]" aria-hidden="true" />
-                <span className="text-xs uppercase tracking-wider font-bold">
+                <h3 className="text-xs uppercase tracking-wider font-bold">
                   Education &amp; Foundations
-                </span>
+                </h3>
               </div>
               <h4 className="text-base sm:text-lg font-bold text-slate-900 mb-1">
                 {developerProfile.education.degree}
@@ -131,9 +131,9 @@ export default function AboutSection() {
             <div className="p-6 rounded-3xl canvas-card-elevated border-[#D9DCE5]/80 shadow-md space-y-4">
               <div className="flex items-center gap-2.5 text-emerald-600">
                 <Award className="w-5 h-5 stroke-[1.5]" aria-hidden="true" />
-                <span className="text-xs uppercase tracking-wider font-bold">
+                <h3 className="text-xs uppercase tracking-wider font-bold">
                   Verified Certifications
-                </span>
+                </h3>
               </div>
 
               <div className="space-y-3">
@@ -143,9 +143,9 @@ export default function AboutSection() {
                     className="p-3.5 rounded-xl bg-white/70 border border-white/60 flex items-center justify-between shadow-2xs hover:border-[#8B3DFF]/40 transition-colors"
                   >
                     <div>
-                      <h5 className="text-xs sm:text-sm font-bold text-slate-900">
+                      <h4 className="text-xs sm:text-sm font-bold text-slate-900">
                         {cert.title}
-                      </h5>
+                      </h4>
                       <p className="text-[11px] text-slate-500 font-medium">
                         {cert.issuer} • ID: {cert.id}
                       </p>
@@ -170,9 +170,9 @@ export default function AboutSection() {
                 <Compass className="w-5 h-5 stroke-[1.5]" aria-hidden="true" />
               </div>
               <div>
-                <h5 className="text-xs font-bold text-slate-900 uppercase tracking-wider">
+                <h3 className="text-xs font-bold text-slate-900 uppercase tracking-wider">
                   Career Objective
-                </h5>
+                </h3>
                 <p className="text-xs text-slate-600 mt-0.5 leading-relaxed font-normal">
                   Seeking high-impact Full-Stack or Frontend Developer positions where I can architect scalable products and solve complex user-facing challenges.
                 </p>

@@ -43,9 +43,9 @@ export default function ServicesSection() {
         <SectionHeader
           index="03"
           kicker="CAPABILITIES & SERVICES"
-          title="Full-Lifecycle"
-          subtitle="Engineering Services."
-          description="Specialized technical services covering frontend architecture, robust backend APIs, secure databases, and search optimization."
+          title="Full Stack Web Development"
+          subtitle="Services."
+          description="Custom SaaS & CRM development, Next.js & React frontend architecture, e-commerce web solutions, Node.js APIs, and technical SEO."
         />
 
         {/* Services Grid */}

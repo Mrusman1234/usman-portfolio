@@ -107,7 +107,7 @@ export default function Navbar() {
             <div className="relative h-8 w-8 sm:h-9 sm:w-9 rounded-lg overflow-hidden shrink-0 shadow-2xs bg-[#0A0814] flex items-center justify-center">
               <Image
                 src="/brand/mu-icon.png"
-                alt="Muhammad Usman Logo"
+                alt="Usman Dev (MU) — Full-Stack Web Developer Brand Monogram Logo"
                 width={36}
                 height={36}
                 className="object-contain w-full h-full group-hover:scale-105 transition-transform"

@@ -48,14 +48,11 @@ export default function HeroSection() {
               transition={{ duration: 0.7, delay: 0.1, ease: [0.16, 1, 0.3, 1] }}
               className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-extrabold tracking-tight text-slate-900 leading-[1.08] mb-6"
             >
-              Building Digital{" "}
-              <span className="text-slate-900">
-                Experiences
-              </span>{" "}
-              That Make an{" "}
+              Usman Dev —{" "}
               <span className="text-gradient-headline">
-                Impact.
-              </span>
+                Full Stack
+              </span>{" "}
+              Web Development Services.
             </motion.h1>
 
             {/* Supporting Description */}
@@ -132,7 +129,7 @@ export default function HeroSection() {
                   <div className="relative w-10 h-10 rounded-2xl overflow-hidden shadow-xs ring-1 ring-slate-900/10 shrink-0 bg-[#0A0814] flex items-center justify-center">
                     <Image
                       src="/brand/mu-icon.png"
-                      alt="Muhammad Usman"
+                      alt="Usman Dev (MU) — Muhammad Usman Full-Stack Web Developer Logo"
                       width={40}
                       height={40}
                       className="object-contain"
@@ -140,7 +137,7 @@ export default function HeroSection() {
                     />
                   </div>
                   <div>
-                    <h2 className="text-sm font-bold text-slate-900">Muhammad Usman</h2>
+                    <p className="text-sm font-bold text-slate-900">Muhammad Usman</p>
                     <p className="text-xs text-slate-500 font-medium">BSCS ({developerProfile.education.year}) • Vehari, PK</p>
                   </div>
                 </div>

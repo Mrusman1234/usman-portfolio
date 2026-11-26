@@ -335,7 +335,7 @@ export default function PizzaHubDemoClient() {
             <div className="relative aspect-video w-full rounded-2xl overflow-hidden border border-[#2A2A2A] shadow-2xl">
               <Image
                 src="/online-pizza-hub-preview.jpg"
-                alt="Online Pizza Hub Vehari Desktop and Mobile Showcase"
+                alt="Online Pizza Hub Vehari multi-restaurant food ordering Flutter and Firebase showcase by Usman Dev"
                 fill
                 priority
                 sizes="(max-width: 1024px) 100vw, 560px"

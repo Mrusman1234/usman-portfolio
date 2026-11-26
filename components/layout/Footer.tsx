@@ -36,7 +36,7 @@ export default function Footer() {
               <div className="relative w-8 h-8 rounded-lg overflow-hidden shadow-2xs shrink-0 bg-[#0A0814] flex items-center justify-center">
                 <Image
                   src="/brand/mu-icon.png"
-                  alt="Muhammad Usman"
+                  alt="Usman Dev (MU) Brand Monogram Icon"
                   width={32}
                   height={32}
                   className="object-contain"

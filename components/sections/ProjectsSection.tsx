@@ -28,9 +28,9 @@ export default function ProjectsSection() {
         <SectionHeader
           index="02"
           kicker="SELECTED WORK & ARCHITECTURE"
-          title="Engineered for"
-          subtitle="Scale & Reliability."
-          description="In-depth case studies of production systems, autonomous AI agents, multi-restaurant engines, and full-stack web applications."
+          title="Featured Projects"
+          subtitle="& Custom Web Applications."
+          description="In-depth case studies of production systems, AI SaaS CRM workspaces, multi-restaurant food ordering platforms, and full-stack e-commerce web applications."
         />
 
         {/* Category Filter Pills */}
@@ -82,14 +82,7 @@ export default function ProjectsSection() {
                   viewport={{ once: true, margin: "-60px" }}
                   exit={{ opacity: 0, scale: 0.98 }}
                   transition={{ duration: 0.5, ease: [0.16, 1, 0.3, 1] }}
-                  onClick={() => {
-                    if (liveTarget) {
-                      window.open(liveTarget, "_blank", "noopener,noreferrer")
-                    }
-                  }}
                   className={`group rounded-3xl transition-all duration-300 p-6 sm:p-8 lg:p-10 ${
-                    liveTarget ? "cursor-pointer " : ""
-                  }${
                     isKeyFlagship
                       ? "canvas-card-elevated border-[#8B3DFF]/50 shadow-xl shadow-[#8B3DFF]/10 hover:border-[#8B3DFF] hover:shadow-2xl hover:shadow-[#8B3DFF]/15 ring-1 ring-[#8B3DFF]/20"
                       : "canvas-card border-[#D9DCE5]/80 shadow-md hover:border-slate-300 hover:shadow-lg"
@@ -124,7 +117,6 @@ export default function ProjectsSection() {
                         <h3 className="text-2xl sm:text-3xl font-bold text-slate-900 mb-2 group-hover:text-[#6425D0] transition-colors">
                           <Link
                             href={`/projects/${project.slug}`}
-                            onClick={(e) => e.stopPropagation()}
                           >
                             {project.title}
                           </Link>
@@ -171,7 +163,6 @@ export default function ProjectsSection() {
                       <div className="pt-5 border-t border-slate-100 flex flex-wrap items-center gap-3 sm:gap-4">
                         <Link
                           href={`/projects/${project.slug}`}
-                          onClick={(e) => e.stopPropagation()}
                           aria-label={`Read technical case study for ${project.title}`}
                           className="inline-flex items-center gap-1.5 px-4 py-2 rounded-full text-xs sm:text-sm font-semibold text-white bg-brand-primary hover:bg-brand-secondary transition-all shadow-sm shadow-[#8B3DFF]/25 cursor-pointer shrink-0"
                         >
@@ -185,7 +176,6 @@ export default function ProjectsSection() {
                               href={liveTarget}
                               target="_blank"
                               rel="noopener noreferrer"
-                              onClick={(e) => e.stopPropagation()}
                               aria-label={`Open interactive live demo for ${project.title}`}
                               className="inline-flex items-center gap-1.5 text-xs sm:text-sm font-semibold text-slate-700 hover:text-[#6425D0] transition-colors py-2 px-3.5 rounded-full canvas-pill canvas-pill-hover hover:border-[#8B3DFF]/40 cursor-pointer shrink-0"
                             >
@@ -197,7 +187,6 @@ export default function ProjectsSection() {
                               href={liveTarget}
                               target="_blank"
                               rel="noopener noreferrer"
-                              onClick={(e) => e.stopPropagation()}
                               aria-label={`Open live deployment preview for ${project.title}`}
                               className="inline-flex items-center gap-1.5 text-xs sm:text-sm font-semibold text-slate-700 hover:text-[#6425D0] transition-colors py-2 px-3.5 rounded-full canvas-pill canvas-pill-hover hover:border-[#8B3DFF]/40 cursor-pointer shrink-0"
                             >
@@ -211,7 +200,6 @@ export default function ProjectsSection() {
                             href={project.githubUrl || project.github}
                             target="_blank"
                             rel="noopener noreferrer"
-                            onClick={(e) => e.stopPropagation()}
                             aria-label={`Open GitHub source repository for ${project.title}`}
                             className="inline-flex items-center gap-1.5 text-xs sm:text-sm font-semibold text-slate-700 hover:text-slate-950 transition-colors py-2 px-3.5 rounded-full canvas-pill canvas-pill-hover hover:border-slate-400 cursor-pointer shrink-0"
                           >
@@ -230,13 +218,12 @@ export default function ProjectsSection() {
                             href={liveTarget}
                             target="_blank"
                             rel="noopener noreferrer"
-                            onClick={(e) => e.stopPropagation()}
                             className="block cursor-pointer focus:outline-none focus:ring-2 focus:ring-[#8B3DFF]/30 rounded-2xl"
                             aria-label={`Open interactive live demo for ${project.title}`}
                           >
                             <BrowserMockup
                               src={project.previewImage || "/portfolio-preview.png"}
-                              alt={`${project.title} interface preview`}
+                              alt={`${project.title} — ${project.subtitle} full-stack web application preview by Usman Dev`}
                               url={mockupBarUrl}
                               aspectClassName={mockupAspectClass}
                               objectClassName={mockupObjectClass}
@@ -248,13 +235,12 @@ export default function ProjectsSection() {
                             href={liveTarget}
                             target="_blank"
                             rel="noopener noreferrer"
-                            onClick={(e) => e.stopPropagation()}
                             className="block cursor-pointer focus:outline-none focus:ring-2 focus:ring-[#8B3DFF]/30 rounded-2xl"
                             aria-label={`Visit live preview for ${project.title}`}
                           >
                             <BrowserMockup
                               src={project.previewImage || "/portfolio-preview.png"}
-                              alt={`${project.title} interface preview`}
+                              alt={`${project.title} — ${project.subtitle} full-stack web application preview by Usman Dev`}
                               url={mockupBarUrl}
                               aspectClassName={mockupAspectClass}
                               objectClassName={mockupObjectClass}
@@ -265,13 +251,12 @@ export default function ProjectsSection() {
                       ) : (
                         <Link
                           href={`/projects/${project.slug}`}
-                          onClick={(e) => e.stopPropagation()}
                           className="block cursor-pointer focus:outline-none focus:ring-2 focus:ring-[#8B3DFF]/30 rounded-2xl"
                           aria-label={`View technical case study for ${project.title}`}
                         >
                           <BrowserMockup
                             src={project.previewImage || "/portfolio-preview.png"}
-                            alt={`${project.title} interface preview`}
+                            alt={`${project.title} — ${project.subtitle} full-stack web application preview by Usman Dev`}
                             url={mockupBarUrl}
                             aspectClassName={mockupAspectClass}
                             objectClassName={mockupObjectClass}

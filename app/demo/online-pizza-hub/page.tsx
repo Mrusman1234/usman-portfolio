@@ -20,9 +20,16 @@ export const metadata: Metadata = {
         url: "/online-pizza-hub-preview.jpg",
         width: 1024,
         height: 576,
-        alt: "Online Pizza Hub Vehari Interactive Demo Preview",
+        alt: "Online Pizza Hub Vehari Interactive Demo Preview by Usman Dev",
       },
     ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Online Pizza Hub Vehari — Interactive Storefront Demo",
+    description:
+      "Explore sample restaurants, customize pizzas with size & add-ons, and test the demo cart & checkout flow.",
+    images: ["/online-pizza-hub-preview.jpg"],
   },
 }
 

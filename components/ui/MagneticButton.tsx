@@ -68,11 +68,12 @@ export default function MagneticButton({
   )
 
   if (href) {
+    const resolvedRel = rel ?? (target === "_blank" ? "noopener noreferrer" : undefined)
     return (
       <a
         href={href}
         target={target}
-        rel={rel}
+        rel={resolvedRel}
         onClick={onClick}
         className="inline-block"
       >

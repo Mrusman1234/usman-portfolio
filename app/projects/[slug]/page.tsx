@@ -52,7 +52,7 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
           url: previewImg,
           width: 1280,
           height: 800,
-          alt: `${project.title} Preview`,
+          alt: `${project.title} — ${project.subtitle} Preview by Usman Dev`,
         },
       ],
     },
@@ -171,7 +171,7 @@ export default async function ProjectDetailPage({ params }: PageProps) {
         <div className="mb-16">
           <BrowserMockup
             src={project.previewImage || "/portfolio-preview.png"}
-            alt={`${project.title} architecture and UI preview`}
+            alt={`${project.title} — ${project.subtitle} system architecture and UI preview by Usman Dev`}
             url={previewBarUrl}
             sizes="(max-width: 1024px) 100vw, 1024px"
             aspectClassName={mockupAspectClass}
